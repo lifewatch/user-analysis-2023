@@ -1,0 +1,45 @@
+version: "3.7"
+# -----------------------------------------------------------------------
+services: 
+  jupyter:
+    build:
+      context: ./jupyter
+    ports:
+      - "8888:8888"
+    links:
+      - graphdb
+    volumes:
+      - "../src/py/ipynb:/notebooks"
+
+  graphdb:
+    image: ontotext/graphdb:10.0.2
+    container_name: graphdb3
+    ports:
+      - 7200:7200     # HTTP
+
+  ingest:
+    build: 
+      context: ./lwua-ingest/ 
+      #args: 
+    container_name: lwua-ingest
+    volumes: 
+      # Stores the data 
+      - ../data:/data
+    env_file:
+      - ../.env
+    # for test / dev -- no restart and single run
+    restart: "no"
+    command: run
+    # towards deploy -- make restart and keep service running
+    # restart: unless-stopped 
+    # command: start
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m 
+    labels:
+      be.vliz.container.project: "LWUA"
+      be.vliz.container.group: "services"
+      be.vliz.container.owner: "laurian.van.maledghem@vliz.be"
+      be.vliz.container.description: "LifeWatch User-Analysis Platform"
+      be.vliz.container.vcs-url: "https://github.com/lifewatch/user-analysis-2023.git"
