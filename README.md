@@ -1,6 +1,20 @@
 # user-analysis-2023
 
-## general plan
+## using this project
+
+Steps:
+1. retrieve the source code from github
+2. to start up the services simply run 
+
+```bash
+.$ touch .env # make sure you have an .env file
+.$ cd docker
+./docker$ docker-compose up
+```
+
+
+
+## general plan 
 
 big idea is to have a central triples store for the user analysis approach
 this to decouple the ingest (retrieval and semantic mapping) from the different sources from the reporting (which should be based on the assembled knowledge graph)
