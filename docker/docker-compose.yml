@@ -4,33 +4,39 @@ services:
   jupyter:
     build:
       context: ./jupyter
+    container_name: lwua_jupyter
     ports:
       - "8888:8888"
     links:
       - graphdb
     volumes:
       - "../src/py/ipynb:/notebooks"
+    labels:
+      be.vliz.container.project: "LWUA"
+      be.vliz.container.group: "services"
 
   graphdb:
     image: ontotext/graphdb:10.0.2
-    container_name: graphdb3
+    container_name: lwua_graphdb
     ports:
       - 7200:7200     # HTTP
+    labels:
+      be.vliz.container.project: "LWUA"
+      be.vliz.container.group: "services"
 
   ingest:
     build: 
       context: ./lwua-ingest/ 
       #args: 
-    container_name: lwua-ingest
+    container_name: lwua_ingest
     volumes: 
-      # Stores the data 
-      - ../data:/data
+      - ../data:/data    # Store for any input data 
     env_file:
       - ../.env
     # for test / dev -- no restart and single run
     restart: "no"
     command: run
-    # towards deploy -- make restart and keep service running
+    # towards deploy -- make restart and keep service running -- consequence: use ctrl-c to stop
     # restart: unless-stopped 
     # command: start
     logging:
