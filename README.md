@@ -7,11 +7,14 @@ Steps:
 2. to start up the services simply run 
 
 ```bash
-.$ touch .env # make sure you have an .env file
-.$ cd docker
-./docker$ docker-compose up
+.$ touch .env                         # make sure you have an .env file
+.$ cd docker && docker-compose up     # use docker to run the services
 ```
+3. open the jupyter notebook
 
+```bash
+.$ xdg-open $(docker/jupyter_url.sh)  # this gets the url for the service and opens a browser to it
+```
 
 
 ## general plan 
