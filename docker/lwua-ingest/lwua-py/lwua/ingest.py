@@ -9,7 +9,7 @@ def run_ingest():
     log.info("run_ingest")
 
 
-def gdb_from_config(insert: bool = False):
+def gdb_from_config():
     # todo get base and repoid from .env
     base = "http://localhost:7200"
     repoid = "lwua23"
@@ -20,7 +20,7 @@ def gdb_from_config(insert: bool = False):
     gdb = SPARQLWrapper(
         endpoint=endpoint,
         updateEndpoint=updateEndpoint,
-        returnFormat='json',
+        returnFormat=JSON,
         agent="lwua-python-sparql-client"
     )
     gdb.method = 'POST'
@@ -35,7 +35,7 @@ def ingest_testing():
     n3str = """
     <http://example.com/lwua23-from-py> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Project> .
     """
-    
+
     # define a graph -- todo find better id
     graphid = f"https://example.org/lwua23/{ file }"
     # assemble the insert statement
