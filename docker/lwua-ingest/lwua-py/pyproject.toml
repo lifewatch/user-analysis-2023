@@ -4,7 +4,6 @@ version = "0.0.0"
 description = "lifewatch user analysis"
 authors = ["Laurian Van Maldeghem <laurian.van.maldeghem@vliz.be>"]
 license = "CC0"
-readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
