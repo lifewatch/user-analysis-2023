@@ -4,22 +4,29 @@ services:
   jupyter:
     build:
       context: ./jupyter
+    image: lwua/lwua_jupyter
     container_name: lwua_jupyter
     ports:
       - "8888:8888"
     links:
       - graphdb
     volumes:
-      - "../src/py/ipynb:/notebooks"
+      - "./jupyter/notebooks:/notebooks"
     labels:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"
 
   graphdb:
-    image: ontotext/graphdb:10.0.2
+    # todo consider a local build that also initializes a repository for lwua inside this lwua_graphdb!
+    build:
+      context: ./graphdb
+    image: lwua/lwua_graphdb
     container_name: lwua_graphdb
     ports:
       - 7200:7200     # HTTP
+    volumes:
+      - ../data:/root/graphdb-import/data
+    # todo - think about volumes for persistence of data
     labels:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"
@@ -28,6 +35,7 @@ services:
     build: 
       context: ./lwua-ingest/ 
       #args: 
+    image: lwua/lwua_ingest
     container_name: lwua_ingest
     volumes: 
       - ../data:/data    # Store for any input data 
@@ -39,6 +47,8 @@ services:
     # towards deploy -- make restart and keep service running -- consequence: use ctrl-c to stop
     # restart: unless-stopped 
     # command: start
+    links:
+      - graphdb
     logging:
       driver: json-file
       options:

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "lwua"
+version = "0.0.0"
+description = "lifewatch user analysis"
+authors = ["Laurian Van Maldeghem <laurian.van.maldeghem@vliz.be>"]
+license = "CC0"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+apscheduler = "^3.10.4"
+pyaml = "^23.9.3"
+python-dotenv = "^1.0.0"
+sparqlwrapper = "^2.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
