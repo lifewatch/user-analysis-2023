@@ -15,7 +15,7 @@ handlers:
     class: logging.FileHandler
     level: DEBUG
     formatter: base
-    filename: lwua-ingest-debug.log
+    filename: logging/lwua-ingest-debug.log
     mode: 'a'  # in stead of 'w'
 loggers:
   __main__:
