@@ -1,6 +1,6 @@
 FROM jupyter/base-notebook
-
-RUN pip install pykg2tbl
-
 VOLUME /notebooks
 WORKDIR /notebooks
+
+COPY ./requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
