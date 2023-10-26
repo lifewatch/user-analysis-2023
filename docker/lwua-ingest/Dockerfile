@@ -19,7 +19,7 @@ ENV PATH="$POETRY_HOME/bin:$PATH"
 RUN python -c 'from urllib.request import urlopen; print(urlopen("https://install.python-poetry.org").read().decode())' | python -
 
 # get the source code in
-COPY ./lwua-py ./
+COPY ./lwua-py /lwua-py
 # use poetry to build and install -- creating the local .venv
 RUN poetry install --no-interaction --no-ansi -vvv
 
@@ -31,4 +31,8 @@ FROM python as runtime
 ENV PATH="/lwua-py/.venv/bin:$PATH" 
 # ensure we have the build folder from the poetry stage of this image
 COPY --from=poetry /lwua-py /lwua-py
+
+VOLUME /data
+VOLUME /logging
+RUN ln -s /logging /lwua-py/logging
 ENTRYPOINT ["python", "-m", "lwua"]
