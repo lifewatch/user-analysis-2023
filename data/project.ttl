@@ -1,4 +1,4 @@
-@prefix schema: <http://schema.org/> .
+@prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix cc: <https://creativecommons.org/ns#> .
 
