@@ -4,6 +4,7 @@ import logging
 from rdflib import Graph
 import os
 from dotenv import load_dotenv
+from .helpers import enable_logging
 
 
 log = logging.getLogger(__name__)
@@ -22,7 +23,7 @@ def run_ingest():
 
 
 def data_path_from_config():
-    folder_name = os.getenv("GDB_DATA_FOLDER", "/root/graphdb-import/data")
+    folder_name = os.getenv("INGEST_DATA_FOLDER", "/data")
     return Path(folder_name).absolute()
 
 
@@ -105,6 +106,7 @@ def ingest_data_file(fname):
 # directly connecting to a localhost graphdb endpoint (which might be inside docker!)
 def main():
     load_dotenv()
+    enable_logging()
     ingest_data_file("project.ttl")
     # todo 
     # run_ingest()

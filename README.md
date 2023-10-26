@@ -3,30 +3,57 @@
 ## using this project
 
 Steps:
+
 1. retrieve the source code from github
-2. to start up the services simply run 
+
+2. to build the services simply run 
 
 ```bash
 .$ touch .env                         # make sure you have an .env file
-.$ cd docker && docker-compose up     # use docker to run the services
+.$ cd docker && docker-compose build  # use docker to build the services 
 ```
-3. open the jupyter notebook
+
+3. to start up the services simply run 
+
+```bash
+.$ cd docker && docker-compose up     # use docker to run the services 
+```
+
+4. open the jupyter notebook
 
 ```bash
 .$ xdg-open $(docker/jupyter_url.sh)  # this gets the url for the service and opens a browser to it
 ```
 
+5. open the graphdb browser ui
 
-## general plan 
+```bash
+.$ xdg-open http://localhost:7200     # opens the web ui in a browser
+```
+
+6. run a test-ingest
+   
+This introduces forcefully at least the data/project.ttl into the triple store
+This should not be needed when the ingest runs automatically
+
+```bash
+.$ docker exec -it lwua_ingest /bin/bash            # interactively gets you into the ingest env
+root@f226b253fbd4:/lwua-py# python -m lwua.ingest   # run the ingest 
+```
+
+
+## general plan ahead -- details to be converted into github issues
 
 big idea is to have a central triples store for the user analysis approach
 this to decouple the ingest (retrieval and semantic mapping) from the different sources from the reporting (which should be based on the assembled knowledge graph)
 
-### for the ingest we will need a mix if strategies
-* actually getting data by using dumps our webservices
-* additionally uplifting thos to triples (via pysubyt)
+### for the ingest we will need a mix of strategies
+* actually getting raw (non linkd) data by using dumps from webservices
+* additionally uplifting those to triples (via pysubyt)
 * possibly ingesting long-living reference sets through ldes client
-
+* augmenting strategies --> starting by reading from what we already have in store, decide, then fetch more connected data, and produce more triples
+* possibly add semantic reasoner
+* attention to provenance triples for meta analysis ?
 
 #### Ingest Tasks
 - identify sources (dumps, werbservices or sparql endpoints)
@@ -46,7 +73,6 @@ this to decouple the ingest (retrieval and semantic mapping) from the different 
 
 - list and code sparql queries
 - build ipynb reports
-
 
 
 ### model-design
@@ -75,9 +101,23 @@ this to decouple the ingest (retrieval and semantic mapping) from the different 
 - deploy at docker-dev
 - setup ci/cd for autodeploy
 
+### meta & wrap up
+
+#### release management
+- to be setup 
+- to consider split between reusable platform of components for generic semantic analysis & lwua23
+- to organise multiple repos
+- to publish images on docker-hub? elsewhere?
+
+#### documentation 
+- todo / make lists 
+- probably organize into separate /docs/**md linked from this readme ? 
 
 
-## repo layout
+
+## documentation
+
+### repo layout
 
 src / py / lwua_ingest --> module for ingest, has nested ./lwua_ingest/ and ./tests/
 
@@ -94,3 +134,5 @@ docker / tools --> useful bash scripts to do some standard docker commands (as a
 docs / **.md --> with useful planning / motivation / usage / etc etc docs (e.g. list-of-sources.md)
 
 data / {source} / **.*  out of band retrieved actual files
+
+logging / ** placeholder folder where dedicated logging from different docker-containers are grouped and put together.
