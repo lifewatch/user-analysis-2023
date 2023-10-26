@@ -39,6 +39,7 @@ services:
     container_name: lwua_ingest
     volumes: 
       - ../data:/data    # Store for any input data 
+      - ../logging:/logging   # Store for any input data 
     env_file:
       - ../.env
     # for test / dev -- no restart and single run
