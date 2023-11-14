@@ -1,6 +1,20 @@
 version: "3.7"
 # -----------------------------------------------------------------------
 services: 
+  graphdb:
+    build:
+      context: ./graphdb
+    image: lwua/lwua_graphdb
+    container_name: lwua_graphdb
+    ports:
+      - 7200:7200     # HTTP
+    volumes:
+      - ../data:/root/graphdb-import/data
+    # todo - think about volumes for persistence of data ?
+    labels:
+      be.vliz.container.project: "LWUA"
+      be.vliz.container.group: "services"
+
   jupyter:
     build:
       context: ./jupyter
@@ -12,21 +26,10 @@ services:
       - graphdb
     volumes:
       - "./jupyter/notebooks:/notebooks"
-    labels:
-      be.vliz.container.project: "LWUA"
-      be.vliz.container.group: "services"
-
-  graphdb:
-    # todo consider a local build that also initializes a repository for lwua inside this lwua_graphdb!
-    build:
-      context: ./graphdb
-    image: lwua/lwua_graphdb
-    container_name: lwua_graphdb
-    ports:
-      - 7200:7200     # HTTP
-    volumes:
-      - ../data:/root/graphdb-import/data
-    # todo - think about volumes for persistence of data
+    env_file:
+      - ../.env
+    environment:
+      - GDB_BASE=http://graphdb:7200/
     labels:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"
@@ -42,6 +45,9 @@ services:
       - ../logging:/logging   # Store for any input data 
     env_file:
       - ../.env
+    environment:
+      - GDB_BASE=http://graphdb:7200/
+      - INGEST_DATA_FOLDER=/data
     # for test / dev -- no restart and single run
     restart: "no"
     command: run
