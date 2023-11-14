@@ -4,10 +4,11 @@ import logging
 from rdflib import Graph
 import os
 from dotenv import load_dotenv
-from .helpers import enable_logging
+from .helpers import enable_logging, resolve_path
 
 
 log = logging.getLogger(__name__)
+URN_BASE = "urn:lwua:INGEST"
 
 
 def run_ingest():
@@ -23,7 +24,8 @@ def run_ingest():
 
 
 def data_path_from_config():
-    folder_name = os.getenv("INGEST_DATA_FOLDER", "/data")
+    local_default = str(resolve_path("./data", versus="dotenv"))
+    folder_name = os.getenv("INGEST_DATA_FOLDER", local_default)
     return Path(folder_name).absolute()
 
 
@@ -46,20 +48,20 @@ def gdb_from_config():
     return gdb
 
 
-def ingest_graph(graph, gname: str = None, replace: bool = False):
-    log.debug(f"to insert data into <{ gname }>")
+def ingest_graph(graph: Graph, context: str = None, replace: bool = False):
+    log.debug(f"to insert data into <{ context }>")
 
     gdb = gdb_from_config()
 
     # do the cleanup if possible
-    if replace and gname is not None:
+    if replace and context is not None:
         pass   # TODO execute delete of full graph -- have to check syntax
 
     # extract the triples and format the insert statement
     ntstr = graph.serialize(format="nt")
     log.debug(f"extracted tiples == { ntstr }")
-    if gname is not None:
-        inserts = f"INSERT DATA {{ GRAPH <{ gname }> {{ { ntstr } }} }}"
+    if context is not None:
+        inserts = f"INSERT DATA {{ GRAPH <{ context }> {{ { ntstr } }} }}"
     else:
         inserts = f"INSERT DATA {{ { ntstr} }}"
     log.debug(f"INSERT of ==> { inserts }")
@@ -73,8 +75,16 @@ def ingest_graph(graph, gname: str = None, replace: bool = False):
     gdb.query()
 
 
-def fname_2_gname(fname):
-    return f"urn:lwua:data/{fname}"   # TODO maybe consider something else?
+def named_context(name: str, base: str = URN_BASE):
+    return f"{base}:{name}"   # TODO maybe consider something else?
+
+
+def fname_2_context(fname: str):
+    return named_context(f"data/{fname}")
+
+
+def admin_context():
+    return named_context("ADMIN")
 
 
 def suffix_2_format(suffix):
@@ -88,7 +98,7 @@ def suffix_2_format(suffix):
 
 def read_graph(fpath: Path, format: str = None):
     format = format or suffix_2_format(fpath.suffix)
-    graph = Graph().parse(location=str(fpath), format=format)
+    graph: Graph = Graph().parse(location=str(fpath), format=format)
     return graph
 
 
@@ -96,20 +106,19 @@ def ingest_data_file(fname):
     file_path = data_path_from_config() / fname
     assert file_path.exists(), f"cannot ingest file at {file_path}"
 
-    gname = fname_2_gname(fname)
-    graph = read_graph(file_path)
+    context = fname_2_context(fname)
+    graph = read_graph(file_path)  # TODO capture lastmodified of this file too
 
-    ingest_graph(graph, gname=gname)
+    ingest_graph(graph, context=context)
+    # TODO maintain metadata triples last-ingest / last-modified of ingested file in some admin graph context
 
 
 # Note: this main method allows to locally test outside docker
-# directly connecting to a localhost graphdb endpoint (which might be inside docker!)
+# directly connecting to a localhost graphdb endpoint (which might be inside docker itself)
 def main():
     load_dotenv()
     enable_logging()
     ingest_data_file("project.ttl")
-    # todo 
-    # run_ingest()
 
 
 if __name__ == '__main__':

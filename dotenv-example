@@ -1,0 +1,5 @@
+# general logconf setting
+LOGCONF=debug-logconf.yml
+
+# general repo setting
+GDB_REPO="lwua23"
