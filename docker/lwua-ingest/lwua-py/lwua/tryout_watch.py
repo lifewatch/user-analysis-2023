@@ -8,44 +8,39 @@ from lwua.helpers import enable_logging, resolve_path
 
 log = logging.getLogger(__name__)
 
-
 class Watcher:
-    def __init__(self, folder_to_watch):
+    def __init__(self, directory_to_watch):
         self.observer = Observer()
-        self._folder_to_watch = folder_to_watch
+        self.directory_to_watch = directory_to_watch
 
     def run(self):
         event_handler = Handler()
-        self.observer.schedule(event_handler, self._folder_to_watch, recursive=True)
-        log.info(f"observer started @{ self._folder_to_watch }")
+        self.observer.schedule(event_handler, self.directory_to_watch, recursive=True)
         self.observer.start()
         try:
             while True:
+                log.debug(f"observer loop {self.directory_to_watch}")
                 time.sleep(5)
-        except Exception as e:
+        except KeyboardInterrupt:
+            log.info("Stopping watcher")
             self.observer.stop()
-            log.exception("observer stopped", e)
-
-        log.info("ended observer-loop")
+        log.info("Stopping observer")
         self.observer.join()
 
-
 class Handler(FileSystemEventHandler):
+    def on_modified(self, event):
+        log.info(f"File {event.src_path} has been modified")
 
-    @staticmethod
-    def on_any_event(event):
-        if event.is_directory:
-            return None
+    def on_created(self, event):
+        log.info(f"File {event.src_path} has been created")
 
-        elif event.event_type == 'created':
-            # Take any action here when a file is first created.
-            log.info(f"Received created event - { event.src_path }.")
+    def on_deleted(self, event):
+        log.info(f"File {event.src_path} has been deleted")
 
-        elif event.event_type == 'modified':
-            # Taken any action here when a file is modified.
-            log.info(f"Received modified event - { event.src_path }.")
+    def on_moved(self, event):
+        log.info(f"File {event.src_path} has been moved to {event.dest_path}")
 
-
+'''
 if __name__ == '__main__':
     load_dotenv()
     enable_logging()
@@ -53,3 +48,4 @@ if __name__ == '__main__':
     log.info(f"env pointing to { file_to_watch }")
     w = Watcher(file_to_watch)
     w.run()
+'''

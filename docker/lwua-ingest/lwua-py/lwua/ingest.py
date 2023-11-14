@@ -5,6 +5,7 @@ from rdflib import Graph
 import os
 from dotenv import load_dotenv
 from .helpers import enable_logging, resolve_path
+from .tryout_watch import Watcher, Handler
 
 
 log = logging.getLogger(__name__)
@@ -14,6 +15,11 @@ URN_BASE = "urn:lwua:INGEST"
 def run_ingest():
     data_path = data_path_from_config()
     log.info(f"run_ingest on updated files in {data_path}")
+    #init watcher on data_path
+    w = Watcher(data_path)
+    w.run()
+    
+    
     # TODO -- immplement steps
     # list all the contents (files) in data_path together with last mod
     # get the <#admin-luwa-ingest> graph listing the maintained named-graphs and their lastmod
@@ -55,8 +61,8 @@ def ingest_graph(graph: Graph, context: str = None, replace: bool = False):
 
     # do the cleanup if possible
     if replace and context is not None:
-        pass   # TODO execute delete of full graph -- have to check syntax
-
+        delete_graph(gdb, context)
+        
     # extract the triples and format the insert statement
     ntstr = graph.serialize(format="nt")
     log.debug(f"extracted tiples == { ntstr }")
@@ -85,6 +91,18 @@ def fname_2_context(fname: str):
 
 def admin_context():
     return named_context("ADMIN")
+
+def delete_all_graphs(gdb):
+    deletes = f"DELETE WHERE {{ GRAPH ?g {{ ?s ?p ?o }} }}"
+    gdb.setQuery(deletes)
+    gdb.queryType = 'DELETE'
+    gdb.query()
+
+def delete_graph(gbd, context: str):
+    deletes = f"DELETE WHERE {{ GRAPH <{ context }> {{ ?s ?p ?o }} }}"
+    gdb.setQuery(deletes)
+    gdb.queryType = 'DELETE'
+    gdb.query()
 
 
 def suffix_2_format(suffix):
