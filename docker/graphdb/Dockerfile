@@ -4,4 +4,4 @@ RUN mkdir -p /root/graphdb-import/data
 WORKDIR /root/graphdb-import/data
 
 COPY ./initdb /initdb
-RUN cd /initdb  && ./init_graphdb.sh 
+RUN cd /initdb  && sh ./init_graphdb.sh 
