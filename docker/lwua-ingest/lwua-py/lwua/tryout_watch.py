@@ -54,20 +54,20 @@ class Watcher:
                     log.info(f"File {f} has been added at {time.ctime(added[f][0])}")
                     context = f"{f}_{format_time(added[f][0])}"
                     log.info(f"context to be used to add: {context}")
-                    #ingest_data_file(f,context)
+                    ingest_data_file(f,context)
                 for f in deleted:
                     log.info(f"File {f} has been deleted")
                     #find the file in the previous filestore and use the last modified time to delete the graph
                     context = f"{f}_{format_time(previous_filestore[f][-1])}"
                     log.info(f"context to be used to delete: {context}")
-                    #delete_graph(context)
+                    delete_graph(context)
                 for f in modified:
                     log.info(f"File {f} has been modified at {time.ctime(modified[f][-1])}, previous to last modified time: {time.ctime(modified[f][0]) if len(modified[f]) > 1 else 'N/A'}")
                     context_to_delete = f"{f}_{format_time(modified[f][0])}"
                     context_to_add = f"{f}_{format_time(modified[f][-1])}"
                     log.info(f"context to be used to delete: {context_to_delete}")
                     log.info(f"context to be used to add: {context_to_add}")
-                    #ingest_data_file(f,context_to_add, context_to_delete)
+                    ingest_data_file(f,context_to_add, context_to_delete)
                     
                 time.sleep(5)
         except KeyboardInterrupt:
