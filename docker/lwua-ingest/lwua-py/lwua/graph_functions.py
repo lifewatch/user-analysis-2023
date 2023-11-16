@@ -87,11 +87,13 @@ def add_graph_to_admin(context: str, gdb: SPARQLWrapper = None):
 def get_admin_graph(gdb: SPARQLWrapper = None):
     if gdb is None:
         gdb = gdb_from_config()
-    selects = f"SELECT ?g ?m WHERE {{ GRAPH <{ admin_context() }> {{ ?g <urn:lwua:INGEST:LASTMOD> ?m }} }}"
-    gdb.setQuery(selects)
-    gdb.queryType = 'SELECT'
+    #get full admin graph
+    query = f"SELECT ?g ?m WHERE {{ GRAPH <{ admin_context() }> {{ ?g <urn:lwua:INGEST:LASTMOD> ?m }} }}"
+    gdb.setQuery(query)
+    gdb.setReturnFormat(JSON)
     results = gdb.query().convert()
     return results
+
 
 def delete_graph_from_admin(context: str, gdb: SPARQLWrapper = None):
     if URN_BASE not in context:
@@ -121,7 +123,6 @@ def delete_graph(context: str,gdb: SPARQLWrapper= None):
     
     #delete the graph from the admin graph
     delete_graph_from_admin(context,gdb)
-    
 
 def suffix_2_format(suffix):
     if suffix in ["ttl", "turtle"]:
