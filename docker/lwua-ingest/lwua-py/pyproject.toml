@@ -2,7 +2,7 @@
 name = "lwua"
 version = "0.0.0"
 description = "lifewatch user analysis"
-authors = ["Laurian Van Maldeghem <laurian.van.maldeghem@vliz.be>"]
+authors = ["Laurian Van Maldeghem <laurian.van.maldeghem@vliz.be>", "Cedric Decruw <cedric.decruw@vliz.be>", "Marc Portier <marc.portier@vliz.be>"]
 license = "CC0"
 
 [tool.poetry.dependencies]
@@ -11,7 +11,6 @@ apscheduler = "^3.10.4"
 pyaml = "^23.9.3"
 python-dotenv = "^1.0.0"
 sparqlwrapper = "^2.0.0"
-watchdog = "^3.0.0"
 
 
 [build-system]
