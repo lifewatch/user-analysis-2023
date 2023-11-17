@@ -9,7 +9,7 @@ import time
 import os
 from dotenv import load_dotenv
 from .helpers import enable_logging, resolve_path
-from pyrdfj2 import Filters, J2RDFSyntaxBuilder
+from pyrdfj2 import J2RDFSyntaxBuilder
 
 log = logging.getLogger(__name__)
 URN_BASE = os.getenv("URN_BASE", "urn:lwua:INGEST")
