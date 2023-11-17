@@ -5,7 +5,7 @@ from rdflib import Graph
 import os
 from dotenv import load_dotenv
 from .helpers import enable_logging, resolve_path
-from .tryout_watch import Watcher
+from .watcher import Watcher
 from .graph_functions import ingest_data_file, data_path_from_config
 
 

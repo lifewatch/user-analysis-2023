@@ -9,9 +9,10 @@ import time
 import os
 from dotenv import load_dotenv
 from .helpers import enable_logging, resolve_path
+from pyrdfj2 import Filters, J2RDFSyntaxBuilder
 
 log = logging.getLogger(__name__)
-URN_BASE = "urn:lwua:INGEST"
+URN_BASE = os.getenv("URN_BASE", "urn:lwua:INGEST")
 
 def data_path_from_config():
     local_default = str(resolve_path("./data", versus="dotenv"))
@@ -36,32 +37,129 @@ def gdb_from_config():
     gdb.method = 'POST'
     return gdb
 
+def get_j2rdf_builder():
+    template_folder = resolve_path("./lwua/templates", versus="dotenv")
+    #log.info(f"template_folder == {template_folder}")
+    #init J2RDFSyntaxBuilder
+    j2rdf = J2RDFSyntaxBuilder(templates_folder=template_folder)
+    return j2rdf
+
+def update_context_admin(context: str, gdb: SPARQLWrapper = None, lastmod: str= None):
+    """Update the last modified time of a context in the admin graph
+
+    Args:
+        context (str): The context to update the last modified time of
+        gdb (SPARQLWrapper, optional): the SPARQLWrapper to post to. Defaults to None.
+        lastmod (str, optional): epoch time. Defaults to None.
+    """
+    log.info(f"update_context_admin on {context}")
+    j2rdf = get_j2rdf_builder()
+    
+    # check if context is IRI compliant
+    context = check_iri_compliance(context)
+    
+    #variables for the template
+    template = "update.sparql"
+    vars = {
+        "admin_graph": admin_context(),
+        "context": context,
+        "lastmod": lastmod
+    }
+    #get the sparql query
+    query = j2rdf.build_syntax(template, **vars)
+    #log.debug(f"update_context_admin query == {query}")
+    #execute the query
+    gdb.setQuery(query)
+    gdb.query()
+    
+def check_iri_compliance(context: str):
+    if URN_BASE not in context:
+        context = named_context(context)
+    return context
+
+    
+def insert_data(graph: Graph, context: str = None, gdb: SPARQLWrapper = None):
+    """Insert data into a context in the graph database
+
+    Args:
+        graph (Graph): The graph to insert data from
+        context (str): The context to insert data into
+        gdb (SPARQLWrapper): The SPARQLWrapper to post to
+    """
+    
+    log.info(f"insert_data into {context}")
+    
+    # Get the SPARQLWrapper
+    gdb = gdb_from_config() if gdb is None else gdb
+    
+    # Initialize the J2RDFSyntaxBuilder
+    j2rdf = get_j2rdf_builder()
+    
+    #check if context is IRI compliant if context is not None
+    context = check_iri_compliance(context) if context is not None else None
+
+    # Variables for the template
+    template = "insert_data.sparql"
+    ntstr = graph.serialize(format="nt")
+    vars = {
+        "context": context,
+        "data": ntstr
+    }
+
+    # Get the SPARQL query
+    query = j2rdf.build_syntax(template, **vars)
+    #log.debug(f"insert_data query == {query}")
+    
+    # Execute the query
+    gdb.setQuery(query)
+    gdb.query()
+    
+def delete_data(context: str = None, gdb: SPARQLWrapper = None):
+    """Delete data from a context in the graph database
+
+    Args:
+        context (str): The context to delete data from (if None, delete all data)
+        gdb (SPARQLWrapper): The SPARQLWrapper to post to
+    """
+    
+    log.info(f"delete_data on {context}")
+    
+    # Get the SPARQLWrapper
+    gdb = gdb_from_config() if gdb is None else gdb
+    
+    # Initialize the J2RDFSyntaxBuilder
+    j2rdf = get_j2rdf_builder()
+    
+    #check if context is IRI compliant
+    context = check_iri_compliance(context) if context is not None else None
+
+    # Variables for the template
+    template = "delete_data.sparql"
+    vars = {
+        "context": context
+    }
+
+    # Get the SPARQL query
+    query = j2rdf.build_syntax(template, **vars)
+
+    # Execute the query
+    gdb.setQuery(query)
+    gdb.query()
+    
 def ingest_graph(graph: Graph, context: str = None, replace: bool = False):
     log.debug(f"to insert data into <{ context }>")
-
     gdb = gdb_from_config()
-
     # do the cleanup if possible
     if replace and context is not None:
         log.debug(f"deleting <{ context }> before insert")
-        delete_graph(context, gdb)
-        
-    # extract the triples and format the insert statement
-    ntstr = graph.serialize(format="nt")
-    #log.debug(f"extracted tiples == { ntstr }") # comented out because it is too verbose
-    if context is not None:
-        inserts = f"INSERT DATA {{ GRAPH <{ context }> {{ { ntstr } }} }}"
-    else:
-        inserts = f"INSERT DATA {{ { ntstr} }}"
-    #log.debug(f"INSERT of ==> { inserts }")
-
-    gdb.setQuery(inserts)
-    log.debug(f"detected querytype == {gdb.queryType}")
-
-    # unsure if this is needed -- can sqlwrapper detect this automatically?
-    gdb.queryType = 'INSERT'  # important to indicate that the update Endpoint should be used
-    gdb.query()
-    register_context_lastmod(context,gdb)
+        delete_data(context, gdb)
+   
+    # insert the data
+    insert_data(graph, context, gdb)
+    
+    #get the time
+    c_time = time.time()
+    update_context_admin(context, gdb, c_time)
 
 def named_context(name: str, base: str = URN_BASE):
     return f"{base}:{name}"   # TODO maybe consider something else?
@@ -73,81 +171,33 @@ def fname_2_context(fname: str):
 def admin_context():
     return named_context("ADMIN")
 
-def register_context_lastmod(context: str, gdb: SPARQLWrapper = None):
-    if URN_BASE not in context:
-        context = named_context(context)
-    if gdb is None:
-        gdb = gdb_from_config()
-        
-    c_time = time.time()
-    
-    #check if the context is already in the admin graph, if so check if the last modified time of the return is smaller than the current time
-    #if so, update the last modified time of the context
-    #if not, do nothing
-    lastmod = get_context_lastmod(context,gdb)
-    if lastmod['results']['bindings']:
-        if float(lastmod['results']['bindings'][0]['m']['value']) < c_time:
-            #delete the old last modified time
-            delete_context_from_admin(context,gdb)
-    
-    #tsparql for insert
-    # GRAPH <{ admin_context() }> {{ <{ context }> <https://schema.org/dateModified> \"{time.time()}\"^^<http://www.w3.org/2001/XMLSchema#double> }}
-    inserts = f"INSERT DATA {{ GRAPH <{ admin_context() }> {{ <{ context }> <https://schema.org/dateModified> \"{time.time()}\"^^<http://www.w3.org/2001/XMLSchema#double> }} }}"
-    gdb.setQuery(inserts)
-    gdb.queryType = 'INSERT'
-    gdb.query()
-
-def get_context_lastmod(context: str, gdb: SPARQLWrapper = None):
-    if URN_BASE not in context:
-        context = named_context(context)
-    if gdb is None:
-        gdb = gdb_from_config()
-    #get last modified time of context
-    query = f"SELECT ?m WHERE {{ GRAPH <{ admin_context() }> {{ <{ context }> <https://schema.org/dateModified> ?m }} }}"
-    gdb.setQuery(query)
-    gdb.setReturnFormat(JSON)
-    results = gdb.query().convert()
-    return results
-
 def get_admin_graph(gdb: SPARQLWrapper = None):
+    
+    log.info(f"get_admin_graph")
+    
     if gdb is None:
         gdb = gdb_from_config()
-    #get full admin graph
-    query = f"SELECT ?g ?m WHERE {{ GRAPH <{ admin_context() }> {{ ?g <https://schema.org/dateModified> ?m }} }}"
+    
+    j2rdf = get_j2rdf_builder()
+    template = "get_admin.sparql"
+    vars = {
+        "admin_context": admin_context()
+    }
+    query = j2rdf.build_syntax(template, **vars)
+    #log.debug(f"get_admin_graph query == {query}")
     gdb.setQuery(query)
     gdb.setReturnFormat(JSON)
     results = gdb.query().convert()
     return results
-
-
-def delete_context_from_admin(context: str, gdb: SPARQLWrapper = None):
-    if URN_BASE not in context:
-        context = named_context(context)
-    if gdb is None:
-        gdb = gdb_from_config()
-    deletes = f"DELETE WHERE {{ GRAPH <{ admin_context() }> {{ <{ context }> <https://schema.org/dateModified> ?m }} }}"
-    gdb.setQuery(deletes)
-    gdb.queryType = 'DELETE'
-    gdb.query()
 
 def delete_all_graphs(gdb):
-    deletes = f"DELETE WHERE {{ GRAPH ?g {{ ?s ?p ?o }} }}"
-    gdb.setQuery(deletes)
-    gdb.queryType = 'DELETE'
-    gdb.query()
+    delete_data(None, gdb)
 
 def delete_graph(context: str,gdb: SPARQLWrapper= None):
-    if URN_BASE not in context:
-        context = named_context(context)
     if gdb is None:
         gdb = gdb_from_config()
-    deletes = f"DELETE WHERE {{ GRAPH <{ context }> {{ ?s ?p ?o }} }}"
-    gdb.setQuery(deletes)
-    gdb.queryType = 'DELETE'
-    gdb.query()
-    
-    #delete the graph from the admin graph
-    delete_context_from_admin(context,gdb)
+    delete_data(context, gdb)
+    update_context_admin(context, gdb, None)
 
 def suffix_2_format(suffix):
     if suffix in ["ttl", "turtle"]:
@@ -167,16 +217,11 @@ def delete_data_file(fname):
     log.info(f"deleting {fname} from {context}")
     delete_graph(context)
 
-def ingest_data_file(fname, context: str = None, replace: bool = False):
+def ingest_data_file(fname, replace: bool = False):
     file_path = data_path_from_config() / fname
     assert file_path.exists(), f"cannot ingest file at {file_path}"
-
     graph = read_graph(file_path)
-    
-    if context is None:
-        context = fname_2_context(fname)
-    
+    context = fname_2_context(fname)
     log.info(f"ingesting {file_path} into {context} | replace : {replace}")
-
     ingest_graph(graph, context=context, replace=replace)
     # TODO maintain metadata triples last-ingest / last-modified of ingested file in some admin graph context

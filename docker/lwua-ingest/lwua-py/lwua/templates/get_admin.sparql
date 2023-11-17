@@ -1,0 +1,9 @@
+{#
+    This template is used to generate SPARQL SELECT queries.
+    This template takes 1 parameter:
+     - admin_context: the context from which the data is to be selected
+#}
+
+SELECT ?g ?m WHERE {
+    GRAPH <{{ admin_context }}> { ?g <https://schema.org/dateModified> ?m }
+}
