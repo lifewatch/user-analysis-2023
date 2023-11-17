@@ -7,8 +7,8 @@ import logging
 from rdflib import Graph
 import time
 import os
-from dotenv import load_dotenv
-from .helpers import enable_logging, resolve_path
+#from dotenv import load_dotenv
+from .helpers import resolve_path #,enable_logging
 from pyrdfj2 import J2RDFSyntaxBuilder
 
 log = logging.getLogger(__name__)
