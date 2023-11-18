@@ -17,14 +17,13 @@ def main_schedule():
 
 # https://apscheduler.readthedocs.io/en/3.x/userguide.html
 class LWUAScheduler(BlockingScheduler):
-
     def __init__(self, run_on_start: bool = True):
         # todo consider injecting interval through .env
         timeprops: dict = dict(minutes=30)
         # timeprops: dict = dict(seconds=5)
         super().__init__()
         self._run_on_start = run_on_start
-        self.add_job(lambda: main_schedule(), 'interval', **timeprops)
+        self.add_job(lambda: main_schedule(), "interval", **timeprops)
 
     def start(self):
         try:

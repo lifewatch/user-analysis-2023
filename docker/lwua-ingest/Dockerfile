@@ -34,5 +34,5 @@ ENV PATH="/lwua-py/.venv/bin:$PATH"
 # ensure we have the build folder from the poetry stage of this image
 COPY --from=poetry /lwua-py /lwua-py
 
-RUN rm /lwua-py/logging && ln -s /logging /lwua-py/logging
+RUN rm -f /lwua-py/logging && ln -s /logging /lwua-py/logging
 ENTRYPOINT ["python", "-m", "lwua"]

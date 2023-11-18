@@ -23,8 +23,7 @@ class Daemon(ABC):
         self.pidfile = str(pidfile)
 
     def daemonize(self):
-        """ Deamonize class. UNIX double fork mechanism.
-        """
+        """Deamonize class. UNIX double fork mechanism."""
 
         try:
             pid = os.fork()
@@ -32,11 +31,11 @@ class Daemon(ABC):
                 # exit first parent
                 sys.exit(0)
         except OSError as err:
-            log.exception(f'fork #1 failed: {err}')
+            log.exception(f"fork #1 failed: {err}")
             sys.exit(1)
 
         # decouple from parent environment
-        os.chdir('/')
+        os.chdir("/")
         os.setsid()
         os.umask(0)
 
@@ -44,19 +43,18 @@ class Daemon(ABC):
         try:
             pid = os.fork()
             if pid > 0:
-
                 # exit from second parent
                 sys.exit(0)
         except OSError as err:
-            log.exception(f'fork #2 failed: {err}')
+            log.exception(f"fork #2 failed: {err}")
             sys.exit(1)
 
         # redirect standard file descriptors
         sys.stdout.flush()
         sys.stderr.flush()
-        si = open(os.devnull, 'r')
-        so = open(os.devnull, 'a+')
-        se = open(os.devnull, 'a+')
+        si = open(os.devnull, "r")
+        so = open(os.devnull, "a+")
+        se = open(os.devnull, "a+")
 
         os.dup2(si.fileno(), sys.stdin.fileno())
         os.dup2(so.fileno(), sys.stdout.fileno())
@@ -67,20 +65,19 @@ class Daemon(ABC):
 
         pid = str(os.getpid())
         log.info(f"creating pidfile {self.pidfile} - containing {pid}")
-        with open(self.pidfile, 'w+') as f:
-            f.write(pid + '\n')
+        with open(self.pidfile, "w+") as f:
+            f.write(pid + "\n")
 
     def delpid(self):
         log.info("atexit -- service run completed -- removing pidfile")
         os.remove(self.pidfile)
 
     def start(self):
-        """Start the daemon.
-        """
+        """Start the daemon."""
 
         # Check for a pidfile to see if the daemon already runs
         try:
-            with open(self.pidfile, 'r') as pf:
+            with open(self.pidfile, "r") as pf:
                 pid = int(pf.read().strip())
         except IOError:
             pid = None
@@ -95,25 +92,26 @@ class Daemon(ABC):
         self.run()
 
     def stop(self):
-        """Stop the daemon.
-        """
+        """Stop the daemon."""
 
         # Get the pid from the pidfile
         try:
-            with open(self.pidfile, 'r') as pf:
+            with open(self.pidfile, "r") as pf:
                 pid = int(pf.read().strip())
         except IOError:
             pid = None
 
         if not pid:
-            message = f"pidfile {self.pidfile} does not exist. Daemon not running?\n"
+            message = (
+                f"pidfile {self.pidfile} does not exist. Daemon not running?\n"
+            )
             sys.stderr.write(message)
             return  # not an error in a restart
 
         # Try killing the daemon process
 
         try:
-            while 1:
+            while True:
                 os.kill(pid, signal.SIGTERM)
                 time.sleep(0.1)
         except OSError as err:
@@ -126,8 +124,7 @@ class Daemon(ABC):
                 sys.exit(1)
 
     def restart(self):
-        """Restart the daemon.
-        """
+        """Restart the daemon."""
         self.stop()
         self.start()
 
@@ -139,10 +136,12 @@ class Daemon(ABC):
         start() or restart().
         """
 
-    CMDS = ['start', 'stop', 'restart', 'run']
+    CMDS = ["start", "stop", "restart", "run"]
 
     def _usage(self):
-        print(f"run this daemon script with one argument == {'|'.join(Daemon.CMDS)}")
+        print(
+            f"run this daemon script with one argument == {'|'.join(Daemon.CMDS)}"
+        )
 
     def _cmd(self, argv):
         if len(argv) != 2:

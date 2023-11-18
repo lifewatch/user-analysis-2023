@@ -11,6 +11,7 @@ import logging
 
 log = logging.getLogger(__name__)
 
+
 class IngestDaemon(Daemon):
     def run(self):
         try:
