@@ -77,3 +77,9 @@ def resolve_path(location: str, versus: str = "module"):
     base: Path = LOCATIONS[versus]
     log.debug(f"resolve path base='{base}' + rel='{location}'")
     return Path(base, location).absolute()
+
+
+def data_path_from_config():
+    local_default = str(resolve_path("./data", versus="dotenv"))
+    folder_name = os.getenv("INGEST_DATA_FOLDER", local_default)
+    return Path(folder_name).absolute()

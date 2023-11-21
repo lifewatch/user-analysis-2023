@@ -1,20 +1,37 @@
 import logging
+import time
 from dotenv import load_dotenv
-from .helpers import enable_logging  # , resolve_path
-from .watcher import Watcher
-from .graph_functions import ingest_data_file, data_path_from_config
+from SPARQLWrapper import SPARQLWrapper, JSON
+from pathlib import Path
+from .helpers import enable_logging,  data_path_from_config
+from .watcher import FolderChangeDetector, IngestChangeObserver
+from .graphdb import ingest_data_file, get_registry_of_lastmod
 
 
 log = logging.getLogger(__name__)
-URN_BASE = "urn:lwua:INGEST"
-
 
 def run_ingest():
     data_path = data_path_from_config()
     log.info(f"run_ingest on updated files in {data_path}")
-    # init watcher on data_path
-    w = Watcher(data_path)
-    w.run()
+    
+    # get the last context graph modification dates
+    # run while true loop with 5 second sleep
+    detector = FolderChangeDetector(data_path)
+    ingestor = IngestChangeObserver()
+    last_mod = None
+    while last_mod is None:
+        try:
+            last_mod = get_registry_of_lastmod()
+            log.info(f"initial last mod == {last_mod}")
+        except Exception as e:
+            log.exception(e)
+            time.sleep(2)
+    
+    while True:
+        log.info("reporting changes")
+        last_mod = detector.report_changes(last_mod,ingestor)
+        log.info(f"last_mod == {last_mod}")
+        time.sleep(5)
 
 
 # Note: this main method allows to locally test outside docker

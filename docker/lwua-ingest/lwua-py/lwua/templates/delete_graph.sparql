@@ -3,11 +3,8 @@
     This template takes 1 parameter:
      - context: the context from which the data is to be deleted. If none is given, all data is deleted.
 #}
-
+{% if context %}
 DELETE WHERE {
-    {% if context %}
     GRAPH <{{ context }}> { ?s ?p ?o }
-    {% else %}
-    ?s ?p ?o
-    {% endif %}
 }
+{% endif %}

@@ -1,12 +1,12 @@
 {# 
     This template is used to generate SPARQL INSERT DATA queries.
     The template takes two parameters:
-    - data: the data to be inserted
+    - raw_triples: the data to be inserted
     - context: the context in which the data should be inserted
 #}
 
 {% if context %}
-INSERT DATA { GRAPH <{{ context }}> { {{ data }} } }
+INSERT DATA { GRAPH <{{ context }}> { {{ raw_triples }} } }
 {% else %}
-INSERT DATA { {{ data }} }
+INSERT DATA { {{ raw_triples }} }
 {% endif %}

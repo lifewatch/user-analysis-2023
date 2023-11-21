@@ -13,7 +13,7 @@
     schema:creator <https://edmo.seadatanet.org/report/422> .
 
 <https://orcid.org/0000-0003-0663-5907> a schema:Person ;
-    schema:name "Laurian van Maldghem"^^xsd:string .
+    schema:name "Laurian van Maldeghem"^^xsd:string .
 
 <https://orcid.org/0000-0002-9648-6484> a schema:Person ;
     schema:name "Marc Portier"^^xsd:string .
