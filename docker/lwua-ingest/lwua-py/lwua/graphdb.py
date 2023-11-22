@@ -11,11 +11,24 @@ import time
 import os
 
 # from dotenv import load_dotenv
-from .helpers import resolve_path, singleton, data_path_from_config  # ,enable_logging
+from .helpers import resolve_path, data_path_from_config  # ,enable_logging
 from pyrdfj2 import J2RDFSyntaxBuilder
 
 log = logging.getLogger(__name__)
 URN_BASE = os.getenv("URN_BASE", "urn:lwua:INGEST")
+
+def named_context(name: str, base: str = URN_BASE):
+    """
+    Create a named context.
+
+    :param name: The name of the context.
+    :type name: str
+    :param base: The base of the context. Defaults to URN_BASE.
+    :type base: str, optional
+    :return: The named context.
+    :rtype: str
+    """
+    return f"{base}:{name}" 
 
 def gdb_from_config():
     base = os.getenv("GDB_BASE", "http://localhost:7200")
@@ -27,28 +40,32 @@ def gdb_from_config():
 
     log.debug(f"using endpoint {endpoint}")
 
-    gdb = SPARQLWrapper(
+    GDB = SPARQLWrapper(
         endpoint=endpoint,
         updateEndpoint=updateEndpoint,
         returnFormat=JSON,
         agent="lwua-python-sparql-client",
     )
-    gdb.method = "POST"
-    return gdb
+    GDB.method = "POST"
+    return GDB
 
-gdb = gdb_from_config()
+GDB = gdb_from_config()
 
-@singleton
 def get_j2rdf_builder():
     template_folder = resolve_path("./lwua/templates")
     log.info(f"template_folder == {template_folder}")
     # init J2RDFSyntaxBuilder
-    j2rdf = J2RDFSyntaxBuilder(templates_folder=template_folder)
+    context = named_context("ADMIN")
+    j2rdf = J2RDFSyntaxBuilder(
+        templates_folder=template_folder,
+        extra_functions = {"registry_of_lastmod_context": context}
+        )
     return j2rdf
 
+J2RDF = get_j2rdf_builder()
 
 def update_registry_lastmod(
-    context: str, lastmod: str = None
+    context: str, lastmod: datetime
 ):
     """
     Update the administration of a context.
@@ -59,7 +76,7 @@ def update_registry_lastmod(
     :type lastmod: str
     """
     log.info(f"update registry_of_lastmod_context on {context}")
-    j2rdf = get_j2rdf_builder()
+    
 
     # check if context is IRI compliant
     assert_iri_compliance(context)
@@ -67,20 +84,19 @@ def update_registry_lastmod(
     # variables for the template
     template = "update_context_lastmod.sparql"
     vars = {
-        "registry_of_lastmod_context": registry_of_lastmod_context(),
         "context": context,
-        "lastmod": lastmod,
+        "lastmod": lastmod.isoformat() if lastmod is not None else None
     }
     # get the sparql query
-    query = j2rdf.build_syntax(template, **vars)
+    query = J2RDF.build_syntax(template, **vars)
     # log.debug(f"update_registry_lastmod query == {query}")
     # execute the query
-    gdb.setQuery(query)
-    gdb.query()
+    GDB.setQuery(query)
+    GDB.query()
 
 
 def assert_iri_compliance(context: str):
-    assert URN_BASE in context, f"Context {context} is not IRI compliant"
+    assert context.startswith(URN_BASE), f"Context {context} is not IRI compliant"
 
 
 def insert_graph(graph: Graph, context: str = None):
@@ -96,7 +112,7 @@ def insert_graph(graph: Graph, context: str = None):
     log.info(f"insert_graph into {context}")
     assert_context_exists(context)
     # Initialize the J2RDFSyntaxBuilder
-    j2rdf = get_j2rdf_builder()
+    
 
     assert_iri_compliance(context) if context is not None else None
 
@@ -106,12 +122,12 @@ def insert_graph(graph: Graph, context: str = None):
     vars = {"context": context, "raw_triples": ntstr}
 
     # Get the SPARQL query
-    query = j2rdf.build_syntax(template, **vars)
+    query = J2RDF.build_syntax(template, **vars)
     # log.debug(f"insert_graph query == {query}")
 
     # Execute the query
-    gdb.setQuery(query)
-    gdb.query()
+    GDB.setQuery(query)
+    GDB.query()
     
 
 def assert_context_exists(context: str):
@@ -130,7 +146,7 @@ def delete_graph(context: str):
     assert_context_exists(context)
 
     # Initialize the J2RDFSyntaxBuilder
-    j2rdf = get_j2rdf_builder()
+    
 
     # check if context is IRI compliant
     assert_iri_compliance(context) if context is not None else None
@@ -140,14 +156,14 @@ def delete_graph(context: str):
     vars = {"context": context}
 
     # Get the SPARQL query
-    query = j2rdf.build_syntax(template, **vars)
+    query = J2RDF.build_syntax(template, **vars)
 
     # Execute the query
-    gdb.setQuery(query)
-    gdb.query()
+    GDB.setQuery(query)
+    GDB.query()
 
 
-def ingest_graph(graph: Graph, lastmod,  context: str, replace: bool = False):
+def ingest_graph(graph: Graph, lastmod:datetime,  context: str, replace: bool = False):
     """
     Convert a filename to a context.
 
@@ -167,22 +183,10 @@ def ingest_graph(graph: Graph, lastmod,  context: str, replace: bool = False):
     insert_graph(graph, context)
 
     # convert the epoch timestamp to a date string
-    date_string = datetime.utcfromtimestamp(lastmod).isoformat()
-    update_registry_lastmod(context, date_string)
+    update_registry_lastmod(context, lastmod)
 
 
-def named_context(name: str, base: str = URN_BASE):
-    """
-    Create a named context.
 
-    :param name: The name of the context.
-    :type name: str
-    :param base: The base of the context. Defaults to URN_BASE.
-    :type base: str, optional
-    :return: The named context.
-    :rtype: str
-    """
-    return f"{base}:{name}"  # TODO maybe consider something else?
 
 def context_2_fname(context: str):
     """
@@ -207,33 +211,19 @@ def fname_2_context(fname: str):
     """
     return named_context(fname)
 
-def date_2_epoch(date: str):
-    """
-    Convert a date string to an epoch timestamp.
 
-    :param date: The date string to convert.
-    :type date: str
-    :return: The epoch timestamp corresponding to the date string.
-    :rtype: float
-    """
-    return datetime.fromisoformat(date).timestamp()
-
-
-def registry_of_lastmod_context():
-    return named_context("ADMIN")
 
 
 def get_registry_of_lastmod():
     log.info(f"getting last modified graph")
 
-    j2rdf = get_j2rdf_builder()
     template = "lastmod_info.sparql"
-    vars = {"context": registry_of_lastmod_context()}
-    query = j2rdf.build_syntax(template, **vars)
+    vars = {}
+    query = J2RDF.build_syntax(template, **vars)
     # log.debug(f"get_admin_graph query == {query}")
-    gdb.setQuery(query)
-    gdb.setReturnFormat(JSON)
-    results = gdb.query().convert()
+    GDB.setQuery(query)
+    GDB.setReturnFormat(JSON)
+    results = GDB.query().convert()
     
     # convert {'head': {'vars': ['graph', 'lastmod']}, 'results': {'bindings': []}} to [{PosixPath('graph'): lastmod}]
     # URI must be substracted from graph context and datetime str must be converted to epoch
@@ -241,7 +231,7 @@ def get_registry_of_lastmod():
     converted = {}
     for g in results["results"]["bindings"]:
         path = context_2_fname(g["graph"]["value"])
-        time = date_2_epoch(g["lastmod"]["value"])
+        time = datetime.fromisoformat(g["lastmod"]["value"])
         converted[path] = time
     return converted
     
@@ -269,7 +259,7 @@ def delete_data_file(fname):
     update_registry_lastmod(context, None)
 
 
-def ingest_data_file(fname, lastmod, replace: bool = True):
+def ingest_data_file(fname: str, lastmod: datetime, replace: bool = True):
     """
     Ingest a data file.
 

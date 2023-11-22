@@ -1,5 +1,5 @@
 import time
-import datetime
+from datetime import datetime
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -36,7 +36,7 @@ class FolderChangeDetector:
         log.info(f"Watching {self.root}")
 
     def report_changes(self, known_lastmod_by_fname: dict = {}, observer: FolderChangeObserver = None):
-        current_lastmod_by_fname = {p: os.path.getmtime(p) for p in self.root.glob('**/*') if p.is_file()}
+        current_lastmod_by_fname = {p: datetime.utcfromtimestamp(os.path.getmtime(p)) for p in self.root.glob('**/*') if p.is_file()}
         log.info(f"current_lastmod_by_fname: {current_lastmod_by_fname}")
         for fname in known_lastmod_by_fname:
             if fname not in current_lastmod_by_fname:
