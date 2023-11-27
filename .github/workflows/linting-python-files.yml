@@ -27,8 +27,16 @@ jobs:
 
       - name: Run Black
         run: |
-          black --check --line-length 79 docker/lwua-ingest/
+          black docker/lwua-ingest/
 
       - name: Run autopep8
         run: |
           autopep8 --in-place --aggressive --aggressive --max-line-length 79 --recursive docker/lwua-ingest/
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'cedricdcc'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m "Automated code formatting" || exit 0
+          git push
