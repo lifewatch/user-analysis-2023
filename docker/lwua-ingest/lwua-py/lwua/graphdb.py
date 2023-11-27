@@ -65,6 +65,7 @@ def update_registry_lastmod(
     """
     log.info(f"update registry_of_lastmod_context on {context}")
     
+    
     # check if context is IRI compliant
     assert_iri_compliance(context)
 
