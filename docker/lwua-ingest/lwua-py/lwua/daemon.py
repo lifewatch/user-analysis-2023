@@ -102,9 +102,7 @@ class Daemon(ABC):
             pid = None
 
         if not pid:
-            message = (
-                f"pidfile {self.pidfile} does not exist. Daemon not running?\n"
-            )
+            message = f"pidfile {self.pidfile} does not exist. Daemon not running?\n"
             sys.stderr.write(message)
             return  # not an error in a restart
 
@@ -140,8 +138,7 @@ class Daemon(ABC):
 
     def _usage(self):
         print(
-            f"run this daemon script with one argument == {'|'.join(Daemon.CMDS)}"
-        )
+            f"run this daemon script with one argument == {'|'.join(Daemon.CMDS)}")
 
     def _cmd(self, argv):
         if len(argv) != 2:

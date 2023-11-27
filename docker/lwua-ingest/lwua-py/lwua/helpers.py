@@ -71,10 +71,7 @@ LOCATIONS: dict[str, Path] = dict(
 
 def resolve_path(location: str, versus: str = "module"):
     location = location if location else ""
-    assert (
-        versus in LOCATIONS
-    ), f"no base path available for coded versus = '{versus}'"
+    assert versus in LOCATIONS, f"no base path available for coded versus = '{versus}'"
     base: Path = LOCATIONS[versus]
     log.debug(f"resolve path base='{base}' + rel='{location}'")
     return Path(base, location).absolute()
-

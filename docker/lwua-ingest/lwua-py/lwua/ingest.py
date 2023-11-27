@@ -12,11 +12,12 @@ from .graphdb import (
     delete_graph,
     ingest_graph,
     update_registry_lastmod,
-    read_graph
+    read_graph,
 )
 
 
 log = logging.getLogger(__name__)
+
 
 # functions here to ingest and delete files
 def fname_2_context(fname: str):
@@ -31,12 +32,14 @@ def fname_2_context(fname: str):
     base = os.getenv("URN_BASE", "urn:lwua:INGEST")
     return f"{base}:{fname}"
 
+
 def delete_data_file(fname):
     context = fname_2_context(fname)
     log.info(f"deleting {fname} from {context}")
     delete_graph(context)
     update_registry_lastmod(context, None)
-    
+
+
 def ingest_data_file(fname: str, lastmod: datetime, replace: bool = True):
     """
     Ingest a data file.
@@ -53,17 +56,18 @@ def ingest_data_file(fname: str, lastmod: datetime, replace: bool = True):
     context = fname_2_context(fname)
     log.info(f"ingesting {file_path} into {context} | replace : {replace}")
     ingest_graph(graph, lastmod, context=context, replace=replace)
-    
+
 
 def data_path_from_config():
     local_default = str(resolve_path("./data", versus="dotenv"))
     folder_name = os.getenv("INGEST_DATA_FOLDER", local_default)
     return Path(folder_name).absolute()
 
+
 def run_ingest():
     data_path = data_path_from_config()
     log.info(f"run_ingest on updated files in {data_path}")
-    
+
     # get the last context graph modification dates
     # run while true loop with 5 second sleep
     detector = FolderChangeDetector(data_path)
@@ -76,15 +80,17 @@ def run_ingest():
         log.exception(e)
 
     log.info("reporting changes")
-    last_mod = detector.report_changes(ingestor,last_mod)
+    last_mod = detector.report_changes(ingestor, last_mod)
     log.info(f"last_mod == {last_mod}")
-    
+
+
 class IngestChangeObserver(FolderChangeObserver):
     def __init__(self):
         pass
 
     def removed(self, fname):
-        # Implement the deletion of graph context and update of lastmod registry
+        # Implement the deletion of graph context and update of lastmod
+        # registry
         log.info(f"File {fname} has been deleted")
         delete_data_file(fname)
 
@@ -92,12 +98,13 @@ class IngestChangeObserver(FolderChangeObserver):
         # Implement the addition of graph in context
         log.info(f"File {fname} has been added")
         ingest_data_file(fname, lastmod)
-        
+
     def changed(self, fname, lastmod):
-        # Implement the replacement of graph in context and update the lastmod registry
+        # Implement the replacement of graph in context and update the lastmod
+        # registry
         log.info(f"File {fname} has been modified")
-        ingest_data_file(fname,lastmod, True)       
-     
+        ingest_data_file(fname, lastmod, True)
+
 
 # Note: this main method allows to locally test outside docker
 # directly connecting to a localhost graphdb endpoint (which might be

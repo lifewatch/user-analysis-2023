@@ -11,7 +11,7 @@ import time
 import os
 
 # from dotenv import load_dotenv
-from .helpers import resolve_path # ,enable_logging
+from .helpers import resolve_path  # ,enable_logging
 from pyrdfj2 import J2RDFSyntaxBuilder
 
 log = logging.getLogger(__name__)
@@ -37,7 +37,9 @@ def gdb_from_config():
     GDB.method = "POST"
     return GDB
 
+
 GDB = gdb_from_config()
+
 
 def get_j2rdf_builder():
     template_folder = resolve_path("./lwua/templates")
@@ -46,15 +48,15 @@ def get_j2rdf_builder():
     context = f"{URN_BASE}:ADMIN"
     j2rdf = J2RDFSyntaxBuilder(
         templates_folder=template_folder,
-        extra_functions = {"registry_of_lastmod_context": context}
-        )
+        extra_functions={"registry_of_lastmod_context": context},
+    )
     return j2rdf
+
 
 J2RDF = get_j2rdf_builder()
 
-def update_registry_lastmod(
-    context: str, lastmod: datetime
-):
+
+def update_registry_lastmod(context: str, lastmod: datetime):
     """
     Update the administration of a context.
 
@@ -64,9 +66,7 @@ def update_registry_lastmod(
     :type lastmod: str
     """
     log.info(f"update registry_of_lastmod_context on {context}")
-    
-    
-    
+
     # check if context is IRI compliant
     assert_iri_compliance(context)
 
@@ -74,7 +74,7 @@ def update_registry_lastmod(
     template = "update_context_lastmod.sparql"
     vars = {
         "context": context,
-        "lastmod": lastmod.isoformat() if lastmod is not None else None
+        "lastmod": lastmod.isoformat() if lastmod is not None else None,
     }
     # get the sparql query
     query = J2RDF.build_syntax(template, **vars)
@@ -85,7 +85,8 @@ def update_registry_lastmod(
 
 
 def assert_iri_compliance(context: str):
-    assert context.startswith(URN_BASE), f"Context {context} is not IRI compliant"
+    assert context.startswith(
+        URN_BASE), f"Context {context} is not IRI compliant"
 
 
 def insert_graph(graph: Graph, context: str = None):
@@ -101,7 +102,6 @@ def insert_graph(graph: Graph, context: str = None):
     log.info(f"insert_graph into {context}")
     assert_context_exists(context)
     # Initialize the J2RDFSyntaxBuilder
-    
 
     assert_iri_compliance(context) if context is not None else None
 
@@ -117,7 +117,7 @@ def insert_graph(graph: Graph, context: str = None):
     # Execute the query
     GDB.setQuery(query)
     GDB.query()
-    
+
 
 def assert_context_exists(context: str):
     assert context is not None, "Context cannot be None"
@@ -135,7 +135,6 @@ def delete_graph(context: str):
     assert_context_exists(context)
 
     # Initialize the J2RDFSyntaxBuilder
-    
 
     # check if context is IRI compliant
     assert_iri_compliance(context) if context is not None else None
@@ -152,7 +151,11 @@ def delete_graph(context: str):
     GDB.query()
 
 
-def ingest_graph(graph: Graph, lastmod:datetime,  context: str, replace: bool = False):
+def ingest_graph(
+        graph: Graph,
+        lastmod: datetime,
+        context: str,
+        replace: bool = False):
     """
     Ingest a graph into a context.
 
@@ -197,12 +200,14 @@ def get_registry_of_lastmod():
     GDB.setQuery(query)
     GDB.setReturnFormat(JSON)
     results = GDB.query().convert()
-    
+
     # convert {'head': {'vars': ['graph', 'lastmod']}, 'results': {'bindings': []}} to [{PosixPath('graph'): lastmod}]
-    # URI must be substracted from graph context and datetime str must be converted to epoch
-    
+    # URI must be substracted from graph context and datetime str must be
+    # converted to epoch
+
     converted = {}
     return convert_results_registry_of_lastmod(results)
+
 
 def convert_results_registry_of_lastmod(results):
     converted = {}
@@ -211,7 +216,7 @@ def convert_results_registry_of_lastmod(results):
         time = datetime.fromisoformat(g["lastmod"]["value"])
         converted[path] = time
     return converted
-    
+
 
 def suffix_2_format(suffix):
     if suffix in ["ttl", "turtle"]:

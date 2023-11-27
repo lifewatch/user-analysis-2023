@@ -9,6 +9,7 @@ from lwua.helpers import enable_logging, resolve_path
 
 log = logging.getLogger(__name__)
 
+
 class FolderChangeObserver(ABC):
     @abstractmethod
     def added(self, fname: str, lastmod: datetime = None):
@@ -22,6 +23,7 @@ class FolderChangeObserver(ABC):
     def changed(self, fname: str, lastmod: datetime = None):
         pass
 
+
 class FolderChangeDetector:
     def __init__(self, folder_to_inspect):
         self.root = Path(folder_to_inspect)
@@ -30,8 +32,12 @@ class FolderChangeDetector:
             time.sleep(1)
         log.info(f"Watching {self.root}")
 
-    def report_changes(self, observer,known_lastmod_by_fname: dict = {}):
-        current_lastmod_by_fname = {p: datetime.utcfromtimestamp(os.path.getmtime(p)) for p in self.root.glob('**/*') if p.is_file()}
+    def report_changes(self, observer, known_lastmod_by_fname: dict = {}):
+        current_lastmod_by_fname = {
+            p: datetime.utcfromtimestamp(os.path.getmtime(p))
+            for p in self.root.glob("**/*")
+            if p.is_file()
+        }
         log.info(f"current_lastmod_by_fname: {current_lastmod_by_fname}")
         for fname in known_lastmod_by_fname:
             if fname not in current_lastmod_by_fname:
@@ -42,9 +48,9 @@ class FolderChangeDetector:
                 observer.added(fname, lastmod)
             elif lastmod > known_lastmod_by_fname[fname]:
                 observer.changed(fname, lastmod)
-                
+
         return current_lastmod_by_fname
-  
+
 
 # test the watcher on local file system - not in docker
 if __name__ == "__main__":

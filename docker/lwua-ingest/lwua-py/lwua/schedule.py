@@ -20,11 +20,11 @@ class LWUAScheduler(BlockingScheduler):
     def __init__(self, run_on_start: bool = True):
         time_delta = os.getenv("SCHEDULER_DELTA", "30")
         timeprops: dict = dict(seconds=int(time_delta))
-        
+
         # get the waittime before starting the scheduler
         waittime = os.getenv("SCHEDULER_WAIT", "0")
         time.sleep(int(waittime))
-        
+
         super().__init__()
         self._run_on_start = run_on_start
         self.add_job(lambda: main_schedule(), "interval", **timeprops)
