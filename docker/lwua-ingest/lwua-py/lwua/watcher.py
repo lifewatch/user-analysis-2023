@@ -6,11 +6,6 @@ from dotenv import load_dotenv
 from abc import ABC, abstractmethod
 import logging
 from lwua.helpers import enable_logging, resolve_path
-from lwua.graphdb import (
-    ingest_data_file,
-    delete_data_file,
-    get_registry_of_lastmod,
-)
 
 log = logging.getLogger(__name__)
 
@@ -35,7 +30,7 @@ class FolderChangeDetector:
             time.sleep(1)
         log.info(f"Watching {self.root}")
 
-    def report_changes(self, known_lastmod_by_fname: dict = {}, observer: FolderChangeObserver = None):
+    def report_changes(self, observer,known_lastmod_by_fname: dict = {}):
         current_lastmod_by_fname = {p: datetime.utcfromtimestamp(os.path.getmtime(p)) for p in self.root.glob('**/*') if p.is_file()}
         log.info(f"current_lastmod_by_fname: {current_lastmod_by_fname}")
         for fname in known_lastmod_by_fname:
@@ -49,28 +44,7 @@ class FolderChangeDetector:
                 observer.changed(fname, lastmod)
                 
         return current_lastmod_by_fname
-
-class IngestChangeObserver(FolderChangeObserver):
-    def __init__(self):
-        pass
-
-    def removed(self, fname):
-        # Implement the deletion of graph context and update of lastmod registry
-        log.info(f"File {fname} has been deleted")
-        delete_data_file(fname)
-
-    def added(self, fname, lastmod):
-        # Implement the addition of graph in context
-        log.info(f"File {fname} has been added")
-        ingest_data_file(fname, lastmod)
-        
-    def changed(self, fname, lastmod):
-        # Implement the replacement of graph in context and update the lastmod registry
-        log.info(f"File {fname} has been modified")
-        ingest_data_file(fname,lastmod, True)       
-       
-
-
+  
 
 # test the watcher on local file system - not in docker
 if __name__ == "__main__":

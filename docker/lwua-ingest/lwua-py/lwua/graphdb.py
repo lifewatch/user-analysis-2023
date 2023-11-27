@@ -11,24 +11,12 @@ import time
 import os
 
 # from dotenv import load_dotenv
-from .helpers import resolve_path, data_path_from_config  # ,enable_logging
+from .helpers import resolve_path # ,enable_logging
 from pyrdfj2 import J2RDFSyntaxBuilder
 
 log = logging.getLogger(__name__)
 URN_BASE = os.getenv("URN_BASE", "urn:lwua:INGEST")
 
-def named_context(name: str, base: str = URN_BASE):
-    """
-    Create a named context.
-
-    :param name: The name of the context.
-    :type name: str
-    :param base: The base of the context. Defaults to URN_BASE.
-    :type base: str, optional
-    :return: The named context.
-    :rtype: str
-    """
-    return f"{base}:{name}" 
 
 def gdb_from_config():
     base = os.getenv("GDB_BASE", "http://localhost:7200")
@@ -55,7 +43,7 @@ def get_j2rdf_builder():
     template_folder = resolve_path("./lwua/templates")
     log.info(f"template_folder == {template_folder}")
     # init J2RDFSyntaxBuilder
-    context = named_context("ADMIN")
+    context = f"{URN_BASE}:ADMIN"
     j2rdf = J2RDFSyntaxBuilder(
         templates_folder=template_folder,
         extra_functions = {"registry_of_lastmod_context": context}
@@ -165,7 +153,7 @@ def delete_graph(context: str):
 
 def ingest_graph(graph: Graph, lastmod:datetime,  context: str, replace: bool = False):
     """
-    Convert a filename to a context.
+    Ingest a graph into a context.
 
     :param fname: The filename to convert.
     :type fname: str
@@ -186,8 +174,6 @@ def ingest_graph(graph: Graph, lastmod:datetime,  context: str, replace: bool = 
     update_registry_lastmod(context, lastmod)
 
 
-
-
 def context_2_fname(context: str):
     """
     Convert a context to a filename path.
@@ -198,20 +184,6 @@ def context_2_fname(context: str):
     :rtype: str
     """
     return Path(context.replace(f"{URN_BASE}:", ""))
-
-
-def fname_2_context(fname: str):
-    """
-    Convert a filename to a context.
-
-    :param fname: The filename to convert.
-    :type fname: str
-    :return: The context corresponding to the filename.
-    :rtype: str
-    """
-    return named_context(fname)
-
-
 
 
 def get_registry_of_lastmod():
@@ -228,6 +200,10 @@ def get_registry_of_lastmod():
     # convert {'head': {'vars': ['graph', 'lastmod']}, 'results': {'bindings': []}} to [{PosixPath('graph'): lastmod}]
     # URI must be substracted from graph context and datetime str must be converted to epoch
     
+    converted = {}
+    return convert_results_registry_of_lastmod(results)
+
+def convert_results_registry_of_lastmod(results):
     converted = {}
     for g in results["results"]["bindings"]:
         path = context_2_fname(g["graph"]["value"])
@@ -249,31 +225,3 @@ def read_graph(fpath: Path, format: str = None):
     format = format or suffix_2_format(fpath.suffix)
     graph: Graph = Graph().parse(location=str(fpath), format=format)
     return graph
-
-
-def delete_data_file(fname):
-    context = fname_2_context(fname)
-    log.info(f"deleting {fname} from {context}")
-    assert_context_exists(context)
-    delete_graph(context)
-    update_registry_lastmod(context, None)
-
-
-def ingest_data_file(fname: str, lastmod: datetime, replace: bool = True):
-    """
-    Ingest a data file.
-
-    :param fname: The name of the file to ingest.
-    :type fname: str
-    :param replace: Whether to replace the existing data. Defaults to False.
-    :type replace: bool
-    :raises AssertionError: If the file does not exist.
-    """
-    file_path = data_path_from_config() / fname
-    assert file_path.exists(), f"cannot ingest file at {file_path}"
-    graph = read_graph(file_path)
-    context = fname_2_context(fname)
-    log.info(f"ingesting {file_path} into {context} | replace : {replace}")
-    ingest_graph(graph, lastmod, context=context, replace=replace)
-    # TODO maintain metadata triples last-ingest / last-modified of ingested
-    # file in some admin graph context

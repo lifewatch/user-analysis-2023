@@ -5,6 +5,6 @@
 #}
 {% if context %}
 DELETE WHERE {
-    GRAPH <{{ context }}> { ?s ?p ?o }
+ GRAPH <{{ context }}> { ?s ?p ?o }
 }
 {% endif %}

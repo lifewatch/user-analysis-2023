@@ -1,26 +1,18 @@
-import unittest
-from unittest.mock import patch, MagicMock
-from lwua.ingest import run_ingest
+# test file for the ingest.py file in the lwua-py folder
+import pytest
+import os
+from lwua.ingest import fname_2_context, data_path_from_config
 
-class TestIngest(unittest.TestCase):
-    @patch('ingest.get_registry_of_lastmod')
-    @patch('ingest.FolderChangeDetector')
-    @patch('ingest.IngestChangeObserver')
-    def test_run_ingest(self, mock_observer, mock_detector, mock_lastmod):
-        # Arrange
-        mock_lastmod.return_value = None
-        mock_detector_instance = mock_detector.return_value
-        mock_detector_instance.report_changes.return_value = None
-        mock_observer_instance = mock_observer.return_value
+def test_fname_2_context():
+    # Arrange
+    fname = "test_file.txt"  # replace with a test file name
 
-        # Act
-        run_ingest()
+    # Act
+    # Call the function with the test parameters
+    result = fname_2_context(fname)
 
-        # Assert
-        mock_lastmod.assert_called_once()
-        mock_detector.assert_called_once()
-        mock_observer.assert_called_once()
-        mock_detector_instance.report_changes.assert_called()
-
-if __name__ == '__main__':
-    unittest.main()
+    # Assert
+    # Check the results
+    # This depends on what the function does
+    # For example, if the function returns a string based on the file name, you can check if the string is correct
+    assert result == "urn:lwua:INGEST:test_file.txt", f"Expected 'expected_result', but got '{result}'"

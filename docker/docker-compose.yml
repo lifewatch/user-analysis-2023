@@ -40,6 +40,8 @@ services:
       #args: 
     image: lwua/lwua_ingest
     container_name: lwua_ingest
+    depends_on:
+      - graphdb
     volumes: 
       - ../data:/data    # Store for any input data 
       - ../logging:/logging   # Store for any input data 

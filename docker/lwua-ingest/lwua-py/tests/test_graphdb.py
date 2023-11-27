@@ -1,44 +1,48 @@
-import unittest
-from unittest.mock import patch, MagicMock
+import pytest
+from datetime import datetime
 from pathlib import Path
-import lwua.graphdb as graphdb
+from lwua.graphdb import context_2_fname, suffix_2_format, read_graph, convert_results_registry_of_lastmod  # replace 'your_module_path' with the actual module path
+from lwua.ingest import data_path_from_config
 
-class TestGraphDB(unittest.TestCase):
-    @patch('graphdb.suffix_2_format')
-    @patch('graphdb.Graph')
-    def test_read_graph(self, mock_graph, mock_suffix_2_format):
-        # Arrange
-        mock_suffix_2_format.return_value = 'xml'
-        mock_graph_instance = mock_graph.return_value
-        mock_graph_instance.parse.return_value = None
+results = {
+        "head": {"vars": ["graph", "lastmod"]},
+        "results": {"bindings": [{"graph": {"value": "urn:lwua:INGEST:test_file.txt"}, "lastmod": {"value": "2022-01-01T00:00:00"}}]}
+    }
 
-        # Act
-        result = graphdb.read_graph(Path('test.xml'))
+def test_context_2_fname():
+    # Act
+    converted = context_2_fname("urn:lwua:INGEST:test_file.txt")
 
-        # Assert
-        mock_suffix_2_format.assert_called_once_with('.xml')
-        mock_graph.assert_called_once()
-        mock_graph_instance.parse.assert_called_once_with(location='test.xml', format='xml')
-        self.assertIsNone(result)
+    # Assert
+    assert isinstance(converted, Path)
+    
+def get_registry_of_lastmod(results):
+    # Act
+    converted = convert_results_registry_of_lastmod(results)
 
-    @patch('graphdb.fname_2_context')
-    @patch('graphdb.log.info')
-    @patch('graphdb.assert_context_exists')
-    @patch('graphdb.delete_graph')
-    @patch('graphdb.update_registry_lastmod')
-    def test_delete_data_file(self, mock_update_registry_lastmod, mock_delete_graph, mock_assert_context_exists, mock_log_info, mock_fname_2_context):
-        # Arrange
-        mock_fname_2_context.return_value = 'context'
+    # Assert
+    assert isinstance(converted, dict)
+    assert len(converted) == 1
+    assert converted[Path("test_file.txt")] == datetime.fromisoformat("2022-01-01T00:00:00")
+    
+def test_suffix_2_format():
+    # Arrange
+    suffixes = ["ttl", "turtle", "jsonld", "json", "other"]
 
-        # Act
-        graphdb.delete_data_file('test.xml')
+    # Act
+    results = [suffix_2_format(suffix) for suffix in suffixes]
 
-        # Assert
-        mock_fname_2_context.assert_called_once_with('test.xml')
-        mock_log_info.assert_called_once()
-        mock_assert_context_exists.assert_called_once_with('context')
-        mock_delete_graph.assert_called_once_with('context')
-        mock_update_registry_lastmod.assert_called_once_with('context', None)
+    # Assert
+    assert results == ["turtle", "turtle", "json-ld", "json-ld", None]
 
-if __name__ == '__main__':
-    unittest.main()
+def test_read_graph():
+    # Arrange
+    fpath = data_path_from_config() / "project.ttl"  # replace with a test file path
+    format = "turtle"
+
+    # Act
+    graph = read_graph(fpath, format)
+
+    # Assert
+    assert graph is not None
+    # Add more assertions based on what the read_graph function is supposed to do

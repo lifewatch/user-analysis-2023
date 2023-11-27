@@ -19,7 +19,8 @@ INSERT {
     GRAPH <{{ registry_of_lastmod_context }}> {
     {#
         pyrdf2j here is a hack to convert a Python datetime object to an XSD dateTime literal.
-        <{{ context }}> schema:dateModified "{{ lastmod | xsd('dateTime') }} .
+        <{{ context }}> schema:dateModified "{{ lastmod | xsd('xsd:datetime') }} .
+    
     #}
     <{{ context }}> schema:dateModified "{{ lastmod }}"^^xsd:dateTime .
     }

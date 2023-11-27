@@ -3,3 +3,7 @@ LOGCONF=debug-logconf.yml
 
 # general repo setting
 GDB_REPO="lwua23"
+
+# scheduler settings
+SCHEDULER_DELTA=5 # seconds
+SCHEDULER_WAIT=5 # seconds | this is needed because the graphdb container takes some time to start, else the first run will be an error
