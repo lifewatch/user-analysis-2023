@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "dereferencer-py"
+version = "0.1.0"
+description = "Dereferencing tool that will add triples to a knowledge graph given a config containing a SPARQL query and a list of property paths are given."
+authors = ["cedricdcc <30471340+cedricdcc@users.noreply.github.com>"]
+license = "CC0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+apscheduler = "^3.10.4"
+pyaml = "^23.9.7"
+python-dotenv = "^1.0.0"
+sparqlwrapper = "^2.0.0"
+pyrdfj2 = "^0.0.5"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

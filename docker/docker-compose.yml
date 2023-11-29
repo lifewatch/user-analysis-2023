@@ -34,6 +34,39 @@ services:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"
 
+  dereferencer:
+    build: 
+      context: ./dereferencer/ 
+      #args: 
+    image: lwua/dereferencer
+    container_name: dereferencer
+    depends_on:
+      - graphdb
+    volumes: 
+      - ../data:/data    # Store for any input data 
+      - ../logging:/logging   # Store for any input data 
+    env_file:
+      - ../.env
+    environment:
+      - GDB_BASE=http://graphdb:7200/
+      - INGEST_DATA_FOLDER=/data
+      - CONFIG_FILE=/configs/config_dereferencer.yml
+    # for test / dev -- no restart and single run
+    restart: "no"
+    command: run
+    # towards deploy -- make restart and keep service running -- consequence: use ctrl-c to stop
+    # restart: unless-stopped 
+    # command: start
+    links:
+      - graphdb
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m 
+    labels:
+      be.vliz.container.project: "LWUA"
+      be.vliz.container.group: "services"
+
   ingest:
     build: 
       context: ./lwua-ingest/ 
