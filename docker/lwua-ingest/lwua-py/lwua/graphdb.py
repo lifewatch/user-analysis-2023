@@ -5,6 +5,7 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import unquote, quote
 import logging
 from rdflib import Graph
 import time
@@ -74,11 +75,11 @@ def update_registry_lastmod(context: str, lastmod: datetime):
     template = "update_context_lastmod.sparql"
     vars = {
         "context": context,
-        "lastmod": lastmod.isoformat() if lastmod is not None else None,
+        "lastmod": lastmod if lastmod is not None else None,
     }
     # get the sparql query
     query = J2RDF.build_syntax(template, **vars)
-    # log.debug(f"update_registry_lastmod query == {query}")
+    log.debug(f"update_registry_lastmod query == {query}")
     # execute the query
     GDB.setQuery(query)
     GDB.query()
@@ -187,7 +188,21 @@ def context_2_fname(context: str):
     :return: The filename corresponding to the context.
     :rtype: str
     """
-    return Path(context.replace(f"{URN_BASE}:", ""))
+    assert context.startswith(URN_BASE), f"Context {context} is not IRI compliant" 
+    return unquote(context[len(URN_BASE) + 1:])
+
+def fname_2_context(fname: str):
+    """
+    Convert a filename to a context.
+
+    :param fname: The filename to convert.
+    :type fname: str
+    :return: The context corresponding to the filename.
+    :rtype: str
+    """
+    base = os.getenv("URN_BASE", "urn:lwua:INGEST")
+    fname = str(fname)
+    return f"{base}:{quote(fname)}"
 
 
 def get_registry_of_lastmod():
@@ -218,7 +233,8 @@ def convert_results_registry_of_lastmod(results):
     return converted
 
 
-def suffix_2_format(suffix):
+def format_from_filepath(fpath:Path):
+    suffix = fpath.suffix[1:].lower()
     if suffix in ["ttl", "turtle"]:
         return "turtle"
     if suffix in ["jsonld", "json"]:
@@ -228,6 +244,6 @@ def suffix_2_format(suffix):
 
 
 def read_graph(fpath: Path, format: str = None):
-    format = format or suffix_2_format(fpath.suffix)
+    format = format or format_from_filepath(fpath)
     graph: Graph = Graph().parse(location=str(fpath), format=format)
     return graph

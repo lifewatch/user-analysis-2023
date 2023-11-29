@@ -13,6 +13,7 @@ from .graphdb import (
     ingest_graph,
     update_registry_lastmod,
     read_graph,
+    fname_2_context
 )
 
 
@@ -20,18 +21,6 @@ log = logging.getLogger(__name__)
 
 
 # functions here to ingest and delete files
-def fname_2_context(fname: str):
-    """
-    Convert a filename to a context.
-
-    :param fname: The filename to convert.
-    :type fname: str
-    :return: The context corresponding to the filename.
-    :rtype: str
-    """
-    base = os.getenv("URN_BASE", "urn:lwua:INGEST")
-    return f"{base}:{fname}"
-
 
 def delete_data_file(fname):
     context = fname_2_context(fname)
@@ -63,25 +52,26 @@ def data_path_from_config():
     folder_name = os.getenv("INGEST_DATA_FOLDER", local_default)
     return Path(folder_name).absolute()
 
+class Ingester:
+    def __init__(self):
+        data_path = data_path_from_config()
+        log.info(f"run_ingest on updated files in {data_path}")
 
-def run_ingest():
-    data_path = data_path_from_config()
-    log.info(f"run_ingest on updated files in {data_path}")
+        # get the last context graph modification dates
+        # run while true loop with 5 second sleep
+        self.detector = FolderChangeDetector(data_path)
+        self.ingestor = IngestChangeObserver()
 
-    # get the last context graph modification dates
-    # run while true loop with 5 second sleep
-    detector = FolderChangeDetector(data_path)
-    ingestor = IngestChangeObserver()
-    last_mod = {}
-    try:
-        last_mod = get_registry_of_lastmod()
-        log.info(f"initial last mod == {last_mod}")
-    except Exception as e:
-        log.exception(e)
-
-    log.info("reporting changes")
-    last_mod = detector.report_changes(ingestor, last_mod)
-    log.info(f"last_mod == {last_mod}")
+    def run_ingest(self):
+        last_mod = {}
+        try:
+            last_mod = get_registry_of_lastmod()
+            log.info(f"initial last mod == {last_mod}")
+            log.info("reporting changes")
+            self.detector.report_changes(self.ingestor, last_mod)
+            log.info(f"last_mod == {last_mod}")
+        except Exception as e:
+            log.exception(e)
 
 
 class IngestChangeObserver(FolderChangeObserver):

@@ -34,7 +34,7 @@ class FolderChangeDetector:
 
     def report_changes(self, observer, known_lastmod_by_fname: dict = {}):
         current_lastmod_by_fname = {
-            p: datetime.utcfromtimestamp(os.path.getmtime(p))
+            str(p): datetime.utcfromtimestamp(p.stat().st_mtime)
             for p in self.root.glob("**/*")
             if p.is_file()
         }
