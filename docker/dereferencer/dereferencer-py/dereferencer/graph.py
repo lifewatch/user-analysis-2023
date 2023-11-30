@@ -1,4 +1,5 @@
-# this file will contain the functions that will be used to query the graph database
+# this file will contain the functions that will be used to query the
+# graph database
 
 import logging
 from SPARQLWrapper import SPARQLWrapper, JSON
@@ -8,6 +9,7 @@ import os
 # from dotenv import load_dotenv
 
 log = logging.getLogger(__name__)
+
 
 def gdb_from_config():
     base = os.getenv("GDB_BASE", "http://localhost:7200")
@@ -31,6 +33,7 @@ def gdb_from_config():
 
 GDB = gdb_from_config()
 
+
 def uri_list(query):
     """
     Return a list of URI's from a query
@@ -41,4 +44,3 @@ def uri_list(query):
     results = GDB.query().convert()
     log.debug(f"uri_list: results: {results}")
     return [result["s"]["value"] for result in results["results"]["bindings"]]
-
