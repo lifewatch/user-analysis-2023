@@ -4,9 +4,11 @@ on:
   push:
     paths:
       - 'docker/lwua-ingest/**/*.py'
+      - 'docker/dereferencer/**/*.py'
   pull_request:
     paths:
       - 'docker/lwua-ingest/**/*.py'
+      - 'docker/dereferencer/**/*.py'
 
 jobs:
   lint:
@@ -28,15 +30,17 @@ jobs:
       - name: Run Black
         run: |
           black docker/lwua-ingest/
+          black docker/dereferencer/
 
       - name: Run autopep8
         run: |
           autopep8 --in-place --aggressive --aggressive --max-line-length 79 --recursive docker/lwua-ingest/
+          autopep8 --in-place --aggressive --aggressive --max-line-length 79 --recursive docker/dereferencer/
 
       - name: Commit and push changes
         run: |
           git config --global user.name 'cedricdcc'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add -A
-          git commit -m "Automated code formatting" || exit 0
+          git commit -m "Automated python code formatting" || exit 0
           git push

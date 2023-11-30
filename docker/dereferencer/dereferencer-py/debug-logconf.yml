@@ -24,7 +24,7 @@ loggers:
   tests:
     level: DEBUG
     propagate: yes
-  lwua:
+  dereferencer:
     level: DEBUG
     propagate: yes
   apscheduler: 

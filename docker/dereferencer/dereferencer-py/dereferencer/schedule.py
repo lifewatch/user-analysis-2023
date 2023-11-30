@@ -26,12 +26,15 @@ class DereferenceScheduler(BlockingScheduler):
 
     def start(self):
         try:
+            log.info("starting dereferencer scheduler")
             self.dereferencer = Dereference()
             if self._run_on_start:
                 self.main_schedule()
             super().start()
         except (KeyboardInterrupt, SystemExit):
             log.info("execution interrupted")
+        except Exception as e:
+            log.exception(e)
 
     def main_schedule(self):
         log.info("starting main service flow")
