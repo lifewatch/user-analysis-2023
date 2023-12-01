@@ -28,11 +28,17 @@ def url_2_fname(url: str):
     :return: The filename corresponding to the URL.
     :rtype: str
     """
-    return url.replace(":", "_").replace("/", "_").replace("?", "_").replace("&", "_").replace("=", "_").replace("#", "_")
+    return (
+        url.replace(":", "_")
+        .replace("/", "_")
+        .replace("?", "_")
+        .replace("&", "_")
+        .replace("=", "_")
+        .replace("#", "_")
+    )
 
 
 DATA_FOLDER = data_folder_from_config()
-
 
 
 def run_download_propertypaths(propertypaths, uri, file_name, download_uri):
@@ -42,7 +48,9 @@ def run_download_propertypaths(propertypaths, uri, file_name, download_uri):
         # if propertypath is a string, download it
         if isinstance(propertypath, str):
             log.info(f"propertypath is a string: {propertypath}, downloading")
-            to_download = uri_list_from_deref_property_path(uri, file_name, propertypath)
+            to_download = uri_list_from_deref_property_path(
+                uri, file_name, propertypath
+            )
             for uri in to_download:
                 if get_uri_downloaded(url_2_fname(uri)) is None:
                     download_uri(uri, url_2_fname(uri))
@@ -51,16 +59,20 @@ def run_download_propertypaths(propertypaths, uri, file_name, download_uri):
             # property path is the key of the dict
             property_to_search = list(propertypath.keys())[0]
             log.info(f"property_to_search: {property_to_search}")
-            
-            to_download = uri_list_from_deref_property_path(uri, file_name, property_to_search)
+
+            to_download = uri_list_from_deref_property_path(
+                uri, file_name, property_to_search
+            )
             for uri in to_download:
                 file_name = get_uri_downloaded(url_2_fname(uri))
                 if file_name is None:
                     file_name = download_uri(uri, url_2_fname(uri))
                 uri = uri
                 propertypath = propertypath[property_to_search]
-                run_download_propertypaths(propertypath, uri, file_name, download_uri)
-                
+                run_download_propertypaths(
+                    propertypath, uri, file_name, download_uri)
+
+
 def download_uri(uri: str, file_name: str):
     """downloads the uri either in json-ld or ttl format and puts the result in the DATA_FOLDER
 
@@ -96,6 +108,7 @@ def download_uri(uri: str, file_name: str):
         )
         return None
 
+
 def get_uri_downloaded(file_name: str):
     """gets the filename of the uri if it is already downloaded
 
@@ -104,7 +117,7 @@ def get_uri_downloaded(file_name: str):
     :return: filename of the uri if it is already downloaded
     :rtype: str
     """
-    
+
     if os.path.isfile(DATA_FOLDER + "/" + file_name + ".json"):
         filename = DATA_FOLDER + "/" + file_name + ".json"
         return filename.replace(DATA_FOLDER, "/data")
@@ -124,7 +137,8 @@ class DerefUriEntity:
         if self.filename is None:
             log.info(f"uri {uri} not downloaded yet")
             self.filename = download_uri(uri, self.file_name)
-        
+
         if propertypaths is not None:
-            run_download_propertypaths(self.propertypaths, self.uri, self.filename, download_uri)
-            
+            run_download_propertypaths(
+                self.propertypaths, self.uri, self.filename, download_uri
+            )
