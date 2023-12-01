@@ -34,6 +34,7 @@ def url_2_fname(url: str):
 DATA_FOLDER = data_folder_from_config()
 
 
+
 def run_download_propertypaths(propertypaths, uri, file_name, download_uri):
     """runs the download_propertypaths function for all propertypaths"""
     for propertypath in propertypaths:
