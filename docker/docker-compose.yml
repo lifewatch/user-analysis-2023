@@ -36,7 +36,7 @@ services:
 
   dereferencer:
     build: 
-      context: ./dereferencer/ 
+      context: ./lwua-dereferencer/ 
       #args: 
     image: lwua/dereferencer
     container_name: dereferencer

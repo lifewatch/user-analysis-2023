@@ -10,3 +10,6 @@ property_paths:
   - http://marineregions.org/ns/ontology#hasGeometry
   - http://marineregions.org/ns/ontology#isPartOf:
     - http://marineregions.org/ns/ontology#hasGeometry
+    - https://schema.org/geo:
+      - https://schema.org/latitude
+      - https://schema.org/longitude

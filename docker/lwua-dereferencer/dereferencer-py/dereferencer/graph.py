@@ -4,9 +4,11 @@
 import logging
 from SPARQLWrapper import SPARQLWrapper, JSON
 from urllib.parse import unquote, quote
+from pyrdfj2 import J2RDFSyntaxBuilder
 import logging
 import os
 import re
+from .helpers import resolve_path
 
 # from dotenv import load_dotenv
 
@@ -38,7 +40,7 @@ GDB = gdb_from_config()
 
 
 def get_j2rdf_builder():
-    template_folder = resolve_path("./lwua/templates")
+    template_folder = resolve_path("./dereferencer/templates")
     log.info(f"template_folder == {template_folder}")
     # init J2RDFSyntaxBuilder
     j2rdf = J2RDFSyntaxBuilder(
@@ -113,7 +115,7 @@ def uri_list(query):
     log.debug(f"uri_list: {query}")
 
     # Extract the variable from the SELECT clause
-    select_part = re.search("SELECT(.*)WHERE", query, re.IGNORECASE).group(1)
+    select_part = re.search('SELECT(.*?)(FROM|WHERE)', query, re.IGNORECASE).group(1)
     variables = select_part.split()
 
     # Check that there is exactly one variable in the SELECT part of the
@@ -132,3 +134,29 @@ def uri_list(query):
 
     # Use the extracted variable when getting the results
     return [result[var]["value"] for result in results["results"]["bindings"]]
+
+def uri_list_from_deref_property_path(url,filename,propertypath):
+    """
+    Return a list of URI's from a query
+    """
+    log.debug(f"uri_list: {propertypath}")
+
+    template = "deref_property_path.sparql"
+    
+    graph = fname_2_context(filename)
+    
+    vars = {
+            "graph": graph,
+            "subject": url,
+            "property": propertypath
+            }
+    
+    query = J2RDF.build_syntax(template, **vars)
+    log.debug(f"uri_list_from_deref_property_path query == {query}")
+    GDB.setQuery(query)
+    GDB.setReturnFormat(JSON)
+    results = GDB.query().convert()
+    log.debug(f"uri_list_from_deref_property_path results: {results}")
+    
+    # Use the extracted variable when getting the results
+    return [result["o"]["value"] for result in results["results"]["bindings"]]
