@@ -8,7 +8,7 @@ on:
   pull_request:
     paths:
       - 'docker/lwua-ingest/**/*.py'
-      - 'docker/dereferencer/**/*.py'
+      - 'docker/lwua-dereferencer/**/*.py'
 
 jobs:
   lint:
@@ -30,12 +30,12 @@ jobs:
       - name: Run Black
         run: |
           black docker/lwua-ingest/
-          black docker/dereferencer/
+          black docker/lwua-dereferencer/
 
       - name: Run autopep8
         run: |
           autopep8 --in-place --aggressive --aggressive --max-line-length 79 --recursive docker/lwua-ingest/
-          autopep8 --in-place --aggressive --aggressive --max-line-length 79 --recursive docker/dereferencer/
+          autopep8 --in-place --aggressive --aggressive --max-line-length 79 --recursive docker/lwua-dereferencer/
 
       - name: Commit and push changes
         run: |
