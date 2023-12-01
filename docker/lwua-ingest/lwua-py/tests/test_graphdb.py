@@ -6,7 +6,7 @@ from lwua.graphdb import (
     suffix_2_format,
     read_graph,
     convert_results_registry_of_lastmod,
-) 
+)
 from lwua.ingest import data_path_from_config
 import os
 
@@ -56,9 +56,14 @@ def test_suffix_2_format():
 
 def test_read_graph():
     # Arrange
-    test_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "test.ttl")
-    
-    fpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "test.ttl")
+    test_file_path = os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), "test.ttl"
+    )
+
+    fpath = os.path.join(
+        os.path.dirname(
+            os.path.realpath(__file__)),
+        "test.ttl")
     format = "turtle"
 
     # Act

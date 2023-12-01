@@ -6,7 +6,6 @@ import os
 from .graphdb import URN_BASE
 
 
-
 def get_j2rdf_builder():
     template_folder = os.path.join(
         os.path.dirname(__file__),
