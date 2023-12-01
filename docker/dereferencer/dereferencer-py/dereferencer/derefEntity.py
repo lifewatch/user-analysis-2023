@@ -18,8 +18,6 @@ def data_folder_from_config():
     return folder_name
 
 
-
-
 DATA_FOLDER = data_folder_from_config()
 
 

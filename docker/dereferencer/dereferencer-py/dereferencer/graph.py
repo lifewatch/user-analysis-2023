@@ -50,6 +50,7 @@ def get_j2rdf_builder():
 
 J2RDF = get_j2rdf_builder()
 
+
 def get_registry_of_lastmod():
     log.info(f"getting last modified graph")
 
@@ -68,6 +69,7 @@ def get_registry_of_lastmod():
     converted = {}
     return convert_results_registry_of_lastmod(results)
 
+
 def convert_results_registry_of_lastmod(results):
     converted = {}
     for g in results["results"]["bindings"]:
@@ -75,6 +77,7 @@ def convert_results_registry_of_lastmod(results):
         time = datetime.fromisoformat(g["lastmod"]["value"])
         converted[path] = time
     return converted
+
 
 def context_2_fname(context: str):
     """
@@ -110,16 +113,17 @@ def uri_list(query):
     log.debug(f"uri_list: {query}")
 
     # Extract the variable from the SELECT clause
-    select_part = re.search('SELECT(.*)WHERE', query, re.IGNORECASE).group(1)
+    select_part = re.search("SELECT(.*)WHERE", query, re.IGNORECASE).group(1)
     variables = select_part.split()
 
-    # Check that there is exactly one variable in the SELECT part of the SPARQL query
+    # Check that there is exactly one variable in the SELECT part of the
+    # SPARQL query
     if len(variables) != 1:
         error_message = f"There should be exactly one variable in the SELECT part of the SPARQL query but found {len(variables)} in {variables}"
         log.error(error_message)
         raise ValueError(error_message)
 
-    var = variables[0][1:] # remove the ? from the variable
+    var = variables[0][1:]  # remove the ? from the variable
 
     GDB.setQuery(query)
     GDB.setReturnFormat(JSON)
