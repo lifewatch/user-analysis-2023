@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'docker/lwua-ingest/**/*.py'
-      - 'docker/dereferencer/**/*.py'
+      - 'docker/lwua-dereferencer/**/*.py'
   pull_request:
     paths:
       - 'docker/lwua-ingest/**/*.py'

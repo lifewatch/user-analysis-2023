@@ -12,7 +12,6 @@ from .derefEntity import DerefUriEntity
 
 log = logging.getLogger(__name__)
 
-
 def config_path_from_config():
     local_default = str(resolve_path("../configs", versus="dotenv"))
     folder_name = os.getenv("CONFIG_FILES_FOLDER", local_default)
