@@ -46,10 +46,9 @@ def get_j2rdf_builder():
     template_folder = resolve_path("./lwua/templates")
     log.info(f"template_folder == {template_folder}")
     # init J2RDFSyntaxBuilder
-    context = f"{URN_BASE}:ADMIN"
     j2rdf = J2RDFSyntaxBuilder(
         templates_folder=template_folder,
-        extra_functions={"registry_of_lastmod_context": context},
+        extra_functions={"registry_of_lastmod_context": f"{URN_BASE}:ADMIN"},
     )
     return j2rdf
 
@@ -202,9 +201,8 @@ def fname_2_context(fname: str):
     :return: The context corresponding to the filename.
     :rtype: str
     """
-    base = os.getenv("URN_BASE", "urn:lwua:INGEST")
     fname = str(fname)
-    return f"{base}:{quote(fname)}"
+    return f"{URN_BASE}:{quote(fname)}"
 
 
 def get_registry_of_lastmod():

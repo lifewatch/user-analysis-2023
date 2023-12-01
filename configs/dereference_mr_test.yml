@@ -1,0 +1,11 @@
+SPARQL: >
+  PREFIX dc: <http://purl.org/dc/terms/> 
+  SELECT ?o
+  WHERE {
+    ?s dc:isVersionOf ?o .
+      FILTER regex(str(?o), "marineregions.org")
+  }
+property_paths:
+  - http://marineregions.org/ns/ontology#hasGeometry
+  - http://marineregions.org/ns/ontology#isPartOf:
+    - http://marineregions.org/ns/ontology#hasGeometry

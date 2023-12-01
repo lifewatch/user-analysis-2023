@@ -5,6 +5,7 @@ import logging
 from SPARQLWrapper import SPARQLWrapper, JSON
 import logging
 import os
+import re
 
 # from dotenv import load_dotenv
 
@@ -39,8 +40,21 @@ def uri_list(query):
     Return a list of URI's from a query
     """
     log.debug(f"uri_list: {query}")
+
+    # Extract the variable from the SELECT clause
+    select_part = re.search('SELECT(.*)WHERE', query, re.IGNORECASE).group(1)
+    variables = select_part.split()
+    
+    # Check that there is exactly one variable in the SELECT part of the SPARQL query
+    if len(variables) != 1:
+        log.error("There should be exactly one variable in the SELECT part of the SPARQL query")
+        raise AssertionError("There should be exactly one variable in the SELECT part of the SPARQL query")
+
     GDB.setQuery(query)
     GDB.setReturnFormat(JSON)
     results = GDB.query().convert()
     log.debug(f"uri_list: results: {results}")
-    return [result["s"]["value"] for result in results["results"]["bindings"]]
+
+    # Use the extracted variable when getting the results
+    return [result[var]["value"] for result in results["results"]["bindings"]]
+

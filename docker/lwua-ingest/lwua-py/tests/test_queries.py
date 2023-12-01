@@ -3,8 +3,8 @@
 from pyrdfj2 import J2RDFSyntaxBuilder
 from lwua.helpers import resolve_path
 import os
+from .graphdb import URN_BASE
 
-URN_BASE = os.getenv("URN_BASE", "urn:lwua:INGEST")
 
 
 def get_j2rdf_builder():

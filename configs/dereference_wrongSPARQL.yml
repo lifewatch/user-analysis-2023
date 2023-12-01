@@ -1,8 +1,8 @@
 SPARQL: >
   PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
   PREFIX schema: <https://schema.org/>
-  SELECT ?s
+  SELECT ?s ?o
   WHERE {
-    ?s rdf:type schema:Person .
+    ?s rdf:type ?o .
   }
 property_paths: 

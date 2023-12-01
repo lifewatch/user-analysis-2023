@@ -56,9 +56,9 @@ class FolderChangeDetector:
 if __name__ == "__main__":
     load_dotenv()
     enable_logging()
-    file_to_watch = resolve_path(
+    path_to_watch = resolve_path(
         os.getenv("GDB_DATA_FOLDER", "/root/graphdb-import/data"), "dotenv"
     ).absolute()
-    log.info(f"env pointing to { file_to_watch }")
-    w = Watcher(file_to_watch)
+    log.info(f"env pointing to { path_to_watch }")
+    w = Watcher(path_to_watch)
     w.run()

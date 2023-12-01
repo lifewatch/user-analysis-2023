@@ -6,8 +6,9 @@ from lwua.graphdb import (
     suffix_2_format,
     read_graph,
     convert_results_registry_of_lastmod,
-)  # replace 'your_module_path' with the actual module path
+) 
 from lwua.ingest import data_path_from_config
+import os
 
 results = {
     "head": {"vars": ["graph", "lastmod"]},
@@ -33,13 +34,13 @@ def test_context_2_fname():
 def get_registry_of_lastmod(results):
     # Act
     converted = convert_results_registry_of_lastmod(results)
+    test_path = Path("test_file.txt")
+    test_date = datetime.fromisoformat("2022-01-01T00:00:00")
 
     # Assert
     assert isinstance(converted, dict)
     assert len(converted) == 1
-    assert converted[Path("test_file.txt")] == datetime.fromisoformat(
-        "2022-01-01T00:00:00"
-    )
+    assert converted[test_path] == test_date
 
 
 def test_suffix_2_format():
@@ -55,7 +56,9 @@ def test_suffix_2_format():
 
 def test_read_graph():
     # Arrange
-    fpath = data_path_from_config() / "project.ttl"  # replace with a test file path
+    test_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "test.ttl")
+    
+    fpath = os.path.join(os.path.dirname(os.path.realpath(__file__)), "test.ttl")
     format = "turtle"
 
     # Act
