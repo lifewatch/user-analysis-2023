@@ -13,7 +13,7 @@ from .graphdb import (
     ingest_graph,
     update_registry_lastmod,
     read_graph,
-    fname_2_context
+    fname_2_context,
 )
 
 
@@ -21,6 +21,7 @@ log = logging.getLogger(__name__)
 
 
 # functions here to ingest and delete files
+
 
 def delete_data_file(fname):
     context = fname_2_context(fname)
@@ -51,6 +52,7 @@ def data_path_from_config():
     local_default = str(resolve_path("./data", versus="dotenv"))
     folder_name = os.getenv("INGEST_DATA_FOLDER", local_default)
     return Path(folder_name).absolute()
+
 
 class Ingester:
     def __init__(self):

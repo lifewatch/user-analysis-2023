@@ -187,8 +187,10 @@ def context_2_fname(context: str):
     :return: The filename corresponding to the context.
     :rtype: str
     """
-    assert context.startswith(URN_BASE), f"Context {context} is not IRI compliant" 
+    assert context.startswith(
+        URN_BASE), f"Context {context} is not IRI compliant"
     return unquote(context[len(URN_BASE) + 1:])
+
 
 def fname_2_context(fname: str):
     """
@@ -231,7 +233,7 @@ def convert_results_registry_of_lastmod(results):
     return converted
 
 
-def format_from_filepath(fpath:Path):
+def format_from_filepath(fpath: Path):
     suffix = fpath.suffix[1:].lower()
     if suffix in ["ttl", "turtle"]:
         return "turtle"
