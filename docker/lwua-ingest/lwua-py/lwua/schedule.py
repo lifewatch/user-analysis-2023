@@ -19,20 +19,21 @@ class LWUAScheduler(BlockingScheduler):
         # get the waittime before starting the scheduler
         waittime = os.getenv("SCHEDULER_WAIT", "10")
         time.sleep(int(waittime))
-
+        
         super().__init__()
         self._run_on_start = run_on_start
         self.add_job(lambda: self.main_schedule(), "interval", **timeprops)
 
     def start(self):
         try:
-            self.ingester = Ingester()
+            self.ingester = Ingester() 
             if self._run_on_start:
                 self.main_schedule()
             super().start()
         except (KeyboardInterrupt, SystemExit):
             log.info("execution interrupted")
-
+            
     def main_schedule(self):
         log.info("starting main service flow")
         self.ingester.run_ingest()
+
