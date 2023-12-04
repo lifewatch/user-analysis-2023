@@ -1,26 +1,32 @@
-## Turn raw input files into files with institutes that can be standardized & made public
 import pandas as pd
-import os
+from pathlib import Path
+import uuid
 
-CURRENTPATH = os.path.dirname(os.path.realpath(__file__))
-PROJECTPATH = os.path.abspath(os.path.join(CURRENTPATH, '..', '..', '..'))
+#Functions 
+def read_input(filepath: pathlib.PosixPath) -> pd.DataFrame:
 
-#Read input
-FOLDERPATH = os.path.join(PROJECTPATH, 'data', '_LWUA_DataSystems_RawInput')
-files = [item for item in os.listdir(FOLDERPATH) if os.path.isfile(os.path.join(FOLDERPATH, item))]
+    """
+    Takes input file and returns Dataframe with filename added as column
+    """
 
-for file in files:
-    filename = os.path.splitext(os.path.basename(file))[0]
-    filepath = os.path.join(FOLDERPATH, file)
-
-    if file.endswith('.csv'):
+    if filepath.suffix == '.csv':
         df = pd.read_csv(filepath, delimiter=';')  # Use pd.read_excel() for Excel files
-    if file.endswith('.txt'):
+    if filepath.suffix == '.txt':
         df = pd.read_csv(filepath, delimiter='\t')
+    
+    df['source'] = filepath.stem
+    
+    return df
 
+
+def annonymize_input(df: pd.DataFrame) -> pd.DataFrame:
+
+    """
+    Takes an pd.Dataframe containing personal information and returns the annonimized version of it
+    """
+    
     df.columns = df.columns.str.lower()
     
-    #Make df --> to standardize & that can be made public
     df_ = pd.DataFrame()
     if 'email' in df.columns: 
         _mailEnds = [email_lst[-1] for email_lst in df['email'].str.split("@")] 
@@ -32,7 +38,29 @@ for file in files:
     if 'institute' in df.columns:
         df_['raw_institute'] = df['institute']
 
-    df_['raw_source'] = filename
+    df_['identifier'] = [uuid.uuid4() for _ in range(len(df_))]
+    
+    return df_
 
-    #write to new files in data folder
-    df_.to_csv(os.path.join(PROJECTPATH, 'data', filename+'_abstract.csv'), index=False) 
+
+def write_to_csv(df, filepath: pathlib.PosixPath) -> None:
+
+    """
+    Writes dataframe to csv file
+    """
+
+    df.to_csv(filepath, index=False)
+
+
+# CODE
+PROJECTPATH = Path.cwd()
+FOLDERPATH = PROJECTPATH / 'data' / '_LWUA_DataSystems_RawInput'
+FILEPATHS = [x for x in FOLDERPATH.iterdir() if x.is_file()]
+
+for filepath in FILEPATHS:
+    new_filename = filepath.stem + '_abstract.csv'
+    new_filepath = PROJECTPATH / 'data' / new_filename
+
+    df = read_input(filepath)
+    df_ = annonymize_input(df)
+    write_to_csv(df_, new_filepath)

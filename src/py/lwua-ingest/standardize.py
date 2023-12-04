@@ -1,41 +1,66 @@
 ## Standardize the institute names
 import pandas as pd
-import os
+from pathlib import Path
 from collections import defaultdict
 
-CURRENTPATH = os.path.dirname(os.path.realpath(__file__))
-PROJECTPATH = os.path.abspath(os.path.join(CURRENTPATH, '..', '..', '..'))
+#Functions
+def make_mapping_dict(affil_mapping: pd.DataFrame) -> dict:
 
-#Load reference files
-REFPATH = os.path.join(PROJECTPATH, 'data', 'reference_data')
-affil_mapping = pd.read_csv(os.path.join(REFPATH, 'AffiliationMappingFile.csv'))
+    """
+    Turn the reference mapping file into a dictionary with structure:
+        {stand-affiliation-name : [all possible ways of writing affil name] }
+    """
 
-# turn mapping file into dictionary
-mapping_dct = defaultdict(list)
-[mapping_dct[row['Institute_standardized']].append(row['Institute']) for index, row in affil_mapping.iterrows()]
-#print(mapping_dct['Flanders Marine Institute (VLIZ)'])
+    mapping_dct = defaultdict(list)
+    return [mapping_dct[row['Institute_standardized']].append(row['Institute']) for index, row in affil_mapping.iterrows()]
 
-#Load '*_abstract' input files
-FOLDERPATH = os.path.join(PROJECTPATH, 'data')
-files = [item for item in os.listdir(FOLDERPATH) if item.endswith('_abstract.csv')]
 
-for file in files:
-    filename = os.path.splitext(os.path.basename(file))[0]
-    filepath = os.path.join(FOLDERPATH, file)
-    df = pd.read_csv(filepath, delimiter=',')
+def standardize_affiliation_names(df: pd.DataFrame, mapping_dct: dict) -> pd.DataFrame:
 
-    #Standardize insitute names
-    print(f"standardizing {filename}...")
+    """
+    Add standardized insitute names to df using as mapping dict
+
+    returns 
+    df with standard institute names added in a new column
+    df consisting of institute names that couldn't be standardized yet
+    """
+        
     for index, row in df.iterrows():
         for stand_inst, inst_list in mapping_dct.items():
             if row['raw_institute'] in inst_list or str(row['raw_institute']).lower() in inst_list:
                 df.at[index, 'stand_institute'] = stand_inst  
-    print("done!")
 
-    # write to file
-    df.to_csv(os.path.join(FOLDERPATH, filename.replace('_abstract', '_standardized.csv')), index=False) 
-
-    # write non-standardized institutes to separate file for manual check
     df_tostand = df.loc[df['stand_institute'].isnull()]
     df_tostand = df_tostand.drop_duplicates()
-    df_tostand.to_csv(os.path.join(FOLDERPATH, filename.replace('_abstract', '_to_standardize.csv')), index=False) 
+
+    return df, df_tostand
+
+
+# CODE
+PROJECTPATH = Path.cwd()
+FOLDERPATH = PROJECTPATH / 'data'
+FILEPATHS = [x for x in FOLDERPATH.iterdir() if x.stem.endswith('_abstract')]
+REFAFFILPATH = PROJECTPATH / 'data' / 'reference_data' / 'AffiliationMappingFile.csv'
+
+affil_mapping = pd.read_csv(REFAFFILPATH)
+mapping_dct = make_mapping_dict(affil_mapping)
+#print(mapping_dct['Flanders Marine Institute (VLIZ)'])
+
+for filepath in FILEPATHS:
+    filename = filepath.stem
+    filename_stand = filename.replace('_abstract', '_standardized.csv')
+    filepath_stand = Path(FOLDERPATH, filename_stand)
+    filename_to_stand = filename.replace('_abstract', '_to_standardize.csv')
+    filepath_to_stand = Path(FOLDERPATH, filename_to_stand)
+
+    #read input
+    df = pd.read_csv(filepath, delimiter=',')
+
+    #standardize affiliation names
+    print(f"standardizing {filename}...")
+    df_stand, df_tostand = standardize_affiliation_names(df, mapping_dct)
+    print("done!")
+
+    # write df to file, and subset of non-stand names to seperate file for manual check
+    df_stand.to_csv(filepath_stand, index=False) 
+    df_tostand.to_csv(filepath_to_stand, index=False) 
