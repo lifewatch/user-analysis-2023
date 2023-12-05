@@ -37,7 +37,7 @@ class Dereference:
 
         # for each config file , parse the file and get the config
         for config_file in config_files:
-            #make a store
+            # make a store
             self.store = Graph()
             log.info(f"config file: {config_file}")
             with open(config_file, "r") as stream:
@@ -54,7 +54,8 @@ class Dereference:
                     for uri in uri_list_from_query:
                         log.info(f"uri: {uri}")
                         derefEntity = DerefUriEntity(
-                            uri, config["property_paths"],self.store)
+                            uri, config["property_paths"], self.store
+                        )
                         log.info(f"derefEntity: {derefEntity}")
                         derefEntity.write_store(file_name)
 

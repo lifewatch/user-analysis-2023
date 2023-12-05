@@ -54,6 +54,7 @@ def get_j2rdf_builder():
 
 J2RDF = get_j2rdf_builder()
 
+
 def fname_2_context(fname: str):
     """
     Convert a filename to a context.
@@ -65,6 +66,7 @@ def fname_2_context(fname: str):
     """
     fname = str(fname)
     return f"{URN_BASE}:{quote(fname)}"
+
 
 def ingest_graph(
         graph: Graph,
@@ -91,10 +93,12 @@ def ingest_graph(
 
     # convert the epoch timestamp to a date string
     update_registry_lastmod(context, lastmod)
-    
+
+
 def assert_context_exists(context: str):
     assert context is not None, "Context cannot be None"
-    
+
+
 def delete_graph(context: str):
     """
     Delete data from a context.
@@ -121,7 +125,7 @@ def delete_graph(context: str):
     # Execute the query
     GDB.setQuery(query)
     GDB.query()
-    
+
 
 def assert_iri_compliance(context: str):
     assert context.startswith(
@@ -156,7 +160,7 @@ def insert_graph(graph: Graph, context: str = None):
     # Execute the query
     GDB.setQuery(query)
     GDB.query()
-    
+
 
 def update_registry_lastmod(context: str, lastmod: datetime):
     """
@@ -217,21 +221,20 @@ def uri_list(query):
     return [result[var]["value"] for result in results["results"]["bindings"]]
 
 
-def writeStoreToGraphDB(store,filename):
+def writeStoreToGraphDB(store, filename):
     """
     Write the store to the graph database
     """
     log.info("writing store to graph database")
-    
+
     context = fname_2_context(filename)
     log.info(f"context: {context}")
-    
+
     # check if context is IRI compliant
     assert_iri_compliance(context)
-    
-    #get time now
+
+    # get time now
     lastmod = datetime.now()
-    
+
     # insert the data
     ingest_graph(store, lastmod, context)
-   

@@ -19,17 +19,17 @@ def run_download_propertypaths(propertypaths, uri, store):
         # if propertypath is a string, download it
         if isinstance(propertypath, str):
             log.info(f"propertypath is a string: {propertypath}, downloading")
-            to_download = getURIsFromStore(store,propertypath,uri)
+            to_download = getURIsFromStore(store, propertypath, uri)
             for uri in to_download:
                 download_uri_to_store(uri, store)
-                
+
         if isinstance(propertypath, dict):
             log.info(f"propertypath is a dict: {propertypath}, downloading")
             # property path is the key of the dict
             property_to_search = list(propertypath.keys())[0]
             log.info(f"property_to_search: {property_to_search}")
 
-            to_download = getURIsFromStore(store,property_to_search,uri)
+            to_download = getURIsFromStore(store, property_to_search, uri)
             for uri in to_download:
                 log.info(f"uri: {uri}")
                 # download the uri
@@ -37,11 +37,11 @@ def run_download_propertypaths(propertypaths, uri, store):
                 uri = uri
                 propertypath = propertypath[property_to_search]
                 run_download_propertypaths(propertypath, uri, store)
-                
+
     return store
 
 
-def download_uri_to_store(uri, store, format='json-ld'):
+def download_uri_to_store(uri, store, format="json-ld"):
     headers = {"Accept": "application/ld+json, text/turtle"}
     r = requests.get(uri, headers=headers)
 
@@ -52,9 +52,9 @@ def download_uri_to_store(uri, store, format='json-ld'):
     ):
         # parse the content directly into the store
         if "application/ld+json" in r.headers["Content-Type"]:
-            format = 'json-ld'
+            format = "json-ld"
         elif "text/turtle" in r.headers["Content-Type"]:
-            format = 'turtle'
+            format = "turtle"
         store.parse(data=r.text, format=format)
         log.info(f"content of {uri} added to the store")
     else:
@@ -69,25 +69,25 @@ class DerefUriEntity:
         self.store = store
         self.propertypathmetadata = None
         self.propertypaths = propertypaths
-        
+
         # download the uri to the store
         download_uri_to_store(uri, self.store)
 
         if propertypaths is not None:
             self.store = run_download_propertypaths(
-                self.propertypaths, self.uri, self.store 
+                self.propertypaths, self.uri, self.store
             )
-            
+
         # log the store and the ammount of triples in the store
         log.info(f"store: {self.store}")
         log.info(f"FINAL store length: {len(self.store)}")
 
     def __repr__(self):
         return f"DerefUriEntity({self.uri},{self.propertypaths},{self.store})"
-    
-    def write_store(self,filename):
+
+    def write_store(self, filename):
         """
         Write the store to the graph database
         """
         log.info("writing store to graph database")
-        writeStoreToGraphDB(self.store,filename)
+        writeStoreToGraphDB(self.store, filename)
