@@ -149,9 +149,12 @@ def insert_graph(graph: Graph, context: str = None):
     assert_iri_compliance(context) if context is not None else None
 
     batch_insert_graph(graph, context)
-    
-    
-def batch_insert_graph(graph: Graph, context: str = None, batch_size: int = 100):
+
+
+def batch_insert_graph(
+        graph: Graph,
+        context: str = None,
+        batch_size: int = 100):
     """
     Insert data into a context in batches.
 
@@ -162,13 +165,13 @@ def batch_insert_graph(graph: Graph, context: str = None, batch_size: int = 100)
     :param batch_size: The batch size to use.
     :type batch_size: int
     """
-    
+
     # Variables for the template
     template = "insert_graph.sparql"
     ntstr = graph.serialize(format="nt")
-    
+
     # Split ntstr by newline to get a list of triples
-    triples = ntstr.split('\n')
+    triples = ntstr.split("\n")
 
     # Initialize an empty list to hold the batches
     ntstr_batches = []
@@ -177,18 +180,18 @@ def batch_insert_graph(graph: Graph, context: str = None, batch_size: int = 100)
     for i in range(0, len(triples), batch_size):
         # Slice the list of triples from the current index to the current index plus batch_size
         # Join them with newline to get a batch
-        batch = '\n'.join(triples[i:i+batch_size])
-        
+        batch = "\n".join(triples[i: i + batch_size])
+
         # Append the batch to ntstr_batches
         ntstr_batches.append(batch)
-        
+
     log.info(f"insert_graph into {context} in {len(ntstr_batches)} batches")
 
     for batch in ntstr_batches:
         # Variables for the template
         vars = {"context": context, "raw_triples": batch}
         query = J2RDF.build_syntax(template, **vars)
-        
+
         GDB.setQuery(query)
         GDB.query()
 
@@ -229,9 +232,8 @@ def uri_list(query):
 
     # Extract the variable from the SELECT clause
     select_part = re.search(
-        "SELECT(?:DISTINCT)?(.*?)(FROM|WHERE)",
-        query,
-        re.IGNORECASE).group(1)
+        "SELECT(?:DISTINCT)?(.*?)(FROM|WHERE)", query, re.IGNORECASE
+    ).group(1)
     variables = select_part.split()
 
     # Check that there is exactly one variable in the SELECT part of the

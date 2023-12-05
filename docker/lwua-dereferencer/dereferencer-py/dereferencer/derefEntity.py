@@ -42,7 +42,9 @@ def run_download_propertypaths(propertypaths, uri, store):
 
 
 def download_uri_to_store(uri, store, format="json-ld"):
-    time.sleep(1) # sleep for 1 second to avoid overloading any servers => TODO make this configurable and add a warning + smart retry
+    # sleep for 1 second to avoid overloading any servers => TODO make this
+    # configurable and add a warning + smart retry
+    time.sleep(1)
     headers = {"Accept": "application/ld+json, text/turtle"}
     r = requests.get(uri, headers=headers)
 
