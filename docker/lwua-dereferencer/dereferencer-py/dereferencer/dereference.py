@@ -17,7 +17,7 @@ def config_path_from_config():
     return Path(folder_name).absolute()
 
 
-def isExpired(lastmod:datetime, cache_lifetime:int):
+def isExpired(lastmod: datetime, cache_lifetime: int):
     # check if the cache_lifetime is set
     if cache_lifetime == 0:
         return True
@@ -45,7 +45,7 @@ class Dereference:
         # dereference
         config_files = [f for f in config_folder_path.glob("dereference*.yml")]
         log.info(f"config files found: {config_files}")
-        
+
         # get all tasks from the graphdb
         tasks_run = get_registry_of_lastmod()
 
@@ -53,42 +53,46 @@ class Dereference:
         for config_file in config_files:
             log.info(f"running dereference for {config_file}")
             derefTask = DerefTask(config_file)
-            
+
             # log the tasks that have been run
             log.info(f"tasks_run: {tasks_run}")
-            
+
             if derefTask.file_name not in tasks_run:
                 log.info(f"task {derefTask.file_name} not in tasks_run")
                 derefTask.run_deref_task()
                 continue
-                
+
             # check if the task is expired
-            if isExpired(tasks_run[derefTask.file_name], derefTask.cache_lifetime):
+            if isExpired(tasks_run[derefTask.file_name],
+                         derefTask.cache_lifetime):
                 derefTask.run_deref_task()
                 continue
-            
-            log.info(f"task {derefTask.file_name} was present in GraphDB and is not expired")
+
+            log.info(
+                f"task {derefTask.file_name} was present in GraphDB and is not expired"
+            )
+
 
 class DerefTask:
-    def __init__(self, config_file:Path):
+    def __init__(self, config_file: Path):
         self.store = Graph()
         self.load_config(config_file)
         self.uris = uri_list(self.SPARQL)
-          
-    def load_config(self,config_file):
+
+    def load_config(self, config_file):
         with open(config_file, "r") as stream:
             try:
                 config = yaml.safe_load(stream)
                 self.SPARQL = config["SPARQL"]
                 self.deref_paths = config["property_paths"]
-                self.cache_lifetime = config["cache_lifetime"] if "cache_lifetime" in config else 0
+                self.cache_lifetime = (
+                    config["cache_lifetime"] if "cache_lifetime" in config else 0)
                 self.file_name = config_file.name
             except yaml.YAMLError as exc:
                 log.error(exc)
-    
+
     def run_deref_task(self):
         for uri in self.uris:
-            derefEntity = DerefUriEntity(
-                uri, self.deref_paths,self.store)
+            derefEntity = DerefUriEntity(uri, self.deref_paths, self.store)
             log.info(f"derefEntity: {derefEntity}")
             derefEntity.write_store(self.file_name)
