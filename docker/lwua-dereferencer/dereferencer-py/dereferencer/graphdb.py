@@ -238,3 +238,45 @@ def writeStoreToGraphDB(store, filename):
 
     # insert the data
     ingest_graph(store, lastmod, context)
+
+
+def get_registry_of_lastmod():
+    log.info(f"getting last modified graph")
+
+    template = "lastmod_info.sparql"
+    vars = {}
+    query = J2RDF.build_syntax(template, **vars)
+    # log.debug(f"get_admin_graph query == {query}")
+    GDB.setQuery(query)
+    GDB.setReturnFormat(JSON)
+    results = GDB.query().convert()
+
+    # convert {'head': {'vars': ['graph', 'lastmod']}, 'results': {'bindings': []}} to [{PosixPath('graph'): lastmod}]
+    # URI must be substracted from graph context and datetime str must be
+    # converted to epoch
+
+    converted = {}
+    return convert_results_registry_of_lastmod(results)
+
+
+def convert_results_registry_of_lastmod(results):
+    converted = {}
+    for g in results["results"]["bindings"]:
+        path = context_2_fname(g["graph"]["value"])
+        time = datetime.fromisoformat(g["lastmod"]["value"])
+        converted[path] = time
+    return converted
+
+
+def context_2_fname(context: str):
+    """
+    Convert a context to a filename path.
+
+    :param context: The context to convert.
+    :type context: str
+    :return: The filename corresponding to the context.
+    :rtype: str
+    """
+    assert context.startswith(
+        URN_BASE), f"Context {context} is not IRI compliant"
+    return unquote(context[len(URN_BASE) + 1:])
