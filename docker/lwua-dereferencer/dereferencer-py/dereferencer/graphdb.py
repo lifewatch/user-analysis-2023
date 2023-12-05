@@ -148,18 +148,49 @@ def insert_graph(graph: Graph, context: str = None):
 
     assert_iri_compliance(context) if context is not None else None
 
+    batch_insert_graph(graph, context)
+    
+    
+def batch_insert_graph(graph: Graph, context: str = None, batch_size: int = 100):
+    """
+    Insert data into a context in batches.
+
+    :param graph: The graph to insert data from.
+    :type graph: Graph
+    :param context: The context to insert data into.
+    :type context: str
+    :param batch_size: The batch size to use.
+    :type batch_size: int
+    """
+    
     # Variables for the template
     template = "insert_graph.sparql"
     ntstr = graph.serialize(format="nt")
-    vars = {"context": context, "raw_triples": ntstr}
+    
+    # Split ntstr by newline to get a list of triples
+    triples = ntstr.split('\n')
 
-    # Get the SPARQL query
-    query = J2RDF.build_syntax(template, **vars)
-    # log.debug(f"insert_graph query == {query}")
+    # Initialize an empty list to hold the batches
+    ntstr_batches = []
 
-    # Execute the query
-    GDB.setQuery(query)
-    GDB.query()
+    # Loop over the list of triples with a step size of batch_size
+    for i in range(0, len(triples), batch_size):
+        # Slice the list of triples from the current index to the current index plus batch_size
+        # Join them with newline to get a batch
+        batch = '\n'.join(triples[i:i+batch_size])
+        
+        # Append the batch to ntstr_batches
+        ntstr_batches.append(batch)
+        
+    log.info(f"insert_graph into {context} in {len(ntstr_batches)} batches")
+
+    for batch in ntstr_batches:
+        # Variables for the template
+        vars = {"context": context, "raw_triples": batch}
+        query = J2RDF.build_syntax(template, **vars)
+        
+        GDB.setQuery(query)
+        GDB.query()
 
 
 def update_registry_lastmod(context: str, lastmod: datetime):
@@ -198,7 +229,7 @@ def uri_list(query):
 
     # Extract the variable from the SELECT clause
     select_part = re.search(
-        "SELECT(.*?)(FROM|WHERE)",
+        "SELECT(?:DISTINCT)?(.*?)(FROM|WHERE)",
         query,
         re.IGNORECASE).group(1)
     variables = select_part.split()
@@ -206,11 +237,10 @@ def uri_list(query):
     # Check that there is exactly one variable in the SELECT part of the
     # SPARQL query
     if len(variables) != 1:
-        error_message = f"There should be exactly one variable in the SELECT part of the SPARQL query but found {len(variables)} in {variables}"
-        log.error(error_message)
-        raise ValueError(error_message)
-
-    var = variables[0][1:]  # remove the ? from the variable
+        # the varbe the first variable that begins with ?
+        var = [v for v in variables if v.startswith("?")][0][1:]
+    else:
+        var = variables[0][1:]
 
     GDB.setQuery(query)
     GDB.setReturnFormat(JSON)

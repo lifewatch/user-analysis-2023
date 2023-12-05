@@ -6,3 +6,4 @@ SPARQL: >
     ?s rdf:type schema:Person .
   }
 property_paths: 
+cache_lifetime: 180

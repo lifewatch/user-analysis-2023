@@ -12,4 +12,4 @@ property_paths:
     - https://schema.org/geo:
       - https://schema.org/latitude
       - https://schema.org/longitude
-cache_lifetime: 3600
+cache_lifetime: 180
