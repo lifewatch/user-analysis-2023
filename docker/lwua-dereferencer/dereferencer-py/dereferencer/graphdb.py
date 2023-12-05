@@ -1,0 +1,237 @@
+# this file will contain the functions that will be used to query the
+# graph database
+
+import logging
+from SPARQLWrapper import SPARQLWrapper, JSON
+from urllib.parse import unquote, quote
+from datetime import datetime
+from pyrdfj2 import J2RDFSyntaxBuilder
+from rdflib import Graph
+import logging
+import os
+import re
+from .helpers import resolve_path
+
+# from dotenv import load_dotenv
+
+log = logging.getLogger(__name__)
+URN_BASE = os.getenv("URN_BASE", "urn:lwua:DEREFERENCE")
+
+
+def gdb_from_config():
+    base = os.getenv("GDB_BASE", "http://localhost:7200")
+    repoid = os.getenv("GDB_REPO", "lwua23")
+
+    endpoint = f"{ base }/repositories/{ repoid }"
+    # update statements are handled at other endpoint
+    updateEndpoint = endpoint + "/statements"
+
+    log.debug(f"using endpoint {endpoint}")
+
+    GDB = SPARQLWrapper(
+        endpoint=endpoint,
+        updateEndpoint=updateEndpoint,
+        returnFormat=JSON,
+        agent="lwua-python-sparql-client",
+    )
+    GDB.method = "POST"
+    return GDB
+
+
+GDB = gdb_from_config()
+
+
+def get_j2rdf_builder():
+    template_folder = resolve_path("./dereferencer/templates")
+    log.info(f"template_folder == {template_folder}")
+    # init J2RDFSyntaxBuilder
+    j2rdf = J2RDFSyntaxBuilder(
+        templates_folder=template_folder,
+        extra_functions={"registry_of_lastmod_context": f"{URN_BASE}:ADMIN"},
+    )
+    return j2rdf
+
+
+J2RDF = get_j2rdf_builder()
+
+def fname_2_context(fname: str):
+    """
+    Convert a filename to a context.
+
+    :param fname: The filename to convert.
+    :type fname: str
+    :return: The context corresponding to the filename.
+    :rtype: str
+    """
+    fname = str(fname)
+    return f"{URN_BASE}:{quote(fname)}"
+
+def ingest_graph(
+        graph: Graph,
+        lastmod: datetime,
+        context: str,
+        replace: bool = False):
+    """
+    Ingest a graph into a context.
+
+    :param fname: The filename to convert.
+    :type fname: str
+    :return: The context corresponding to the filename.
+    :rtype: str
+    """
+    log.debug(f"to insert data into <{ context }>")
+    assert_context_exists(context)
+    # do the cleanup if possible
+    if replace and context is not None:
+        log.debug(f"deleting <{ context }> before insert")
+        delete_graph(context)
+
+    # insert the data
+    insert_graph(graph, context)
+
+    # convert the epoch timestamp to a date string
+    update_registry_lastmod(context, lastmod)
+    
+def assert_context_exists(context: str):
+    assert context is not None, "Context cannot be None"
+    
+def delete_graph(context: str):
+    """
+    Delete data from a context.
+
+    :param context: The context to delete data from.
+    :type context: str
+    """
+
+    log.info(f"delete_graph on {context}")
+    assert_context_exists(context)
+
+    # Initialize the J2RDFSyntaxBuilder
+
+    # check if context is IRI compliant
+    assert_iri_compliance(context) if context is not None else None
+
+    # Variables for the template
+    template = "delete_graph.sparql"
+    vars = {"context": context}
+
+    # Get the SPARQL query
+    query = J2RDF.build_syntax(template, **vars)
+
+    # Execute the query
+    GDB.setQuery(query)
+    GDB.query()
+    
+
+def assert_iri_compliance(context: str):
+    assert context.startswith(
+        URN_BASE), f"Context {context} is not IRI compliant"
+
+
+def insert_graph(graph: Graph, context: str = None):
+    """
+    Insert data into a context.
+
+    :param graph: The graph to insert data from.
+    :type graph: Graph
+    :param context: The context to insert data into.
+    :type context: str
+    """
+
+    log.info(f"insert_graph into {context}")
+    assert_context_exists(context)
+    # Initialize the J2RDFSyntaxBuilder
+
+    assert_iri_compliance(context) if context is not None else None
+
+    # Variables for the template
+    template = "insert_graph.sparql"
+    ntstr = graph.serialize(format="nt")
+    vars = {"context": context, "raw_triples": ntstr}
+
+    # Get the SPARQL query
+    query = J2RDF.build_syntax(template, **vars)
+    # log.debug(f"insert_graph query == {query}")
+
+    # Execute the query
+    GDB.setQuery(query)
+    GDB.query()
+    
+
+def update_registry_lastmod(context: str, lastmod: datetime):
+    """
+    Update the administration of a context.
+
+    :param context: The context to update.
+    :type context: str
+    :param lastmod: The date string to update with.
+    :type lastmod: str
+    """
+    log.info(f"update registry_of_lastmod_context on {context}")
+
+    # check if context is IRI compliant
+    assert_iri_compliance(context)
+
+    # variables for the template
+    template = "update_context_lastmod.sparql"
+    vars = {
+        "context": context,
+        "lastmod": lastmod if lastmod is not None else None,
+    }
+    # get the sparql query
+    query = J2RDF.build_syntax(template, **vars)
+    log.debug(f"update_registry_lastmod query == {query}")
+    # execute the query
+    GDB.setQuery(query)
+    GDB.query()
+
+
+def uri_list(query):
+    """
+    Return a list of URI's from a query
+    """
+    log.debug(f"uri_list: {query}")
+
+    # Extract the variable from the SELECT clause
+    select_part = re.search(
+        "SELECT(.*?)(FROM|WHERE)",
+        query,
+        re.IGNORECASE).group(1)
+    variables = select_part.split()
+
+    # Check that there is exactly one variable in the SELECT part of the
+    # SPARQL query
+    if len(variables) != 1:
+        error_message = f"There should be exactly one variable in the SELECT part of the SPARQL query but found {len(variables)} in {variables}"
+        log.error(error_message)
+        raise ValueError(error_message)
+
+    var = variables[0][1:]  # remove the ? from the variable
+
+    GDB.setQuery(query)
+    GDB.setReturnFormat(JSON)
+    results = GDB.query().convert()
+    log.debug(f"uri_list: results: {results}")
+
+    # Use the extracted variable when getting the results
+    return [result[var]["value"] for result in results["results"]["bindings"]]
+
+
+def writeStoreToGraphDB(store,filename):
+    """
+    Write the store to the graph database
+    """
+    log.info("writing store to graph database")
+    
+    context = fname_2_context(filename)
+    log.info(f"context: {context}")
+    
+    # check if context is IRI compliant
+    assert_iri_compliance(context)
+    
+    #get time now
+    lastmod = datetime.now()
+    
+    # insert the data
+    ingest_graph(store, lastmod, context)
+   

@@ -3,12 +3,9 @@
     This template takes in 3 parameters:
         - The URI of the property
         - The URI of the subject
-        - The URI of the graph
 #}
 
 SELECT ?o
 WHERE {
-    GRAPH <{{ graph }}> {
         <{{ subject }}> <{{ property }}> ?o .
     }
-}
