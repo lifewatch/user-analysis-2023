@@ -95,4 +95,6 @@ class DerefTask:
         for uri in self.uris:
             derefEntity = DerefUriEntity(uri, self.deref_paths, self.store)
             log.info(f"derefEntity: {derefEntity}")
+        # indent this line to ingest after each uri is done
+        # this is better for having intermediate results but slower
             derefEntity.write_store(self.file_name)

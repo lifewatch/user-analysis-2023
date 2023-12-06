@@ -253,7 +253,7 @@ def uri_list(query):
     return [result[var]["value"] for result in results["results"]["bindings"]]
 
 
-def writeStoreToGraphDB(store, filename):
+def writeStoreToGraphDB(store:Graph, filename:str):
     """
     Write the store to the graph database
     """
@@ -312,3 +312,30 @@ def context_2_fname(context: str):
     assert context.startswith(
         URN_BASE), f"Context {context} is not IRI compliant"
     return unquote(context[len(URN_BASE) + 1:])
+
+
+def get_graph_from_trajectory(store:Graph,uri:str,pp_trajectory:list):
+    """Function that will get the graph by performing a query on a given store and a given trajectory
+    
+    :param store: The store to query
+    :type store: Graph
+    :param uri: The uri to query
+    :type uri: str
+    :param pp_trajectory: The trajectory to query
+    :type pp_trajectory: list
+    :return: The results of the query
+    """
+    template = "deref_property_trajectory.sparql"
+    vars = {
+        "subject": uri,
+        "property_trajectory": pp_trajectory
+    }
+    query = J2RDF.build_syntax(template, **vars)
+    
+    log.debug(f"get_graph_from_trajectory query == {query}")
+    results = store.query(query)
+    # get the results as a list
+    results_list = [str(result[0]) for result in results]
+    log.debug(f"results_list: {results_list}")
+    return results_list
+    
