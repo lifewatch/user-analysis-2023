@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "dereferencer-py"
+name = "dereferencer"
 version = "0.1.0"
 description = "Dereferencing tool that will add triples to a knowledge graph given a config containing a SPARQL query and a list of property paths are given."
 authors = ["cedricdcc <30471340+cedricdcc@users.noreply.github.com>"]

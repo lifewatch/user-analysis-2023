@@ -1,12 +1,9 @@
-SPARQL: >
-  PREFIX dc: <http://purl.org/dc/terms/> 
-  SELECT ?o
-  FROM <urn:lwua:INGEST:/data/mr_regions_ldes_test.ttl>
-  WHERE {
-    ?s dc:isVersionOf ?o .
-      FILTER regex(str(?o), "marineregions.org")
-  }
-property_paths:
+subjects:
+  literal: 
+    - http://marineregions.org/mrgid/63523
+    - http://marineregions.org/mrgid/2540
+    - http://marineregions.org/mrgid/12548
+assert-paths:
   - http://marineregions.org/ns/ontology#hasGeometry
   - http://marineregions.org/ns/ontology#isPartOf:
     - http://marineregions.org/ns/ontology#hasGeometry

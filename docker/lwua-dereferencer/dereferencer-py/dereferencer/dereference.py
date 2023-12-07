@@ -77,14 +77,25 @@ class DerefTask:
     def __init__(self, config_file: Path):
         self.store = Graph()
         self.load_config(config_file)
-        self.uris = uri_list(self.SPARQL)
 
     def load_config(self, config_file):
         with open(config_file, "r") as stream:
             try:
                 config = yaml.safe_load(stream)
-                self.SPARQL = config["SPARQL"]
-                self.deref_paths = config["property_paths"]
+                self.subjects = config["subjects"]
+                # check if child of subjects is SPARQL or literal
+                # if SPARQL then get the uri's from the SPARQL query
+                # if literal then get the uri's from the literal
+                if "SPARQL" in self.subjects:
+                    self.uris = uri_list(self.subjects["SPARQL"])
+                elif "literal" in self.subjects:
+                    self.uris = self.subjects["literal"]
+                else:
+                    log.error(
+                        "subjects should contain either SPARQL or literal")
+                    raise Exception(
+                        "subjects should contain either SPARQL or literal")
+                self.deref_paths = config["assert-paths"]
                 self.cache_lifetime = (
                     config["cache_lifetime"] if "cache_lifetime" in config else 0)
                 self.file_name = config_file.name
