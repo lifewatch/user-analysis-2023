@@ -28,3 +28,10 @@
     cc:prohibits cc:CCCommercialUse .
 
 <https://data.arms-mbon.org/> a schema:Project .
+
+<https://data.arms-mbon.org/data_workspace/latest/#> a schema:Dataset ;
+    schema:name "ARMS-MBON Data Workspace"^^xsd:string ;
+    schema:description "The ARMS-MBON Data Workspace is a repository for ARMS data and metadata."^^xsd:string ;
+    schema:license <https://creativecommons.org/licenses/by/4.0/> ;
+    schema:contributor <https://orcid.org/0000-0002-9648-6484> ;
+    schema:creator <https://edmo.seadatanet.org/report/422> .

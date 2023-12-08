@@ -37,9 +37,10 @@ def download_uri_to_store(uri, store, format="json-ld"):
     if r.status_code == 200 and (
         "application/ld+json" in r.headers["Content-Type"]
         or "text/turtle" in r.headers["Content-Type"]
+        or "application/json" in r.headers["Content-Type"]
     ):
         # parse the content directly into the store
-        if "application/ld+json" in r.headers["Content-Type"]:
+        if "application/ld+json" in r.headers["Content-Type"] or "application/json" in r.headers["Content-Type"]:
             format = "json-ld"
         elif "text/turtle" in r.headers["Content-Type"]:
             format = "turtle"

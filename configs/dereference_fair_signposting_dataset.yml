@@ -3,7 +3,7 @@ subjects:
     PREFIX schema: <https://schema.org/>
     SELECT ?s ?p ?o
     WHERE {
-      ?s ?p schema:Project .
+      ?s ?p schema:Dataset .
     }
-assert-paths: 
+assert-paths:
 cache_lifetime: 180
