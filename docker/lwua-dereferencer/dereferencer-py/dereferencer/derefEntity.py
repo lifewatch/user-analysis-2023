@@ -11,6 +11,7 @@ from .graphdb import writeStoreToGraphDB, get_graph_from_trajectory
 
 log = logging.getLogger(__name__)
 
+
 class MyHTMLParser(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -23,6 +24,7 @@ class MyHTMLParser(HTMLParser):
                     for attr in attrs:
                         if attr[0] == "href":
                             self.links.append(attr[1])
+
 
 def download_uri_to_store(uri, store, format="json-ld"):
     # sleep for 1 second to avoid overloading any servers => TODO make this
@@ -53,8 +55,9 @@ def download_uri_to_store(uri, store, format="json-ld"):
             # if there is then download it to the store
             log.info(f"content of {uri} is html")
             # go over the html file and find all the links in the head section
-            # and check if there is any links with rel="describedby" anf if so then follow it and download it to the store
-            
+            # and check if there is any links with rel="describedby" anf if so
+            # then follow it and download it to the store
+
             parser = MyHTMLParser()
             parser.feed(r.text)
             log.info(f"found {len(parser.links)} links in the html file")
