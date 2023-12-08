@@ -26,3 +26,5 @@
     cc:permits cc:Reproduction, cc:Distribution, cc:DerivativeWorks ;
     cc:requires cc:Notice ;
     cc:prohibits cc:CCCommercialUse .
+
+<https://data.arms-mbon.org/> a schema:Project .

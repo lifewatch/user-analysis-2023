@@ -4,11 +4,25 @@
 import logging
 import requests
 from rdflib import Graph
+from urllib.parse import urljoin
+from html.parser import HTMLParser
 import time
 from .graphdb import writeStoreToGraphDB, get_graph_from_trajectory
 
 log = logging.getLogger(__name__)
 
+class MyHTMLParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "link":
+            for attr in attrs:
+                if attr[0] == "rel" and attr[1] == "describedby":
+                    for attr in attrs:
+                        if attr[0] == "href":
+                            self.links.append(attr[1])
 
 def download_uri_to_store(uri, store, format="json-ld"):
     # sleep for 1 second to avoid overloading any servers => TODO make this
@@ -30,6 +44,30 @@ def download_uri_to_store(uri, store, format="json-ld"):
         store.parse(data=r.text, format=format)
         log.info(f"content of {uri} added to the store")
     else:
+        # perform a check in the html to see if there is any link to fair signposting
+        # perform request to uri with accept header text/html
+        headers = {"Accept": "text/html"}
+        r = requests.get(uri, headers=headers)
+        if r.status_code == 200 and "text/html" in r.headers["Content-Type"]:
+            # parse the html and check if there is any link to fair signposting
+            # if there is then download it to the store
+            log.info(f"content of {uri} is html")
+            # go over the html file and find all the links in the head section
+            # and check if there is any links with rel="describedby" anf if so then follow it and download it to the store
+            
+            parser = MyHTMLParser()
+            parser.feed(r.text)
+            log.info(f"found {len(parser.links)} links in the html file")
+            for link in parser.links:
+                # check first if the link is absolute or relative
+                if link.startswith("http"):
+                    absolute_url = link
+                else:
+                    # Resolve the relative URL to an absolute URL
+                    absolute_url = urljoin(uri, link)
+                # download the uri to the store
+                download_uri_to_store(absolute_url, store)
+            parser.close()
         log.warning(
             f"request for {uri} failed with status code {r.status_code} and content type {r.headers['Content-Type']}"
         )
