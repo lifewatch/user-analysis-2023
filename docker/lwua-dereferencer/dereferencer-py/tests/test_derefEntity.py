@@ -86,8 +86,9 @@ def test_make_tasks_object():
 TEST_URI_CASES = {
     "http://marineregions.org/mrgid/17585": True,
     "http://example.org/": False,
-    "https://data.arms-mbon.org/":True
+    "https://data.arms-mbon.org/": True,
 }
+
 
 def test_download_uri_to_store_cases():
     for uri, expected in TEST_URI_CASES.items():
@@ -117,7 +118,6 @@ class TestSubTasks:
         ]
         subtasks = SubTasks(pp)
         yield subtasks
-        
 
     def test_subtasks_initialization(self, subtasks):
         # Assert
