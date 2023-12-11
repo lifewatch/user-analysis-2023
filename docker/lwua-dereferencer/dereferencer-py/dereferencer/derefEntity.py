@@ -213,8 +213,11 @@ class SubTasks:
             # then break the loop
 
             if (
-                (self.failed_tasks == last_failed_tasks and self.uris_downloaded == last_uris_downloaded) or 
-                (self.successful_tasks == last_successful_tasks and self.uris_downloaded == last_uris_downloaded)
+                self.failed_tasks == last_failed_tasks
+                and self.uris_downloaded == last_uris_downloaded
+            ) or (
+                self.successful_tasks == last_successful_tasks
+                and self.uris_downloaded == last_uris_downloaded
             ):
                 log.warning(f"failed tasks: {self.failed_tasks}")
                 log.warning(f"successful tasks: {self.successful_tasks}")
