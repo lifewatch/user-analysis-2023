@@ -83,27 +83,21 @@ def test_make_tasks_object():
     ]
 
 
-def test_download_uri_to_store():
-    # Arrange
-    uri = "http://marineregions.org/mrgid/17585"
-    graph = Graph()
-    # Act
-    result = download_uri_to_store(uri, graph)
-    # Assert
-    assert result is None
+TEST_URI_CASES = {
+    "http://marineregions.org/mrgid/17585": True,
+    "http://example.org/": False,
+    "https://data.arms-mbon.org/":True
+}
 
-    # assert if size of store is 0
-    assert len(graph) != 0
-
-
-def test_download_uri_to_store_bad_uri():
-    # Arrange
-    uri = "http://example.org/"
-    graph = Graph()
-    # Act
-    result = download_uri_to_store(uri, graph)
-    # Assert if len store is not 0
-    assert len(graph) == 0
+def test_download_uri_to_store_cases():
+    for uri, expected in TEST_URI_CASES.items():
+        graph = Graph()
+        result = download_uri_to_store(uri, graph)
+        if expected:
+            assert result is None
+            assert len(graph) != 0
+        else:
+            assert len(graph) == 0
 
 
 # tests for Subtasks class
@@ -123,9 +117,7 @@ class TestSubTasks:
         ]
         subtasks = SubTasks(pp)
         yield subtasks
-
-        # Teardown
-        # ... code to cleanup after tests ...
+        
 
     def test_subtasks_initialization(self, subtasks):
         # Assert
