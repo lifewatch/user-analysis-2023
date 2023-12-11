@@ -325,7 +325,7 @@ def get_graph_from_trajectory(store: Graph, uri: str, pp_trajectory: list):
     :type pp_trajectory: list
     :return: The results of the query
     """
-    template = "deref_property_trajectory.sparql"
+    template = "deref_property_trajectory_via_subject.sparql"
     vars = {"subject": uri, "property_trajectory": pp_trajectory}
     query = J2RDF.build_syntax(template, **vars)
 
@@ -334,4 +334,20 @@ def get_graph_from_trajectory(store: Graph, uri: str, pp_trajectory: list):
     # get the results as a list
     results_list = [str(result[0]) for result in results]
     log.debug(f"results_list: {results_list}")
+    
+    # TODO: discuss with marc if this is the right way to do this , feels bad imho
+    
+    #if the results are empty then try to query via other sparql query
+    if len(results_list) == 0:
+        log.debug(f"results_list is empty")
+        template = "deref_property_trajectory_via_object.sparql"
+        vars = {"object": uri, "property_trajectory": pp_trajectory}
+        query = J2RDF.build_syntax(template, **vars)
+
+        log.debug(f"get_graph_from_trajectory query == {query}")
+        results = store.query(query)
+        # get the results as a list
+        results_list = [str(result[0]) for result in results]
+        log.debug(f"results_list: {results_list}")
+    
     return results_list

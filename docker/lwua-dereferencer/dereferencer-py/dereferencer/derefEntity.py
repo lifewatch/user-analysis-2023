@@ -116,6 +116,7 @@ class SubTasks:
         self.last_failed_tasks = []
         self.last_successful_tasks = []
         self.successful_tasks = []
+        self.uris_downloaded = []
 
     def __repr__(self):
         return f"SubTasks({self.tasks})"
@@ -177,6 +178,7 @@ class SubTasks:
         while self.__len__() > 0:
             last_failed_tasks = self.failed_tasks.copy()
             last_successful_tasks = self.successful_tasks.copy()
+            last_uris_downloaded = self.uris_downloaded.copy()
             log.debug(f"task length: {self.__len__()}")
             for task in self.tasks:
                 # implode the array to a string with / as separator
@@ -188,7 +190,11 @@ class SubTasks:
                     log.info(f"query returned {len(q_r)} results")
                     # for uri found , download it to the store
                     for uri in q_r:
-                        download_uri_to_store(uri, graph)
+                        if uri not in self.uris_downloaded:
+                            download_uri_to_store(uri, graph)
+                            self.uris_downloaded.append(uri)
+                            continue
+                        log.info(f"uri {uri} already downloaded")
                     self.successful_tasks.append(task)
                     self.delete_task(task)
                     continue
@@ -207,8 +213,8 @@ class SubTasks:
             # then break the loop
 
             if (
-                self.failed_tasks == last_failed_tasks
-                and self.successful_tasks == last_successful_tasks
+                (self.failed_tasks == last_failed_tasks and self.uris_downloaded == last_uris_downloaded) or 
+                (self.successful_tasks == last_successful_tasks and self.uris_downloaded == last_uris_downloaded)
             ):
                 log.warning(f"failed tasks: {self.failed_tasks}")
                 log.warning(f"successful tasks: {self.successful_tasks}")

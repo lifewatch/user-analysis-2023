@@ -6,4 +6,5 @@ subjects:
       ?s ?p schema:Dataset .
     }
 assert-paths:
+  - http://xmlns.com/foaf/0.1/Person
 cache_lifetime: 180
