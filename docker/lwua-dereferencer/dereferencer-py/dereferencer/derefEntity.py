@@ -12,7 +12,7 @@ from .graphdb import writeStoreToGraphDB, get_graph_from_trajectory
 
 log = logging.getLogger(__name__)
 
-REGEXP = r"(?:\w+:\w+|<[^>]+>)" #  r"(?<!^)(?<!<)/(?!@)(?![^<]*>)(?!$)" 
+REGEXP = r"(?:\w+:\w+|<[^>]+>)"  # r"(?<!^)(?<!<)/(?!@)(?![^<]*>)(?!$)"
 
 
 class MyHTMLParser(HTMLParser):
