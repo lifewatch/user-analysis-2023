@@ -6,5 +6,5 @@ subjects:
       ?s ?p schema:Project .
     }
 assert-paths: 
-  - https://schema.org/Dataset
+  - <https://schema.org/Dataset>
 cache_lifetime: 180

@@ -5,11 +5,14 @@
     This template takes in 2 parameters:
         - "subject" : The URI of the property
         - "property_trajectory" : A list of the URIs of the subjects of the trajectory
+        - "prefixes": A dict of the prefixes used in the query
 #}
 
-{% set property_path = property_trajectory|join('>/<') %}
+{% for prefix, uri in prefixes.items() %}
+PREFIX {{ prefix }}: {{ uri }}
+{% endfor %}
 
 SELECT ?o
 WHERE {
-        <{{ subject }}> <{{ property_path }}> ?o .
+        <{{ subject }}> {{ property_trajectory }} ?o .
     }

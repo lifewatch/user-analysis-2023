@@ -7,6 +7,7 @@ from rdflib import Graph
 from urllib.parse import urljoin
 from html.parser import HTMLParser
 import time
+import re
 from .graphdb import writeStoreToGraphDB, get_graph_from_trajectory
 
 log = logging.getLogger(__name__)
@@ -80,38 +81,9 @@ def download_uri_to_store(uri, store, format="json-ld"):
         )
 
 
-def make_tasks(propertypaths):
-    """
-    Create tasks for all the propertypaths
-    """
-    tasks = []
-
-    def helper(propertypath, task=[]):
-        if isinstance(propertypath, dict):
-            # property path is the key of the dict
-            property_to_search = list(propertypath.keys())[0]
-            return helper(
-                propertypath[property_to_search],
-                task + [property_to_search])
-        elif isinstance(propertypath, str):
-            tasks.append(task + [propertypath])
-        else:
-            for subpath in propertypath:
-                helper(subpath, task)
-
-    try:
-        for propertypath in propertypaths:
-            helper(propertypath)
-    except Exception as e:
-        log.error(f"Error creating tasks: {e}")
-        tasks = []
-
-    return tasks
-
-
 class SubTasks:
     def __init__(self, propertypaths: dict):
-        self.tasks = make_tasks(propertypaths)
+        self.tasks = propertypaths if propertypaths else []
         self.failed_tasks = []
         self.last_failed_tasks = []
         self.last_successful_tasks = []
@@ -161,11 +133,13 @@ class SubTasks:
         :param task: the task to delete
         :type task: list
         """
-        p_task = task[:-1]
+        # do regex here to seperate the different elements from each other and then make the currect parent task.
+        matches = re.findall(r'(?:\w+:\w+|<[^>]+>)', task)
+        p_task = matches[:-1]
         if len(p_task) == 0:
             log.warning(f"parent task is empty")
             return
-        self.add_task(p_task)
+        self.add_task("/".join(p_task))
 
     def reverse(self):
         """
@@ -173,14 +147,14 @@ class SubTasks:
         """
         self.tasks.reverse()
 
-    def run(self, graph, uri):
+    def run(self, graph, uri, prefixes):
         while self.__len__() > 0:
             last_failed_tasks = self.failed_tasks.copy()
             last_successful_tasks = self.successful_tasks.copy()
             log.debug(f"task length: {self.__len__()}")
             for task in self.tasks:
                 # implode the array to a string with / as separator
-                q_r = get_graph_from_trajectory(graph, uri, task)
+                q_r = get_graph_from_trajectory(graph, uri, task, prefixes)
 
                 # check if the query returned any results and if so then
                 # continue to the next task , delete the task from the subtasks
@@ -218,14 +192,16 @@ class SubTasks:
 
 
 class DerefUriEntity:
-    def __init__(self, uri: str, propertypaths: dict, store: Graph):
+    def __init__(self, uri: str, propertypaths: dict, store: Graph, prefixes: dict):
         self.uri = uri
         self.store = store
+        self.prefixes = prefixes
+        log.info(f"prefixes: {self.prefixes}")
         self.subtasks = SubTasks(propertypaths)
 
         # download the uri to the store
         download_uri_to_store(uri, self.store)
-        self.subtasks.run(self.store, self.uri)
+        self.subtasks.run(self.store, self.uri, self.prefixes)
         self.propertypathmetadata = None
         self.propertypaths = propertypaths
         log.info(f"FINAL store length: {len(self.store)}")

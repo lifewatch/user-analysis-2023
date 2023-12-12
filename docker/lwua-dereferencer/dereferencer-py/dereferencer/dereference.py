@@ -5,7 +5,7 @@ from rdflib import Graph
 from datetime import datetime, timedelta
 from pathlib import Path
 from .helpers import resolve_path
-from .graphdb import uri_list, get_registry_of_lastmod
+from .graphdb import uri_list, get_registry_of_lastmod, writeStoreToGraphDB
 from .derefEntity import DerefUriEntity
 
 log = logging.getLogger(__name__)
@@ -95,17 +95,33 @@ class DerefTask:
                         "subjects should contain either SPARQL or literal")
                     raise Exception(
                         "subjects should contain either SPARQL or literal")
+                self.prefixes = {}
+                if "prefixes" in config:
+                    self.prefixes = config["prefixes"]    
+                
                 self.deref_paths = config["assert-paths"]
+                log.info(f"deref_paths: {self.deref_paths}")
                 self.cache_lifetime = (
                     config["cache_lifetime"] if "cache_lifetime" in config else 0)
                 self.file_name = config_file.name
             except yaml.YAMLError as exc:
                 log.error(exc)
+    
+    def write_store(self, filename):
+        """
+        Write the store to the graph database
+        """
+        log.info("writing store to graph database")
+        writeStoreToGraphDB(self.store, filename)
 
     def run_deref_task(self):
+        self.store = Graph()
         for uri in self.uris:
-            derefEntity = DerefUriEntity(uri, self.deref_paths, self.store)
+            derefEntity = DerefUriEntity(uri, self.deref_paths, self.store, self.prefixes)
             log.info(f"derefEntity: {derefEntity}")
-            # indent this line to ingest after each uri is done
-            # this is better for having intermediate results but slower
-            derefEntity.write_store(self.file_name)
+            # indent the following line to ingest after each uri is done
+            # this is better for having intermediate results in dev testing but significantly slower
+            # derefEntity.write_store(self.file_name)
+            self.store = derefEntity.store
+        #write store
+        self.write_store(self.file_name)  

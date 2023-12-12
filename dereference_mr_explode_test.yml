@@ -5,5 +5,5 @@ subjects:
         FILTER regex(str(?s), "^http://marineregions.org/mrgid/[0-9]{1,5}$")
     }
 assert-paths:
-  - http://marineregions.org/ns/ontology#isPartOf
+  - <http://marineregions.org/ns/ontology#isPartOf>
 cache_lifetime: 5

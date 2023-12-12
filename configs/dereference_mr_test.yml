@@ -3,11 +3,13 @@ subjects:
     - http://marineregions.org/mrgid/63523
     - http://marineregions.org/mrgid/2540
     - http://marineregions.org/mrgid/12548
+prefixes:
+  ex: <https://example.org/whatever/>
+  mr: <http://marineregions.org/ns/ontology#>
 assert-paths:
-  - http://marineregions.org/ns/ontology#hasGeometry
-  - http://marineregions.org/ns/ontology#isPartOf:
-    - http://marineregions.org/ns/ontology#hasGeometry
-    - https://schema.org/geo:
-      - https://schema.org/latitude
-      - https://schema.org/longitude
+  - "mr:hasGeometry"
+  - "mr:isPartOf / mr:hasGeometry"
+  - "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>"
+  - "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>"
+  - "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>"
 cache_lifetime: 180
