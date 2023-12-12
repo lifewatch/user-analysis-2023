@@ -5,16 +5,18 @@ from pathlib import Path
 from dereferencer.derefEntity import (
     DerefUriEntity,
     SubTasks,
-    make_tasks,
     download_uri_to_store,
+    REGEXP
 )
+import re
 from rdflib import Graph
 
 # fake variables
 # fake uri
 uri = "http://marineregions.org/mrgid/17585"
 # fake propertypaths
-pp = ["http://www.example.org/property1", "http://www.example.org/property2"]
+pp = ["ex:lol", "<http://www.example.org/property2>"]
+prefixes = {"ex": "<http://example.org/>"}
 # fake store
 store = Graph()
 
@@ -24,7 +26,7 @@ class TestDerefUriEntity:
     @pytest.fixture
     def deref_uri_entity(self):
         # Setup
-        deref_uri_entity = DerefUriEntity(uri, pp, store)
+        deref_uri_entity = DerefUriEntity(uri, pp, store, prefixes)
         yield deref_uri_entity
 
     def test_deref_uri_entity_initialization(self, deref_uri_entity):
@@ -38,55 +40,11 @@ class TestDerefUriEntity:
         assert deref_uri_entity.subtasks.successful_tasks == []
 
 
-def test_make_tasks():
-    # Arrange
-    pp = ["http://www.example.org/property1",
-          "http://www.example.org/property2"]
-    # Act
-    result = make_tasks(pp)
-    # Assert
-    assert result == [
-        ["http://www.example.org/property1"],
-        ["http://www.example.org/property2"],
-    ]
-
-
-def test_make_tasks_empty():
-    # Arrange
-    pp = []
-    # Act
-    result = make_tasks(pp)
-    # Assert
-    assert result == []
-
-
-def test_make_tasks_object():
-    # Arrange
-    pp = [
-        "http://www.example.org/property1",
-        "http://www.example.org/property2",
-        {
-            "http://www.example.org/property3": [
-                "http://www.example.org/property4",
-                "http://www.example.org/property5",
-            ]
-        },
-    ]
-    # Act
-    result = make_tasks(pp)
-    # Assert
-    assert result == [
-        ["http://www.example.org/property1"],
-        ["http://www.example.org/property2"],
-        ["http://www.example.org/property3", "http://www.example.org/property4"],
-        ["http://www.example.org/property3", "http://www.example.org/property5"],
-    ]
-
-
 TEST_URI_CASES = {
     "http://marineregions.org/mrgid/17585": True,
     "http://example.org/": False,
     "https://data.arms-mbon.org/": True,
+    "https://edmo.seadatanet.org/report/422": True
 }
 
 
@@ -107,14 +65,11 @@ class TestSubTasks:
     def subtasks(self):
         # Setup
         pp = [
-            "http://www.example.org/property1",
-            "http://www.example.org/property2",
-            {
-                "http://www.example.org/property3": [
-                    "http://www.example.org/property4",
-                    "http://www.example.org/property5",
-                ]
-            },
+            "mr:hasGeometry",
+            "mr:isPartOf / mr:hasGeometry",
+            "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>",
+            "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>",
+            "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>"
         ]
         subtasks = SubTasks(pp)
         yield subtasks
@@ -128,26 +83,26 @@ class TestSubTasks:
 
     def test_subtasks_add_task(self, subtasks):
         # Act
-        subtasks.add_task(["http://www.example.org/property7"])
+        subtasks.add_task("http://www.example.org/property7")
 
         # Assert
         # Assert if task not in tasks
-        assert ["http://www.example.org/property7"] in subtasks.tasks
+        assert "http://www.example.org/property7" in subtasks.tasks
 
     def test_subtasks_add_failed_task(self, subtasks):
         # Act
-        subtasks.add_failed_task(["http://www.example.org/property7"])
+        subtasks.add_failed_task("http://www.example.org/property7")
 
         # Assert
         # Assert if task not in failed_tasks
-        assert ["http://www.example.org/property7"] in subtasks.failed_tasks
+        assert "http://www.example.org/property7" in subtasks.failed_tasks
 
     def test_delete_task(self, subtasks):
         # Act
-        subtasks.delete_task(["http://www.example.org/property1"])
+        subtasks.delete_task("http://www.example.org/property1")
         # Assert
         # Assert if task in tasks
-        assert ["http://www.example.org/property1"] not in subtasks.tasks
+        assert "http://www.example.org/property1" not in subtasks.tasks
 
     def test_reverse(self, subtasks):
         # Act
@@ -155,34 +110,54 @@ class TestSubTasks:
         # Assert
         # Assert if tasks is reversed
         assert subtasks.tasks == [
-            ["http://www.example.org/property3", "http://www.example.org/property5"],
-            ["http://www.example.org/property3", "http://www.example.org/property4"],
-            ["http://www.example.org/property2"],
-            ["http://www.example.org/property1"],
+            'mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>',
+            'mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>',
+            'mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>',
+            'mr:isPartOf / mr:hasGeometry',
+            'mr:hasGeometry'
         ]
 
     def test_len(self, subtasks):
         # Act
         result = len(subtasks)
         # Assert
-        # Assert if len of tasks is 4
-        assert result == 4
+        # Assert if len of tasks is 5
+        assert result == 5
 
     def test_add_parent_task_normal(self, subtasks):
         # Act
         subtasks.add_parent_task(
-            [
-                "http://www.example.org/property/parent",
-                "http://www.example.org/property2",
-            ]
+            "<http://www.example.org/property/parent> / <http://www.example.org/property2>"
         )
         # Assert
         # Assert if task in tasks
-        assert ["http://www.example.org/property/parent"] in subtasks.tasks
+        assert "<http://www.example.org/property/parent>" in subtasks.tasks
 
     def test_add_parent_task_empty(self, subtasks):
         # Act
-        subtasks.add_parent_task(["http://www.example.org/property2"])
+        subtasks.add_parent_task("<http://www.example.org/property2>")
         # Assert
         # Assert if task in tasks
         assert [] not in subtasks.tasks
+        
+#tests here for the regular expression that is used to seperate the different elements from each other in teh property path
+
+to_test_strings = [
+    "mr:hasGeometry",
+    "mr:isPartOf / mr:hasGeometry",
+    "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>",
+    "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>",
+    "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>"
+]
+
+expected_results = [
+    ["mr:hasGeometry"],
+    ["mr:isPartOf", "mr:hasGeometry"],
+    ["mr:isPartOf", "<https://schema.org/geo>", "<https://schema.org/latitude>"],
+    ["mr:isPartOf", "<https://schema.org/geo>", "<https://schema.org/longitude>"],
+    ["mr:isPartOf", "mr:hasGeometry", "<https://schema.org/latitude>", "<https://schema.org/longitude>"]
+]
+
+def test_regexp():
+    for i in range(len(to_test_strings)):
+        assert re.findall(REGEXP, to_test_strings[i]) == expected_results[i]

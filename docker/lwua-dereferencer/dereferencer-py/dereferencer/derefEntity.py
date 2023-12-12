@@ -12,20 +12,34 @@ from .graphdb import writeStoreToGraphDB, get_graph_from_trajectory
 
 log = logging.getLogger(__name__)
 
+REGEXP = r"(?:\w+:\w+|<[^>]+>)"
 
 class MyHTMLParser(HTMLParser):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.links = []
+        self.scripts = []
+        self.in_script = False
+        self.type = None
 
     def handle_starttag(self, tag, attrs):
-        if tag == "link":
-            for attr in attrs:
-                if attr[0] == "rel" and attr[1] == "describedby":
-                    for attr in attrs:
-                        if attr[0] == "href":
-                            self.links.append(attr[1])
+        attrs = dict(attrs)
+        if tag == 'link' and 'rel' in attrs and attrs['rel'] == 'describedby':
+            if 'href' in attrs:
+                self.links.append(attrs['href'])
+        elif tag == 'script' and 'type' in attrs and (
+            attrs['type'] == 'application/ld+json' or attrs['type'] == 'text/turtle'
+        ):
+            self.in_script = True
+            self.type = attrs['type']
 
+    def handle_endtag(self, tag):
+        if tag == 'script':
+            self.in_script = False
+
+    def handle_data(self, data):
+        if self.in_script:
+            self.scripts.append({self.type:data})
 
 def download_uri_to_store(uri, store, format="json-ld"):
     # sleep for 1 second to avoid overloading any servers => TODO make this
@@ -75,7 +89,19 @@ def download_uri_to_store(uri, store, format="json-ld"):
                     absolute_url = urljoin(uri, link)
                 # download the uri to the store
                 download_uri_to_store(absolute_url, store)
+            for script in parser.scripts:
+                # parse the script and check if it is json-ld or turtle
+                # if so then add it to the store
+                log.info(f"script: {script}")
+                # { 'application/ld+json': '...'} | {'text/turtle': '...'}
+                if "application/ld+json" in script:
+                    log.info(f"found script with type application/ld+json")
+                    store.parse(data=script["application/ld+json"], format="json-ld")
+                elif "text/turtle" in script:
+                    log.info(f"found script with type text/turtle")
+                    store.parse(data=script["text/turtle"], format="turtle")
             parser.close()
+            return
         log.warning(
             f"request for {uri} failed with status code {r.status_code} and content type {r.headers['Content-Type']}"
         )
@@ -135,7 +161,7 @@ class SubTasks:
         """
         # do regex here to seperate the different elements from each other and
         # then make the currect parent task.
-        matches = re.findall(r"(?:\w+:\w+|<[^>]+>)", task)
+        matches = re.findall(REGEXP, task)
         p_task = matches[:-1]
         if len(p_task) == 0:
             log.warning(f"parent task is empty")
@@ -147,6 +173,7 @@ class SubTasks:
         Reverse the tasks list
         """
         self.tasks.reverse()
+        log.debug(f"tasks reversed: {self.tasks}")
 
     def run(self, graph, uri, prefixes):
         while self.__len__() > 0:
