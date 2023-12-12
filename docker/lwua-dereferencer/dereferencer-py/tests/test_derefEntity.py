@@ -6,7 +6,7 @@ from dereferencer.derefEntity import (
     DerefUriEntity,
     SubTasks,
     download_uri_to_store,
-    REGEXP
+    REGEXP,
 )
 import re
 from rdflib import Graph
@@ -44,7 +44,7 @@ TEST_URI_CASES = {
     "http://marineregions.org/mrgid/17585": True,
     "http://example.org/": False,
     "https://data.arms-mbon.org/": True,
-    "https://edmo.seadatanet.org/report/422": True
+    "https://edmo.seadatanet.org/report/422": True,
 }
 
 
@@ -69,7 +69,7 @@ class TestSubTasks:
             "mr:isPartOf / mr:hasGeometry",
             "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>",
             "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>",
-            "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>"
+            "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>",
         ]
         subtasks = SubTasks(pp)
         yield subtasks
@@ -110,11 +110,11 @@ class TestSubTasks:
         # Assert
         # Assert if tasks is reversed
         assert subtasks.tasks == [
-            'mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>',
-            'mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>',
-            'mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>',
-            'mr:isPartOf / mr:hasGeometry',
-            'mr:hasGeometry'
+            "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>",
+            "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>",
+            "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>",
+            "mr:isPartOf / mr:hasGeometry",
+            "mr:hasGeometry",
         ]
 
     def test_len(self, subtasks):
@@ -139,24 +139,35 @@ class TestSubTasks:
         # Assert
         # Assert if task in tasks
         assert [] not in subtasks.tasks
-        
-#tests here for the regular expression that is used to seperate the different elements from each other in teh property path
+
+
+# tests here for the regular expression that is used to seperate the
+# different elements from each other in teh property path
 
 to_test_strings = [
     "mr:hasGeometry",
     "mr:isPartOf / mr:hasGeometry",
     "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>",
     "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>",
-    "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>"
+    "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>",
 ]
 
-expected_results = [
-    ["mr:hasGeometry"],
-    ["mr:isPartOf", "mr:hasGeometry"],
-    ["mr:isPartOf", "<https://schema.org/geo>", "<https://schema.org/latitude>"],
-    ["mr:isPartOf", "<https://schema.org/geo>", "<https://schema.org/longitude>"],
-    ["mr:isPartOf", "mr:hasGeometry", "<https://schema.org/latitude>", "<https://schema.org/longitude>"]
-]
+expected_results = [["mr:hasGeometry"],
+                    ["mr:isPartOf",
+                     "mr:hasGeometry"],
+                    ["mr:isPartOf",
+                     "<https://schema.org/geo>",
+                     "<https://schema.org/latitude>"],
+                    ["mr:isPartOf",
+                     "<https://schema.org/geo>",
+                     "<https://schema.org/longitude>"],
+                    ["mr:isPartOf",
+                     "mr:hasGeometry",
+                     "<https://schema.org/latitude>",
+                     "<https://schema.org/longitude>",
+                     ],
+                    ]
+
 
 def test_regexp():
     for i in range(len(to_test_strings)):
