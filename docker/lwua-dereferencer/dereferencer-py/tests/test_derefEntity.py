@@ -150,6 +150,9 @@ to_test_strings = [
     "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>",
     "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>",
     "mr:isPartOf/mr:hasGeometry    / <https://schema.org/latitude> /<https://schema.org/longitude>",
+    "mr:isPartOf/mr:hasGeometry   @ <https://schema.org/latitude> @ <https://schema.org/longitude>",
+    "/mr:isPartOf/mr:hasGeometry   / <https://schema.org/latitude> / <https://schema.org/longitude>/""",
+    """""""/mr:isPartOf/mr:hasGeometry  @@@@/@ / <https://schema.org/latitude> / <https://schema.org/longitude>/"""
 ]
 
 expected_results = [["mr:hasGeometry"],
@@ -166,9 +169,25 @@ expected_results = [["mr:hasGeometry"],
                      "<https://schema.org/latitude>",
                      "<https://schema.org/longitude>",
                      ],
+                    ["mr:isPartOf",
+                     "mr:hasGeometry",
+                     "<https://schema.org/latitude>",
+                     "<https://schema.org/longitude>",
+                     ],
+                    ["mr:isPartOf",
+                     "mr:hasGeometry",
+                     "<https://schema.org/latitude>",
+                     "<https://schema.org/longitude>",
+                     ],
+                    ["mr:isPartOf",
+                     "mr:hasGeometry",
+                     "<https://schema.org/latitude>",
+                     "<https://schema.org/longitude>",
+                     ],
                     ]
 
 
 def test_regexp():
     for i in range(len(to_test_strings)):
+        print(re.findall(REGEXP, to_test_strings[i]))
         assert re.findall(REGEXP, to_test_strings[i]) == expected_results[i]
