@@ -133,8 +133,9 @@ class SubTasks:
         :param task: the task to delete
         :type task: list
         """
-        # do regex here to seperate the different elements from each other and then make the currect parent task.
-        matches = re.findall(r'(?:\w+:\w+|<[^>]+>)', task)
+        # do regex here to seperate the different elements from each other and
+        # then make the currect parent task.
+        matches = re.findall(r"(?:\w+:\w+|<[^>]+>)", task)
         p_task = matches[:-1]
         if len(p_task) == 0:
             log.warning(f"parent task is empty")
@@ -192,7 +193,12 @@ class SubTasks:
 
 
 class DerefUriEntity:
-    def __init__(self, uri: str, propertypaths: dict, store: Graph, prefixes: dict):
+    def __init__(
+            self,
+            uri: str,
+            propertypaths: dict,
+            store: Graph,
+            prefixes: dict):
         self.uri = uri
         self.store = store
         self.prefixes = prefixes

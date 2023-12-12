@@ -97,8 +97,8 @@ class DerefTask:
                         "subjects should contain either SPARQL or literal")
                 self.prefixes = {}
                 if "prefixes" in config:
-                    self.prefixes = config["prefixes"]    
-                
+                    self.prefixes = config["prefixes"]
+
                 self.deref_paths = config["assert-paths"]
                 log.info(f"deref_paths: {self.deref_paths}")
                 self.cache_lifetime = (
@@ -106,7 +106,7 @@ class DerefTask:
                 self.file_name = config_file.name
             except yaml.YAMLError as exc:
                 log.error(exc)
-    
+
     def write_store(self, filename):
         """
         Write the store to the graph database
@@ -117,11 +117,13 @@ class DerefTask:
     def run_deref_task(self):
         self.store = Graph()
         for uri in self.uris:
-            derefEntity = DerefUriEntity(uri, self.deref_paths, self.store, self.prefixes)
+            derefEntity = DerefUriEntity(
+                uri, self.deref_paths, self.store, self.prefixes
+            )
             log.info(f"derefEntity: {derefEntity}")
             # indent the following line to ingest after each uri is done
             # this is better for having intermediate results in dev testing but significantly slower
             # derefEntity.write_store(self.file_name)
             self.store = derefEntity.store
-        #write store
-        self.write_store(self.file_name)  
+        # write store
+        self.write_store(self.file_name)

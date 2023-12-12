@@ -173,7 +173,7 @@ def batch_insert_graph(
 
     # log the size fo the ntstr
     log.info(f"ntstr size: {len(ntstr)}")
-    
+
     # Split ntstr by newline to get a list of triples
     triples = ntstr.split("\n")
 
@@ -198,7 +198,9 @@ def batch_insert_graph(
 
         GDB.setQuery(query)
         GDB.query()
-        time.sleep(0.2) # give the server a breather, else it will crash depending on the potato running it
+        # give the server a breather, else it will crash depending on the
+        # potato running it
+        time.sleep(0.2)
 
 
 def update_registry_lastmod(context: str, lastmod: datetime):
@@ -319,7 +321,9 @@ def context_2_fname(context: str):
     return unquote(context[len(URN_BASE) + 1:])
 
 
-def get_graph_from_trajectory(store: Graph, uri: str, pp_trajectory: list, prefixes: dict):
+def get_graph_from_trajectory(
+    store: Graph, uri: str, pp_trajectory: list, prefixes: dict
+):
     """Function that will get the graph by performing a query on a given store and a given trajectory
 
     :param store: The store to query
@@ -334,7 +338,10 @@ def get_graph_from_trajectory(store: Graph, uri: str, pp_trajectory: list, prefi
     :rtype: list
     """
     template = "deref_property_trajectory.sparql"
-    vars = {"subject": uri, "property_trajectory": pp_trajectory, "prefixes": prefixes}
+    vars = {
+        "subject": uri,
+        "property_trajectory": pp_trajectory,
+        "prefixes": prefixes}
     query = J2RDF.build_syntax(template, **vars)
 
     log.debug(f"get_graph_from_trajectory query == {query}")
