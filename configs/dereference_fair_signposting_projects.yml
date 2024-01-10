@@ -7,4 +7,4 @@ subjects:
     }
 assert-paths: 
   - <https://schema.org/Dataset>
-cache_lifetime: 180
+cache_lifetime: 1

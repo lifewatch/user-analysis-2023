@@ -158,6 +158,7 @@ to_test_strings = [
     "@@/@"
     " / <https://schema.org/latitude> / <https://schema.org/longitude>/"
     "",
+    """/ / / mr:isPartOf/mr:hasGeometry   / <https://schema.org/latitude> / <https://schema.org/longitude> /@""",
 ]
 
 expected_results = [["mr:hasGeometry"],
@@ -169,6 +170,11 @@ expected_results = [["mr:hasGeometry"],
                     ["mr:isPartOf",
                      "<https://schema.org/geo>",
                      "<https://schema.org/longitude>"],
+                    ["mr:isPartOf",
+                     "mr:hasGeometry",
+                     "<https://schema.org/latitude>",
+                     "<https://schema.org/longitude>",
+                     ],
                     ["mr:isPartOf",
                      "mr:hasGeometry",
                      "<https://schema.org/latitude>",

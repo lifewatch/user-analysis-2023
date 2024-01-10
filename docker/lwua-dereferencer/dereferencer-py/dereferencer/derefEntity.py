@@ -68,7 +68,7 @@ def download_uri_to_store(uri, store, format="json-ld"):
             format = "json-ld"
         elif "text/turtle" in r.headers["Content-Type"]:
             format = "turtle"
-        store.parse(data=r.text, format=format)
+        store.parse(data=r.text, format=format, publicID=uri)
         log.info(f"content of {uri} added to the store")
     else:
         # perform a check in the html to see if there is any link to fair signposting
@@ -104,10 +104,14 @@ def download_uri_to_store(uri, store, format="json-ld"):
                     log.info(f"found script with type application/ld+json")
                     store.parse(
                         data=script["application/ld+json"],
-                        format="json-ld")
+                        format="json-ld",
+                        publicID=uri,
+                        )
                 elif "text/turtle" in script:
                     log.info(f"found script with type text/turtle")
-                    store.parse(data=script["text/turtle"], format="turtle")
+                    store.parse(data=script["text/turtle"],
+                                format="turtle",
+                                publicID=uri)
             parser.close()
             return
         log.warning(

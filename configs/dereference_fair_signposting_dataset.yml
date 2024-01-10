@@ -6,4 +6,4 @@ subjects:
       ?s ?p schema:Dataset .
     }
 assert-paths:
-cache_lifetime: 180
+cache_lifetime: 1
