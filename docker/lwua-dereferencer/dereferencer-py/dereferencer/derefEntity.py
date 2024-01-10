@@ -106,12 +106,13 @@ def download_uri_to_store(uri, store, format="json-ld"):
                         data=script["application/ld+json"],
                         format="json-ld",
                         publicID=uri,
-                        )
+                    )
                 elif "text/turtle" in script:
                     log.info(f"found script with type text/turtle")
-                    store.parse(data=script["text/turtle"],
-                                format="turtle",
-                                publicID=uri)
+                    store.parse(
+                        data=script["text/turtle"],
+                        format="turtle",
+                        publicID=uri)
             parser.close()
             return
         log.warning(
