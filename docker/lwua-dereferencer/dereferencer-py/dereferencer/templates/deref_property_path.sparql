@@ -1,0 +1,11 @@
+{#
+    This Template is used to make a SPARQL query that will return the objects of a given property
+    This template takes in 3 parameters:
+        - The URI of the property
+        - The URI of the subject
+#}
+
+SELECT ?o
+WHERE {
+        <{{ subject }}> <{{ property }}> ?o .
+    }

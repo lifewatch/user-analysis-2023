@@ -1,0 +1,10 @@
+subjects: 
+  SPARQL: >
+    PREFIX schema: <https://schema.org/>
+    SELECT ?s ?p ?o
+    WHERE {
+      ?s ?p schema:Project .
+    }
+assert-paths: 
+  - <https://schema.org/Dataset>
+cache_lifetime: 1
