@@ -33,7 +33,6 @@ services:
     labels:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"
-
   dereferencer:
     build: 
       context: ./lwua-dereferencer/ 

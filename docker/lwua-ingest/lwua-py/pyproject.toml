@@ -3,6 +3,7 @@ name = "lwua"
 version = "0.0.0"
 description = "lifewatch user analysis"
 authors = ["Laurian Van Maldeghem <laurian.van.maldeghem@vliz.be>", "Cedric Decruw <cedric.decruw@vliz.be>", "Marc Portier <marc.portier@vliz.be>"]
+
 license = "CC0"
 
 [tool.poetry.dependencies]

@@ -133,7 +133,6 @@ class Daemon(ABC):
         It will be called after the process has been daemonized by
         start() or restart().
         """
-
     CMDS = ["start", "stop", "restart", "run"]
 
     def _usage(self):
