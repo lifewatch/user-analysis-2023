@@ -9,7 +9,7 @@ Steps:
 2. to build the services simply run 
 
 ```bash
-.$ touch .env                         # make sure you have an .env file
+.$ cp dotenv-example .env             # make sure you have an .env file
 .$ cd docker && docker-compose build  # use docker to build the services 
 ```
 

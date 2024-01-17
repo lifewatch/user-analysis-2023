@@ -1,116 +1,112 @@
-from SPARQLWrapper import SPARQLWrapper, JSON
-from pathlib import Path
 import logging
-from rdflib import Graph
-import os
+import time
 from dotenv import load_dotenv
-from .helpers import enable_logging
+from datetime import datetime
+from SPARQLWrapper import SPARQLWrapper, JSON
+import os
+from pathlib import Path
+from .helpers import enable_logging, resolve_path
+from .watcher import FolderChangeObserver, FolderChangeDetector
+from .graphdb import (
+    get_registry_of_lastmod,
+    delete_graph,
+    ingest_graph,
+    update_registry_lastmod,
+    read_graph,
+    fname_2_context,
+)
 
 
 log = logging.getLogger(__name__)
 
 
-def run_ingest():
-    data_path = data_path_from_config()
-    log.info(f"run_ingest on updated files in {data_path}")
-    # TODO -- immplement steps
-    # list all the contents (files) in data_path together with last mod
-    # get the <#admin-luwa-ingest> graph listing the maintained named-graphs and their lastmod
-    # there nees to be a mapping between filenames and named-graphs !
-    # check which filenames are younger then their named-graph equivalent
-    # read them into mem - replace the coresponding named-graph in the repo
-    # update the triple for the named-graph to lastmod in the admin grap
+# functions here to ingest and delete files
+
+
+def delete_data_file(fname):
+    context = fname_2_context(fname)
+    log.info(f"deleting {fname} from {context}")
+    delete_graph(context)
+    update_registry_lastmod(context, None)
+
+
+def ingest_data_file(fname: str, lastmod: datetime, replace: bool = True):
+    """
+    Ingest a data file.
+
+    :param fname: The name of the file to ingest.
+    :type fname: str
+    :param replace: Whether to replace the existing data. Defaults to True.
+    :type replace: bool
+    :raises AssertionError: If the file does not exist.
+    """
+    file_path = data_path_from_config() / fname
+    assert file_path.exists(), f"cannot ingest file at {file_path}"
+    graph = read_graph(file_path)
+    context = fname_2_context(fname)
+    log.info(f"ingesting {file_path} into {context} | replace : {replace}")
+    ingest_graph(graph, lastmod, context=context, replace=replace)
 
 
 def data_path_from_config():
-    folder_name = os.getenv("INGEST_DATA_FOLDER", "/data")
+    local_default = str(resolve_path("./data", versus="dotenv"))
+    folder_name = os.getenv("INGEST_DATA_FOLDER", local_default)
     return Path(folder_name).absolute()
 
 
-def gdb_from_config():
-    base = os.getenv("GDB_BASE", "http://localhost:7200")
-    repoid = os.getenv("GDB_REPO", "lwua23")
+class Ingester:
+    def __init__(self):
+        data_path = data_path_from_config()
+        log.info(f"run_ingest on updated files in {data_path}")
 
-    endpoint = f"{ base }/repositories/{ repoid }"
-    updateEndpoint = endpoint + "/statements"   # update statements are handled at other endpoint
+        # get the last context graph modification dates
+        # run while true loop with 5 second sleep
+        self.detector = FolderChangeDetector(data_path)
+        self.ingestor = IngestChangeObserver()
 
-    log.debug(f"using endpoint {endpoint}")
-
-    gdb = SPARQLWrapper(
-        endpoint=endpoint,
-        updateEndpoint=updateEndpoint,
-        returnFormat=JSON,
-        agent="lwua-python-sparql-client"
-    )
-    gdb.method = 'POST'
-    return gdb
-
-
-def ingest_graph(graph, gname: str = None, replace: bool = False):
-    log.debug(f"to insert data into <{ gname }>")
-
-    gdb = gdb_from_config()
-
-    # do the cleanup if possible
-    if replace and gname is not None:
-        pass   # TODO execute delete of full graph -- have to check syntax
-
-    # extract the triples and format the insert statement
-    ntstr = graph.serialize(format="nt")
-    log.debug(f"extracted tiples == { ntstr }")
-    if gname is not None:
-        inserts = f"INSERT DATA {{ GRAPH <{ gname }> {{ { ntstr } }} }}"
-    else:
-        inserts = f"INSERT DATA {{ { ntstr} }}"
-    log.debug(f"INSERT of ==> { inserts }")
-
-    gdb.setQuery(inserts)
-    log.debug(f"detected querytype == {gdb.queryType}")
-
-    # unsure if this is needed -- can sqlwrapper detect this automatically?
-    gdb.queryType = 'INSERT'  # important to indicate that the update Endpoint should be used
-
-    gdb.query()
+    def run_ingest(self):
+        last_mod = {}
+        try:
+            last_mod = get_registry_of_lastmod()
+            log.info(f"initial last mod == {last_mod}")
+            log.info("reporting changes")
+            self.detector.report_changes(self.ingestor, last_mod)
+            log.info(f"last_mod == {last_mod}")
+        except Exception as e:
+            log.exception(e)
 
 
-def fname_2_gname(fname):
-    return f"urn:lwua:data/{fname}"   # TODO maybe consider something else?
+class IngestChangeObserver(FolderChangeObserver):
+    def __init__(self):
+        pass
 
+    def removed(self, fname):
+        # Implement the deletion of graph context and update of lastmod
+        # registry
+        log.info(f"File {fname} has been deleted")
+        delete_data_file(fname)
 
-def suffix_2_format(suffix):
-    if suffix in ["ttl", "turtle"]:
-        return "turtle"
-    if suffix in ["jsonld", "json"]:
-        return "json-ld"
-    # todo consider others if needed
-    return None
+    def added(self, fname, lastmod):
+        # Implement the addition of graph in context
+        log.info(f"File {fname} has been added")
+        ingest_data_file(fname, lastmod)
 
-
-def read_graph(fpath: Path, format: str = None):
-    format = format or suffix_2_format(fpath.suffix)
-    graph = Graph().parse(location=str(fpath), format=format)
-    return graph
-
-
-def ingest_data_file(fname):
-    file_path = data_path_from_config() / fname
-    assert file_path.exists(), f"cannot ingest file at {file_path}"
-
-    gname = fname_2_gname(fname)
-    graph = read_graph(file_path)
-
-    ingest_graph(graph, gname=gname)
+    def changed(self, fname, lastmod):
+        # Implement the replacement of graph in context and update the lastmod
+        # registry
+        log.info(f"File {fname} has been modified")
+        ingest_data_file(fname, lastmod, True)
 
 
 # Note: this main method allows to locally test outside docker
-# directly connecting to a localhost graphdb endpoint (which might be inside docker!)
+# directly connecting to a localhost graphdb endpoint (which might be
+# inside docker itself)
+
+
 def main():
     load_dotenv()
     enable_logging()
-    ingest_data_file("project.ttl")
-    # todo 
-    # run_ingest()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

@@ -1,0 +1,33 @@
+name: Python Tests
+
+on:
+  push:
+    paths:
+      - 'docker/lwua-ingest/lwua-py/**/*.py'
+  pull_request:
+    paths:
+      - 'docker/lwua-ingest/lwua-py/**/*.py'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10.6
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          cd docker/lwua-ingest/lwua-py
+          poetry install
+
+      - name: Run pytest
+        run: |
+          cd docker/lwua-ingest/lwua-py
+          poetry run pytest ./tests/

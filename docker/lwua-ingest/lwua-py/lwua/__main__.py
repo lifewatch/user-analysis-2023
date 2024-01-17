@@ -9,7 +9,6 @@ from lwua import LWUAScheduler
 import sys
 import logging
 
-
 log = logging.getLogger(__name__)
 
 

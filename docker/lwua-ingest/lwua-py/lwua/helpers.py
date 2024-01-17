@@ -15,7 +15,7 @@ def yaml_load_file(file):
         return None
     # else
     try:
-        with open(file, 'r') as yml_file:
+        with open(file, "r") as yml_file:
             return yaml.load(yml_file, Loader=yaml.SafeLoader)
     except Exception as e:
         log.exception(e)
@@ -23,20 +23,21 @@ def yaml_load_file(file):
 
 
 def find_logconf(logconf):
-    if logconf is None or logconf == '':
+    if logconf is None or logconf == "":
         return None
     for vs in ["dotenv", "module", "work"]:  # try in this order
         logconf_path = resolve_path(logconf, versus=vs)
         print(f"trying vs {vs} --> {logconf_path} ?")
-        if (logconf_path.exists()):
+        if logconf_path.exists():
             return logconf_path
     # else
-    raise Exception(f"config error logconf file {logconf} not found relative to dotenv, module or pwd")
+    raise Exception(
+        f"config error logconf file {logconf} not found relative to dotenv, module or pwd"
+    )
 
 
 def enable_logging(logconf: str = None):
-    """Configures logging based on logconf specified through .env ${LOGCONF}
-    """
+    """Configures logging based on logconf specified through .env ${LOGCONF}"""
     logconf = os.getenv("LOGCONF") if logconf is None else logconf
     logconf_path = find_logconf(logconf)
     if logconf_path is None:
@@ -49,8 +50,7 @@ def enable_logging(logconf: str = None):
 
 
 def singleton(class_):
-    """ Decorator for singleton classes
-    """
+    """Decorator for singleton classes"""
     instances = {}
 
     def getinstance(*args, **kwargs):

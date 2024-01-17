@@ -1,0 +1,19 @@
+{#- Jinja Template for Sparql Query
+ | Lists schema:Project instances with their (optional) schema:name
+ | variables in template:
+ |    - (optional) N: number of results you want (defaults to no limits --> full listing)
+ |    - (optional) O: offset to apply when paging
+ -#}
+PREFIX schema: <https://schema.org/>
+
+SELECT 
+  (?s as ?project) 
+  ?name 
+WHERE { 
+	?s a schema:Project .
+    OPTIONAL {
+        ?s schema:name ?name .
+    }
+}
+{{ "OFFSET " ~ O  if O else "" }} {#- add offset statement if provided #}
+{{ "LIMIT " ~ N   if N else "" }} {#- add limit  statement if provided #}
