@@ -23,8 +23,6 @@ def read_input(filepath: PosixPath) -> pd.DataFrame:
         idx = [r[0] for r in data]
         data = (islice(r, 1, None) for r in data)
         df = pd.DataFrame(data, index=idx, columns=cols)
-        print("df: ", df)
-        print("df-type: ", type(df))
     #add other file configurations if necessary
     
     df['source'] = filepath.stem
@@ -39,16 +37,13 @@ def annonymize_input(df: pd.DataFrame) -> pd.DataFrame:
     df.columns = df.columns.str.lower()
     
     df_ = pd.DataFrame()
+    df_['source'] = df['source']
     if 'email' in df.columns: #overwritten if more specific information is available
-        try:
-            _mailEnds = [email_lst[-1] for email_lst in df['email'].str.split("@")] 
-            _split_mailsEnds = [mail_end.split('.')for mail_end in _mailEnds]
-        
-            df_['raw_country'] = [item_lst[-1] for item_lst in _split_mailsEnds]
-            df_['raw_institute'] = [''.join(item_lst[0:-1]) for item_lst in _split_mailsEnds]
-        except:
-            df_['raw_country'] = df['email']
-            df_['raw_institute'] = df['email']
+        _mailEnds = [ str(email).split("@")[-1] if email is not None else 'NA' for email in df['email'] ] 
+        _split_mailsEnds = [mail_end.split('.') if mail_end is not None else 'NA' for mail_end in _mailEnds ]
+
+        df_['email_domain_end'] = [item_lst[-1] for item_lst in _split_mailsEnds]
+        df_['email_domain_name'] = [''.join(item_lst[0:-1]) for item_lst in _split_mailsEnds]
 
     if 'institute' in df.columns:
         df_['raw_institute'] = df['institute']
@@ -56,7 +51,7 @@ def annonymize_input(df: pd.DataFrame) -> pd.DataFrame:
     if 'organisation' in df.columns:
         df_['raw_institute'] = df['organisation']
 
-    df_['identifier'] = [uuid.uuid4() for _ in range(len(df_))]
+    df_['user_identifier'] = [uuid.uuid4() for _ in range(len(df_))]
     
     return df_
 
@@ -90,8 +85,12 @@ def standardize_affiliation_names(df: pd.DataFrame, mapping_dct: dict) -> pd.Dat
     df['stand_institute'] = ''
     for index, row in df.iterrows():
         for stand_inst, inst_list in mapping_dct.items():
-            if row['raw_institute'] in inst_list or str(row['raw_institute']).lower().strip() in inst_list:
-                df.at[index, 'stand_institute'] = stand_inst
+            if 'email_domain_name' in df:
+                if row['email_domain_name'] in inst_list or str(row['email_domain_name']).lower().strip() in inst_list:
+                    df.at[index, 'stand_institute'] = stand_inst
+            if 'raw_institute' in df:
+                if row['raw_institute'] in inst_list or str(row['raw_institute']).lower().strip() in inst_list:
+                    df.at[index, 'stand_institute'] = stand_inst
 
     df_tostand = df.loc[df['stand_institute'] == '']
     df_tostand = df_tostand.drop_duplicates()
@@ -104,7 +103,6 @@ def add_info(df: pd.DataFrame, affil_info: pd.DataFrame) -> pd.DataFrame:
 
     df['stand_institute'] = df['stand_institute'].fillna('NA') # because NaN is of type Int64 and can't merge between different types
     merged_df = pd.merge(df, affil_info, on='stand_institute', how='left', suffixes=('_', '_info'))
-
     return merged_df
 
 
@@ -133,33 +131,29 @@ for filepath in RAWINPUT_FILEPATHS:
     # 1. read data
     df = read_input(filepath)
 
-    # 2. annonymize data (& write to intermediate csv for check-up)
+    # 2.A annonymize data 
     filename_abstr = filename + '_abstract.csv'
     filepath_abstr = PROJECTPATH / 'data' / filename_abstr
-    
     df_ = annonymize_input(df)
-    
-    df_.to_csv(filepath_abstr, index=False) 
+    # 2.B write to intermediate csv for check-up
+    #df_.to_csv(filepath_abstr, index=False) 
 
-    # 3. standardize affiliation names based on reference data (& write to intermediate csv for check-up)
+    # 3.A standardize affiliation names based on reference data 
     filename_stand = filename + '_standardized.csv'
     filepath_stand = PROJECTPATH / 'data' / filename_stand
-
     filename_to_stand = filename + '_to_standardize.csv'
     filepath_to_stand = PROJECTPATH / 'data' / filename_to_stand
-
     print(f"standardizing {filename}...")
     df_stand, df_tostand = standardize_affiliation_names(df_, mapping_dct)
     print("done!")
-    
-    df_stand.to_csv(filepath_stand, index=False) 
+    # 3.B write to intermediate csv for check-up
+    #df_stand.to_csv(filepath_stand, index=False) 
     df_tostand.to_csv(filepath_to_stand, index=False) 
 
-    # 4. add info to standardized affiliation names (& write to intermediate csv for check-up)
+    # 4. add info to standardized affiliation names 
     filename_infoadded = filename + '_info_added.csv'
     filepath_infoadded = PROJECTPATH / 'data' / filename_infoadded
 
-    df__ = add_info(df_, affil_info)
-    
-    df__.to_csv(filepath_infoadded, index=False) 
- 
+    df__ = add_info(df_stand, affil_info)
+    # 4.B write to intermediate csv for check-up
+    df__.to_csv(filepath_infoadded, index=False)

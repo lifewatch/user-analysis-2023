@@ -1,0 +1,3257 @@
+@prefix schema: <http://schema.org/>.
+@prefix lw: <http://lifewatch.org/ns/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@base <http://lifewatch-user-analysis-2023> . #to decide baseref for this use-case project
+
+</user/a0f2a630-5f50-4745-98e7-a519f8ba6e0f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/8a4b27bd-cae4-4b14-a433-dcb997e86e94>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a0fe17c3-9a47-4c36-9b17-45bc855ba20f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'RMCA Royal Museum for Central Africa'^^xsd:string ; 
+        schema:identifier </affiliation/RMCA_Royal_Museum_for_Central_Africa> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a9ca24a2-4919-43fa-abc3-8f03c57ba288>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'RMCA Royal Museum for Central Africa'^^xsd:string ; 
+        schema:identifier </affiliation/RMCA_Royal_Museum_for_Central_Africa> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/03589003-1245-4920-a0c2-e9fe1cd0e96c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'RMCA Royal Museum for Central Africa'^^xsd:string ; 
+        schema:identifier </affiliation/RMCA_Royal_Museum_for_Central_Africa> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/70de27fa-a0bc-4a64-b0bc-9aae4d52ac89>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e57ad64d-ce52-47a5-91bf-9fe87a5a31c4>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Liège'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Liège> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/04abef3e-7107-4550-b6b9-2841b001c107>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Catholique University of Louvain'^^xsd:string ; 
+        schema:identifier </affiliation/Catholique_University_of_Louvain> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b35a03c4-af6b-4bf6-9a9d-be35c9927e7e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b04327c7-f986-4a47-abb4-2fa124fec952>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Deltares'^^xsd:string ; 
+        schema:identifier </affiliation/Deltares> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Netherlands'^^xsd:string ; 
+        ] ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/27f76ad3-d8bd-40db-9455-3110f0e49b06>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/44459823-f2cc-4b81-a717-6de9960afd4f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Federal government - Federal Public Service Justice'^^xsd:string ; 
+        schema:identifier </affiliation/Federal_government_-_Federal_Public_Service_Justice> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/ba1dbb67-2908-43cd-b561-861b2c212049>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/af44f3ce-857d-4384-aa87-f0512cc5cc3b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b4da7141-8fb8-4d43-b6c1-a8b05a892f5b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d61e2849-5d77-484c-92bc-760ba611948b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/65de6821-e9a2-4018-a110-e7ef75267c5b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Liège'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Liège> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/7d6c8999-6688-4207-b0ed-058f3a98f68f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ardenne & Gaume'^^xsd:string ; 
+        schema:identifier </affiliation/Ardenne_&_Gaume> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Other ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/894a0c93-6fd2-4e60-96d2-1bdbd059cdd7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Hasselt University'^^xsd:string ; 
+        schema:identifier </affiliation/Hasselt_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/97930244-5e87-4446-8168-603512275754>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Institute of Tropical Medicine Antwerp'^^xsd:string ; 
+        schema:identifier </affiliation/Institute_of_Tropical_Medicine_Antwerp> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/48583131-ceed-447d-84a6-e83dcc206f0e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b2414567-5113-40bd-945b-4e7f42af91c8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ffefbf62-0fb5-49ec-ba51-45c5eb4ed3a3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/fd1598b6-1f98-42cb-9ca5-19edca9a6ff2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/005c006d-c07f-4335-9351-1b58e39ac230>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/652b5261-f42b-4fef-b6c0-82d4f249a520>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/56e01dff-6481-4eeb-9d66-a4a8a27876a7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/be31feec-f179-4224-84c0-0850016c696e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/96dda5ea-64c8-4cd2-ba0a-0dcf5158011d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2d339903-da56-489d-9a4a-c24bfdca7e16>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1c88bf83-ec07-474c-a698-9bd7b132b27d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6314f62f-1787-4571-aa56-44cac56c460d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1b17ad89-9525-49f5-9444-0a7218004c74>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/0316301d-a147-42c1-a37e-75bc55dc1b31>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e75e3279-d275-4c0f-90c7-4c8624ac5088>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/bafb749f-8914-4a42-8156-44d8bad648ca>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/f0e6b8fe-bc18-4af5-bea1-c5e43dfaaf97>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6390f5c1-e6ab-406a-810b-f866ee19c919>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6d49aa8c-e723-4b12-be3a-6b8c588ae3be>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2da70b3e-7937-4640-bca4-08f59b78763a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ef3832ed-7223-402d-8a4c-2c38df5c5fe1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/89280036-1db8-4035-8efe-057be6c3b2ae>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2fa59eb6-40a0-4f9f-848b-3ffd93a8ae6a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/fcb599c4-9e49-47b4-9cdc-4facd49227fc>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b5b9a5ec-072e-4d30-9349-bd54f542bcf2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a23bb53c-af8a-4bc0-99a9-e4ef66d5c2fb>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/ad560881-2a9f-457d-9592-3bc11441eeb3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/17d8f8ea-eb19-4ef0-83c5-6753afdcf306>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/cfc4158f-64ab-4e24-a4cd-c7be205a4bc8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Liège'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Liège> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/0ec2dc42-5aa8-477e-8cda-ebe977097e80>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/9babeec7-218b-4171-a99c-0197a743b572>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d257dca9-5aea-4b01-a297-08bda417b240>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/02a2529c-d3e0-462a-aa5a-bf867afeb0f6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/aeca104e-830b-43f8-bec2-ca9e6cd60d68>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/57fd81f6-6925-4866-9612-5fb43a8969a1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Hasselt University'^^xsd:string ; 
+        schema:identifier </affiliation/Hasselt_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/60ff32df-6e64-4e06-8147-d92dd96cefe1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ; 
+        schema:identifier </affiliation/ILVO_Flanders_Research_Institute_for_Agriculture,_Fisheries_and_Food> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a3ab654a-6ff5-442e-addb-f2c926076816>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Swedish University of Agricultural Sciences (SLU)'^^xsd:string ; 
+        schema:identifier </affiliation/Swedish_University_of_Agricultural_Sciences_(SLU)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Sweden'^^xsd:string ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ad4c5837-29f1-4d06-9a16-4f1ab9927c1d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Plantentuin Meise'^^xsd:string ; 
+        schema:identifier </affiliation/Plantentuin_Meise> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1f8d5b9a-dcd7-45f4-92c8-e15bfe8c01ab>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Federal government - Belgian Science Policy (BELSPO)'^^xsd:string ; 
+        schema:identifier </affiliation/Federal_government_-_Belgian_Science_Policy_(BELSPO)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/7dbf1153-9cda-4fa5-89b0-1e8ad58e65a2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/a20abfd7-d3ea-4840-b293-cdd738208b73>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Antwerp'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Antwerp> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/da682d1e-109c-4213-b24a-a2f2879ebc6d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Province of East-Flanders'^^xsd:string ; 
+        schema:identifier </affiliation/Province_of_East-Flanders> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Other_public_authorities ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/035a97f5-e678-40d1-a278-e33eb4082d16>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Catholique University of Louvain'^^xsd:string ; 
+        schema:identifier </affiliation/Catholique_University_of_Louvain> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/98914b52-1659-4e05-aa65-b271e52cc1a1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VITO Vlaamse Instelling voor Technologisch Onderzoek'^^xsd:string ; 
+        schema:identifier </affiliation/VITO_Vlaamse_Instelling_voor_Technologisch_Onderzoek> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/59e99774-a2ae-4e53-a7d2-a18f5c7bb762>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'UNESCO'^^xsd:string ; 
+        schema:identifier </affiliation/UNESCO> ;
+    ] ; 
+.
+
+</user/e4f4435f-f127-4a39-afe1-82fbc837547b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/2493b71b-6ba9-4dfb-8b30-ff2620917e2d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'CETAF (Consortium of European Taxonomic Facilities)'^^xsd:string ; 
+        schema:identifier </affiliation/CETAF_(Consortium_of_European_Taxonomic_Facilities)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Europe'^^xsd:string ; 
+        ] ;
+        lw:group lw:Research_network ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e534c732-01be-4d70-828f-0fbfb14b4472>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Flemish Government - Department of Economy, Science and Innovation (EWI)'^^xsd:string ; 
+        schema:identifier </affiliation/Flemish_Government_-_Department_of_Economy,_Science_and_Innovation_(EWI)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/d570ce24-31cc-4340-a16a-0d32235b4715>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'UNESCO'^^xsd:string ; 
+        schema:identifier </affiliation/UNESCO> ;
+    ] ; 
+.
+
+</user/7c1943c0-6321-41b9-8969-147c0ddd16e7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Université Libre de Bruxelles (ULB)'^^xsd:string ; 
+        schema:identifier </affiliation/Université_Libre_de_Bruxelles_(ULB)> ;
+    ] ; 
+.
+
+</user/25bf8d62-6e81-4a61-b390-bcd7d03194a8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Sheffield'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Sheffield> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'UK'^^xsd:string ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d0ae9aa6-ef04-4645-a07f-a4e6df99e518>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d987b1d4-d49a-4a36-90b0-1536b629cc7c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a84ad54b-5336-4077-957c-f079f26e2b8b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ebaf1e4f-bb0e-40b3-ad08-6e05702f8705>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/48058712-5183-4f82-a3b4-f329d67061f8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b4ee710b-25eb-407a-b46d-f47f7620dea6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/536a13c2-05c5-4dfe-8b0e-e9bd2880e3aa>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Lotek'^^xsd:string ; 
+        schema:identifier </affiliation/Lotek> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Global'^^xsd:string ; 
+        ] ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/3c8933d7-4cbb-485c-955b-b939e74c4b3d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Catholique University of Louvain'^^xsd:string ; 
+        schema:identifier </affiliation/Catholique_University_of_Louvain> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/4f0739f6-4bca-4c36-b90a-ee15277a0b99>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2e9ad2ff-2076-4df4-92e3-bacb50b27c7f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/758b383d-5589-4b64-bfd5-7f52f106ec6b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/02618434-a65f-4e98-99ed-a7b8054358ab>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/077e389a-ccbc-45f2-b9d5-174b7af80fb0>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e2d1a9c5-e1b2-4de2-9d7d-ed740b5ba164>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/451828d8-b46d-4de1-b7bf-2e728050d30d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Fédération Wallonie-Bruxelles'^^xsd:string ; 
+        schema:identifier </affiliation/Fédération_Wallonie-Bruxelles> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/a80511e1-df22-4dac-b897-a57ae4e57236>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'SPW Service public de Wallonie'^^xsd:string ; 
+        schema:identifier </affiliation/SPW_Service_public_de_Wallonie> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/8d965db4-007a-497c-82fc-8244c0ee2839>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'WWF'^^xsd:string ; 
+        schema:identifier </affiliation/WWF> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Global'^^xsd:string ; 
+        ] ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/bb4403bc-7487-42a8-884e-e68a08c14eba>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/83a73e24-27a8-4c60-8c34-88718b31eb4e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/39c02969-cb48-40ed-86fd-4ab640eabaa9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/bdd7d28c-e679-41a4-bc66-ac515d3172df>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/511eed19-f2b1-447d-bf65-b5fb6f6866de>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Flemish Government'^^xsd:string ; 
+        schema:identifier </affiliation/Flemish_Government> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/4dfaa2d4-4530-4bea-a50c-4779d59a1766>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/c352ced0-0918-4a89-be5b-f7e97d3f02b9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e71a83cf-a2c3-4bb6-9cf9-04220449ed0e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/10408a4a-93d0-4e38-8656-6f231d862272>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/7bd4d985-b35f-4da3-8781-1914eed62d9b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/3d0e21c8-a5a7-4032-98de-f51e398e644f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/5da52c88-7436-4e17-9d3b-a05a3361a8b8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Antwerp'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Antwerp> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/97bd5736-70bd-47d6-8294-677cc263fe6c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Catholique University of Louvain'^^xsd:string ; 
+        schema:identifier </affiliation/Catholique_University_of_Louvain> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b1b6d165-cbdc-4e21-8139-b8bd4a1fab5a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Natagora'^^xsd:string ; 
+        schema:identifier </affiliation/Natagora> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/597d8c49-c97b-465b-bf98-3f8358984111>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b2c05037-cf76-4deb-b0b8-49986c4591dc>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'LifeWatch BELGIUM'^^xsd:string ; 
+        schema:identifier </affiliation/LifeWatch_BELGIUM> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:group lw:Research_ ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/67e64e14-61e5-4131-8668-70cd0bf476e7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2744ecdf-56e7-4364-b2fc-64ddff94fff0>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'EMODnet (European Marine Observation and Data Network)'^^xsd:string ; 
+        schema:identifier </affiliation/EMODnet_(European_Marine_Observation_and_Data_Network)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Europe'^^xsd:string ; 
+        ] ;
+        lw:group lw:Data_infrastructure ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b3357730-f49b-43be-a73f-6158a3b1ed7e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2217ffa1-6894-4c21-9bf8-5d4151a947b7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a9209e11-b489-4e0d-89ff-0785d56981f9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/7e69bf37-b91a-4582-81c1-f81824718333>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Antwerp'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Antwerp> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b7e08028-f542-4743-af69-550f48139d91>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/609d5870-c868-42b4-ae40-5e9023126b09>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Defensie'^^xsd:string ; 
+        schema:identifier </affiliation/Defensie> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Defence ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/09d0d322-69d0-4b00-916e-e23019476717>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Defensie'^^xsd:string ; 
+        schema:identifier </affiliation/Defensie> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Defence ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/0867923f-39b9-4ff2-abe5-58d331b02dfb>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/4dc7711e-eaf1-4398-94c1-607e377cdef9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/99398693-71e8-4504-949c-f1fb58db31e8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Aristotle University of Thessaloniki - School of Veterinary Medicine'^^xsd:string ; 
+        schema:identifier </affiliation/Aristotle_University_of_Thessaloniki_-_School_of_Veterinary_Medicine> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Greece'^^xsd:string ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1a9231a3-24fd-4f39-afc1-aa40c9bfb528>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Aristotle University of Thessaloniki - School of Veterinary Medicine'^^xsd:string ; 
+        schema:identifier </affiliation/Aristotle_University_of_Thessaloniki_-_School_of_Veterinary_Medicine> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Greece'^^xsd:string ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/19e0e06b-3b4c-4e36-8e3e-ab81985dd207>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e3ad64fd-0bcb-4758-b7cf-12b62eb864af>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/81eb7ff8-2ea8-43a8-ad6a-839aae58a941>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/38f721a7-77d5-4bbf-bb7c-3c9087d8b0a9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/8370a115-d762-4993-bed7-f679912fdbdd>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Hasselt University'^^xsd:string ; 
+        schema:identifier </affiliation/Hasselt_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/76fdcb90-05a9-4e38-b1a3-f7d3b2809926>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/3a345f10-2ca6-445b-8e8e-80ab92d38bd9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d6249215-cc81-482f-940c-0a1b1ead702c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/212699f7-5455-4e8d-b4de-eac310fe9142>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Natagora'^^xsd:string ; 
+        schema:identifier </affiliation/Natagora> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/96009e6e-8fec-41e5-839e-851315641309>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e17052bb-0093-4566-a236-810238c2af6c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/895a0b21-f23d-46e6-a372-c0dfeeca95ef>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/03aece6d-67f4-401a-9f0f-4aa02e9f1893>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1f262967-a8df-449e-ad1d-695446d98808>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/cdb8df6a-8bca-4b15-86e3-7136a7ab7654>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/8979e3c4-cc30-4f3a-83ce-cea51519a60d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/65c33bce-d304-4256-b3c3-1e5d7366a78d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/0825b97a-20b4-4369-8f1b-9b918754af01>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c89bafad-c3af-44be-8de9-78f18b08c4b4>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Wageningen University & Research (WUR)'^^xsd:string ; 
+        schema:identifier </affiliation/Wageningen_University_&_Research_(WUR)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Netherlands'^^xsd:string ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/22ed2513-f8db-46f4-97cf-a8cbc93d3ff5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6cdd851d-b487-405a-a61d-fac5b0754552>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a7d70a68-f39b-4cba-a08b-c89274789521>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1055a620-0122-454b-a6ae-7c4f36aefc0d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Liège'^^xsd:string ; 
+        schema:identifier </affiliation/University_of_Liège> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ffce9c5a-94a5-420d-aace-3eef421fe36f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d4db0d46-7485-480b-84a6-bde83ff88f75>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/774031c4-0091-4f9f-bec8-010a7155e70f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Hasselt University'^^xsd:string ; 
+        schema:identifier </affiliation/Hasselt_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/fcd96041-ce03-471a-acf5-60d2b45d792c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/fd383521-fe0e-4b0b-b822-aa4d1433ad88>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/6650f872-6aba-445b-8b36-8b94c9bd830c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'De Rijke Noordzee'^^xsd:string ; 
+        schema:identifier </affiliation/De_Rijke_Noordzee> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/54808702-a4ad-4474-a5ca-519bd9bd005f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'LifeWatch BELGIUM'^^xsd:string ; 
+        schema:identifier </affiliation/LifeWatch_BELGIUM> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:group lw:Research_ ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/57362a9e-7e3e-4237-bf31-d351edcd9601>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'LifeWatch BELGIUM'^^xsd:string ; 
+        schema:identifier </affiliation/LifeWatch_BELGIUM> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:group lw:Research_ ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/27d88f7e-7eea-4a28-a5b1-863b6a1dd2ca>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ; 
+        schema:identifier </affiliation/ILVO_Flanders_Research_Institute_for_Agriculture,_Fisheries_and_Food> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d49ae1bf-1aa1-4816-8373-c43f589b7793>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'De Rijke Noordzee'^^xsd:string ; 
+        schema:identifier </affiliation/De_Rijke_Noordzee> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/de42a5d5-cefc-45ec-afe6-fec6c4a51fd9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'RMCA Royal Museum for Central Africa'^^xsd:string ; 
+        schema:identifier </affiliation/RMCA_Royal_Museum_for_Central_Africa> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/68415d4e-94e0-4da9-b396-1dfafcd098d9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/0c58ff15-73b8-474b-a5c6-cffaec06ac1c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'UNESCO'^^xsd:string ; 
+        schema:identifier </affiliation/UNESCO> ;
+    ] ; 
+.
+
+</user/57787f34-23aa-4238-82d8-03da2ded6a6b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/91cda4b1-8218-430a-aec7-d309a3e34aba>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1340b9de-c8d3-48ef-a7d1-c568640675ec>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'RMCA Royal Museum for Central Africa'^^xsd:string ; 
+        schema:identifier </affiliation/RMCA_Royal_Museum_for_Central_Africa> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/49976974-4cfa-4528-a277-b24b707f0337>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/53a86e49-cf35-4e01-a392-9a7d0cbc2834>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'European Marine Board'^^xsd:string ; 
+        schema:identifier </affiliation/European_Marine_Board> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Europe'^^xsd:string ; 
+        ] ;
+        lw:group lw:NGO ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/9b734b33-fd82-4c6e-82e6-db8f423cbb15>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'European Marine Board'^^xsd:string ; 
+        schema:identifier </affiliation/European_Marine_Board> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Europe'^^xsd:string ; 
+        ] ;
+        lw:group lw:NGO ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/30836dda-e82b-4085-baf3-b493cf7d21e4>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/bd7c671a-be14-4219-8b96-7bf721924651>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a9541c62-a07e-47f4-88ea-8069c5f45d6c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/704555d3-6d55-4e8f-9e88-3e7d91402fa3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/687e3acd-dbc1-4e04-a422-d46b89712b16>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/86e55b42-de1e-4890-9d41-cb339a2dc1d0>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/9555ff4b-01ba-4cc3-baab-5a2c58a30192>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VITO Vlaamse Instelling voor Technologisch Onderzoek'^^xsd:string ; 
+        schema:identifier </affiliation/VITO_Vlaamse_Instelling_voor_Technologisch_Onderzoek> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e0522492-0874-43b0-a0ea-e45eeef9ccd2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/b9ad2c28-d184-45c8-937a-8c920427826b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/461c19b4-4596-4843-a984-5e82b8cb5ddf>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/9fd9f11e-6cc8-49b3-8f79-c35110566775>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/42576149-b1a0-4bea-88ad-a8f8cfb4ed0d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/1b75ea22-fe8b-411a-9ef2-14ab60755afb>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/0f578869-ec1b-4fd1-b627-c9eeec7a400b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/337191b8-252b-4fa4-961f-555b468d8120>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/b93acd11-2a9f-4345-b127-d9c2217c38a2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b7cead2b-05d2-4d0c-ac3d-577e93d544b9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2939dae7-aedd-460c-a815-64d4136b32e7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d8c3f20b-94ea-45e8-a17b-7a8589a9a17a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/816c66b0-51cd-45f1-b7af-47c27be6550a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d5dc9ba8-8730-4e48-af29-abb98ee81296>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/34576963-e475-4aa0-8f49-7a35f8324bb9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/26f1af02-d0e7-48b0-b50c-3b2f3cffccd1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'INBO Research Institute for Nature and Forest'^^xsd:string ; 
+        schema:identifier </affiliation/INBO_Research_Institute_for_Nature_and_Forest> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/f8c02b5d-299c-4a0c-b5a7-06b3242e2def>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'European Space Agency'^^xsd:string ; 
+        schema:identifier </affiliation/European_Space_Agency> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Europe'^^xsd:string ; 
+        ] ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/57350eab-5cf8-40ee-b92f-52b57e80a5be>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Flemish Government'^^xsd:string ; 
+        schema:identifier </affiliation/Flemish_Government> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/2c6a5ead-c086-4e39-b036-3744a295da18>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Research Foundation – Flanders'^^xsd:string ; 
+        schema:identifier </affiliation/Research_Foundation_–_Flanders> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/992da6c2-f091-4fbb-b538-736d33a0ec0f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Flemish Government'^^xsd:string ; 
+        schema:identifier </affiliation/Flemish_Government> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/d4ec453a-6dc6-401e-bb0d-7991cefd5ba7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e2e62188-c074-4258-b5f5-d5ab203929f2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Australian National University'^^xsd:string ; 
+        schema:identifier </affiliation/Australian_National_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Australia'^^xsd:string ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/441f325e-2f3d-4190-949b-5ebadc32f7c7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Brazilian Government, Ministry of Agriculture, Livestock and Food supply, Brazilian Agricultural Research Corporation'^^xsd:string ; 
+        schema:identifier </affiliation/Brazilian_Government,_Ministry_of_Agriculture,_Livestock_and_Food_supply,_Brazilian_Agricultural_Research_Corporation> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Brazil'^^xsd:string ; 
+        ] ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/ce3920df-8eb8-4db2-8f40-3faaca66fbe7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/ae3c3281-afce-45c8-bfe2-c59d83d080ca>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/56ac61e3-c4b0-40b3-bc83-99aa86d282bd>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Plantentuin Meise'^^xsd:string ; 
+        schema:identifier </affiliation/Plantentuin_Meise> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a9b05b89-6fbc-481d-a283-0b5c8ae0e6b6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d90735b9-b3c8-4d8f-9144-152f70b524e0>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d2839da7-6190-48e6-9095-02c612c32c7e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/3e64f0df-6e2f-4749-a352-7cc639e81202>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ; 
+        schema:identifier </affiliation/VLIZ_Flanders_Marine_Institute> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6deaca8c-a2f7-4626-9694-674840dbb072>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2f048a99-67c0-4474-a177-5ac3faae7a97>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Province of Antwerp'^^xsd:string ; 
+        schema:identifier </affiliation/Province_of_Antwerp> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/64c542f6-f378-437d-8076-5bbd2deadb19>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Province of Antwerp'^^xsd:string ; 
+        schema:identifier </affiliation/Province_of_Antwerp> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Governmental_body ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/76dfa08e-9812-4977-885a-e7159fdd7e4f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/0935da49-6a06-4738-ad64-9835973a99f3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ; 
+        schema:identifier </affiliation/Royal_Belgian_Institute_of_Natural_Sciences_(RBINS)> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/171645ff-ecf9-4f08-9fb8-f80b5975919e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+    ] ; 
+.
+
+</user/57925f4a-e0e2-4b65-9133-e72ef979a154>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ; 
+        schema:identifier </affiliation/Ghent_University> ;
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'Belgium'^^xsd:string ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.

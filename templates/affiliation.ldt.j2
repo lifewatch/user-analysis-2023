@@ -1,0 +1,36 @@
+{#
+name: affiliation.ldt.j2
+description: template to turn information on standardized affiliations into triples 
+input: data/reference_data/AffiliationInfo.csv
+#}
+
+{%- if ctrl.isFirst %}
+{%- include 'includes/prefixes.ttl' %}
+
+@base <http://lifewatch-user-analysis-2023> . #to decide baseref for this use-case project
+{%- endif %}
+
+{% set stand_institute_identifier = _.stand_institute.split(' ') | join('_') %}
+
+</affiliation/{{ _.stand_institute.split(' ') | join('_') | safe }}>
+        a schema:Organization ;
+
+        schema:name {{_.stand_institute | ttl("xsd:string") | safe }} ; 
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry {{ _.country | ttl("xsd:string") | safe }} ; 
+        ] ; 
+
+        {%- if _.flemish %}
+        lw:isFlemish "true"^^xsd:boolean ; 
+        {%- endif %}
+
+        {%- if _.group %}
+        lw:group lw:{{ _.group.split(' ') | join('_') | safe }} ;
+        {%- endif %}
+
+        {%- if _.qh %}
+        lw:qh lw:{{ _.qh.split(' ') | join('_') | safe }} ; 
+        {%- endif %}
+.
