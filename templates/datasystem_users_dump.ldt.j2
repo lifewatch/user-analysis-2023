@@ -16,7 +16,7 @@ input: data/*_info_added.csv
         a schema:Organization ; 
         {%- if _.stand_institute %}
         schema:name {{_.stand_institute | ttl("xsd:string") | safe }} ; 
-        schema:identifier </affiliation/{{ _.stand_institute.split(' ') | join('_') | safe }}> ; 
+        {#schema:identifier </affiliation/{{ _.stand_institute.split(' ') | join('_') | safe }}> ; #} 
         {%- endif %}
         {%- if _.country %}
         schema:address [
