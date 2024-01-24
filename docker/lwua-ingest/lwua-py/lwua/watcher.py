@@ -36,7 +36,7 @@ class FolderChangeDetector:
         current_lastmod_by_fname = {
             str(p): datetime.utcfromtimestamp(p.stat().st_mtime)
             for p in self.root.glob("**/*")
-            if p.is_file()
+            if p.is_file() and p.suffix in [".ttl", ".jsonld"]
         }
         log.info(f"current_lastmod_by_fname: {current_lastmod_by_fname}")
         for fname in known_lastmod_by_fname:
