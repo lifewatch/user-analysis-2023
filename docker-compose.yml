@@ -100,3 +100,20 @@ services:
       be.vliz.container.owner: "laurian.van.maldeghem@vliz.be"
       be.vliz.container.description: "LifeWatch User-Analysis Platform"
       be.vliz.container.vcs-url: "https://github.com/lifewatch/user-analysis-2023.git"
+
+  sembench:
+    build:
+      context: ./docker/lwua-sembench/
+    image: lwua/lwua_sembench
+    container_name: lwua_sembench
+    volumes:
+      - ./data:/data
+      - ./config:/config
+    environment:
+      - INPUT_DATA_LOCATION=/data/input-data
+      - OUTPUT_DATA_LOCATION=/data/output-data
+      - SEMBENCH_DATA_LOCATION=/data/sembench-data
+      - SEMBENCH_CONFIG_PATH=/config/sembench.json
+    labels:
+      be.vliz.container.project: "LWUA"
+      be.vliz.container.group: "services"

@@ -1,0 +1,11 @@
+[
+    {
+        "type": "pysubyt",
+        "input": "...",
+        "output": "...",
+        "template": {
+            "jinja_root": "...",
+            "file_name": "..."
+        }
+    }
+]
