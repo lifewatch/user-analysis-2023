@@ -1,9 +1,0 @@
-subjects:
-  SPARQL: >
-    select DISTINCT ?s where { 
-      ?s ?p ?o .
-        FILTER regex(str(?s), "^http://marineregions.org/mrgid/[0-9]{1,5}$")
-    }
-assert-paths:
-  - <http://marineregions.org/ns/ontology#isPartOf>
-cache_lifetime: 5
