@@ -110,8 +110,8 @@ services:
       - ./data:/data
       - ./config:/config
     environment:
-      - INPUT_DATA_LOCATION=/data/input-data
-      - OUTPUT_DATA_LOCATION=/data/output-data
+      - INPUT_DATA_LOCATION=/data
+      - OUTPUT_DATA_LOCATION=/data
       - SEMBENCH_DATA_LOCATION=/data/sembench-data
       - SEMBENCH_CONFIG_PATH=/config/sembench.json
     labels:
