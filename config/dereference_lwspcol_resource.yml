@@ -22,9 +22,6 @@ assert-paths:
   # identifiers van alle resources (personen, instituten, projecten, events, publicaties en datasets) gelinkt aan een LW spcol 
   # (identifiers van personen moeten ervantussen wegens GDPR)
   # bij publicaties zijn dit: DOI, WoS code en VABB code
-  - "dcat:resource / schema:identifier "
-
-  # titles van publicaties & datasets gelinkt aan LW spcol
-  - "dcat:resource / dct:title "
+  - "dcat:resource"
   
 cache_lifetime: 180
