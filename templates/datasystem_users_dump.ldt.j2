@@ -16,12 +16,16 @@ input: data/*_info_added.csv
         a schema:Organization ; 
         {%- if _.stand_institute %}
         schema:name {{_.stand_institute | ttl("xsd:string") | safe }} ; 
-        {#schema:identifier </affiliation/{{ _.stand_institute.split(' ') | join('_') | safe }}> ; #} 
         {%- endif %}
-        {%- if _.country %}
+        {% if _.MarineInfo_ID %}
+        schema:identifier <{{_.MarineInfo_ID}}> ;
+        {#{% else if _.MarineInfo_ID  %}
+        {% else%}#}
+        {%- endif %}
+        {%- if _.country_url %}
         schema:address [
             a schema:Postaladdress ; 
-            schema:addressCountry {{ _.country | ttl("xsd:string") | safe }} ; 
+            schema:addressCountry {{ _.country_url | ttl("xsd:anyURI") | safe }} ; 
         ] ; 
         {%- endif %}
 

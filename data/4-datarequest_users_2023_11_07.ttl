@@ -1,0 +1,3265 @@
+@prefix schema: <http://schema.org/>.
+@prefix lw: <http://lifewatch.org/ns/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+
+@base <http://lifewatch-user-analysis-2023> . #to decide baseref for this use-case project
+
+</user/bebe2717-157e-4f69-8abe-4bbf375a6e05>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/6c18dfdb-1952-4386-8db0-32a721d3b095>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5442> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/449b3b1e-564f-4026-8927-24cabed5c6b5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/e0303eb4-4a35-4e6d-b133-176abe68683d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Free University of Brussels (VUB)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=2956> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/114b943a-6bfe-4d7d-944e-5ad00ccaf34e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Antwerp'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=4538> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c782c652-e94d-4647-ba73-619c1ea630db>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/d9ff8a88-be5b-49de-b94b-3c40d5d2a547>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/4cc46831-c206-4e17-b434-7c8555e1303f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'RBINS Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ;
+        
+    ] ; 
+.
+
+</user/4269e6a4-2a9a-4770-a036-938a533db736>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/cec564bf-5f5e-4e5d-bf43-06690612e38c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/2ad4b9f7-131e-43de-a667-f3b8c46324bb>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VITO Vlaamse Instelling voor Technologisch Onderzoek'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=138> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/edeca625-1aa8-49fa-854f-fbb16cf6ab64>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/d0ebeca8-d391-494c-a05b-64efc3d46f2b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/529c1be9-8c0e-4a88-8396-9e0f77d6a83d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/5ef851df-c182-4492-b355-4530ddd2b523>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/87e5b119-fb8d-4ead-a697-5f36090b98ed>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'IFREMER - DYNECO (Unité Dynamiques des Ecosystèmes Côtiers)'^^xsd:string ;
+        
+    ] ; 
+.
+
+</user/293937fa-af77-40ad-8589-229361943eb3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/cb2696c1-6635-4782-901a-00ea70e2f5fe>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/6cf9b469-04d1-4862-989c-6cb59cce3ffa>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/1796cab1-3cae-4f0e-85ed-d2636c0c952a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/f162883d-1c42-44d2-9fab-c3dfacf300f9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/461ad819-6bd1-408c-8555-d05ed8cc4a3f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/1b684a1b-8d72-44ae-a3cd-6bfa789ab86f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/d94af299-7246-495a-85ae-ef7e5bf93035>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/e2c629a0-3fb3-4b39-86e6-c215d630f0aa>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VITO Vlaamse Instelling voor Technologisch Onderzoek'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=138> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d2d56a30-6cd6-4786-b5c7-e285abd1b946>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/3a195316-47c1-4760-abf4-0d558146ae28>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Antwerp'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=4538> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/48845a9b-7d7d-4f5f-8832-fba55de6b3ec>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/74bca5d5-c9f3-4c03-89a8-f2743f537cb2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/9d80ceaa-ce17-40cc-b362-76619a202623>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/d614d49e-48cf-4b33-aaae-3a0533c36629>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/10988596-6540-41a8-abf2-dfd3114028fa>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/2bc0fc9c-02bd-4614-9f1f-9923c4e40a1b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/8b01e14e-154f-44ad-a879-640265892f81>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'UNESCO'^^xsd:string ;
+        
+    ] ; 
+.
+
+</user/b3308511-bb3b-4ffc-b206-5ef4efa56a78>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/de984ef1-950f-4f81-9fa3-bfb1a5541513>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/57b3f467-cc33-4454-93c1-fe3a4a67d5dd>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Defensie'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=14103> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Defence ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/107a2376-ca4a-4bc7-8056-7f3585b9a1ee>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Catholique University of Louvain'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=12102> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b6c57224-e97f-4e40-b6e3-11f7bee5c670>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/a61acc51-607e-4b0a-ae2d-1552caca4183>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/48cdcf89-c28f-4b2a-ba7d-724de0219775>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a10ccaf4-e21c-447e-afe7-22800d0a777d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/665daecc-3dca-403e-b030-65becf3c5868>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Deltares'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=8811> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:NL'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/5e8ff47d-a925-4d95-8d9f-774b29b35d36>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1788e13b-9e04-4263-8100-464d7260ff47>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/3d5625a5-e042-4be1-abf1-594e5285bb02>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Free University of Brussels (VUB)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=2956> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/674d5f88-9690-4715-9686-7758d8afb3b2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/b488fe0b-e28f-438c-adad-97a344277f71>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c82a528a-b186-4389-9500-05820ce96867>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=1883> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e79a252c-dcf6-4d44-8724-88756db2185e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/ad0ce791-4f3a-4da5-a733-8bb4bcddac17>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/09f9ed41-1989-48ba-9ef8-2e804baf2f2c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/79b1ecc6-42fd-420b-a128-b31c0ddc98b2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Jan De Nul Group'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=240> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/eba32f3f-7b0f-424a-bb41-253d68b7ddff>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'IMDC'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=777> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Consultancy ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/0ea4d6af-ad05-4e31-85b7-830a793da9de>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VITO Vlaamse Instelling voor Technologisch Onderzoek'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=138> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/4291fb38-3ddf-4699-93af-85d32beb2528>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Aveiro'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5421> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:PT'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/f9b601de-2bdb-4aac-9d49-908e8ec1fd0b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'CNRS'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=8395> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:FR'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/7b992ddd-f15c-4ad1-a6fe-5e834a2b0407>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/3e56d1d3-1277-4b71-b49d-cf7ceb6944a5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/0d6f52ce-a57b-4659-8751-65bfdbfd2471>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5442> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e1fdb632-55a2-40d7-aa00-e613723dc3b6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'CSIC (Consejo Superior de Investigaciones Científicas)'^^xsd:string ;
+        
+    ] ; 
+.
+
+</user/03b67307-14ea-40e1-93b9-815470562cc2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/ea793394-88ad-44ff-87b2-85a87db04661>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/37d5272e-8054-4f99-9ffe-6acbb2a15749>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/818f1d0b-419e-4dbb-af87-4ae345b589aa>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Salento'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=9076> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:IT'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/33b20738-fb04-4c83-b49e-70cc125d8156>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Brevisco BVBA'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=8595> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/eb113400-38ae-4d72-8e37-9bbe4d655400>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Sioen industries'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=12195> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/d2749485-f9ac-4c77-a371-ef3f947d2ff0>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Antwerp Maritime Academy (HZS)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=3260> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/583151a5-0dc5-41fa-841d-fa1dbc5256a1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/ee552fe7-2cdc-40f0-afcd-bb5913a67d1a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/dd0e8776-689e-4ef1-976c-e1065223f229>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/8fbed9a8-fb15-4f33-8a12-d2a20ca9ffd3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Aquacultuur Oostende BVBA'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/532592b1-779d-480b-914d-884140b4ba81>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/57a4e0d3-362c-4f47-ac8b-8f287736ab03>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/e74845a2-71b1-4fad-8d48-fe660a71786b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/73d2b793-7189-4899-88d4-6bc0bf2e90cb>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Catholique University of Louvain'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=12102> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2aa099f2-a365-4bd0-8128-01798dfaf545>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Free University of Brussels (VUB)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=2956> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b8d92deb-95f9-4f5b-9f2b-a77885c008af>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Antwerp Maritime Academy (HZS)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=3260> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/78ba64ec-fdf2-4638-9972-eec4ece78620>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Sirris'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=8503> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/fd432bd4-5f2f-486a-b45f-d350fc1e78b5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c7620b75-f5a2-4845-aaa2-5846c9ad3f56>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/7873585d-7358-423a-8ddd-bc6f2710181b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/35b80601-a182-460f-b4e4-5bbae534748c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/49f84c2a-d49e-420b-acdf-e0106deec961>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/6a786676-a39e-4634-8a21-b7a5cb59eae7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/a8131a95-28e7-4078-92f5-cf06a1f4cbf5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/0ddc6a64-e5b8-430a-892a-ccdfa9f323bb>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Station Biologique de Roscoff'^^xsd:string ;
+        
+    ] ; 
+.
+
+</user/395f564a-9ca5-4aeb-84b2-e792e1d41368>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/82478b8a-f6ea-474d-920b-0cc04f32a078>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/9efd7d17-3595-4f93-ad86-be5c93e66e41>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Defensie'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=14103> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Defence ;
+        lw:qh lw:Policy ;
+    ] ; 
+.
+
+</user/8dcd5516-30bc-4eca-8d15-407a7f0b1f26>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Sirris'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=8503> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/a089e0ec-e60c-4d97-9e84-010e2f12483b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5442> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/9cd0233b-03f8-4134-8b60-11b20f4c4c9d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/2adf4dc4-a571-4d5d-88b1-d3141ff90bbd>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5442> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c46b6f4c-4e6b-4925-8cd4-de1ba486dfea>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/341d3b79-561f-4222-ad0b-c9ccd34eb5f8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/66b951bf-6732-46f0-a1de-0001b03dca8e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/058a3627-8032-4c43-9f4e-45d0010cef3b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ae9d02da-ef51-4ec2-b640-1928a1c28f68>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/4632469c-0ede-4bc0-9d48-f49b9a3135c4>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/c7747334-638f-4622-a80d-845c07d0d5ab>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/66dda099-3b7d-4b81-8a16-e4d704aecc9f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5442> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c06bb62b-82b0-4d35-933e-4a8266d97121>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Institut National de Recherche Halieutique (INRH)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5901> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:MA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/25756166-113e-4523-950b-5f815d49118f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/676cab61-8aea-40bc-bd77-b57319b652b0>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/1eedf793-2814-4df2-a34c-179ec7751292>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/ba6041db-c17b-44af-9715-1b4efa72c2dc>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/b80e2dda-7207-4e16-88dc-28853dc04b70>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/5959c6ac-02c7-49f3-b2f1-40acff2c25d5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/635540eb-1eb7-43be-865f-2ca813f9a9a6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/3b3832f2-cef6-40ad-a333-63c4a0383bc8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/b6c39d97-c999-486d-a5e8-3763e76f8c00>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/86c51c16-c6dc-44c3-b185-14cf03c8bd38>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'MNHN National Museum of Natural History'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=4397> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:FR'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Museum ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/27bbad00-66ad-43ea-a216-4a10500461aa>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/e2aa3c32-127e-4a13-b6cc-ed7eb039a91c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/de36044d-8a76-4076-8ee8-363b73d3752b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/020dd80e-072a-46cc-9616-bc2c8a854ddd>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'BirdLife International'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Non-profit_organization ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/ded0beec-e5d4-440d-8405-49fe11624938>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d3458d4f-556f-4b22-9e4f-4703f289c275>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c74595af-e1f3-4de2-99d9-072195f70c74>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/e6497fe1-0d46-4ba1-b718-34b585afa7e6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/fd083a9a-40da-456d-b6b7-7a8d17cdd798>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/69108a68-4381-44aa-8857-19cd927361c5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/430ff7a1-c195-4d1b-9298-550747788dcd>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/9e61fc8b-3b74-4d49-907d-b0391f065d90>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/33dea011-008e-4c86-b093-6f287753d282>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/10cb701b-8461-45e9-b5b0-9ef9ecfbe8aa>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/ba846bbe-2c87-4ea6-80a5-ba14881a79a3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/2a7d0b12-8115-4279-893e-406a0361c01c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/60380690-3351-433a-a08b-d1485d52b308>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/de68a499-6240-472c-a17c-4e187584fdc5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Stazione Zoologica Anton Dohrn Napoli (SZN)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=1410> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:IT'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ad3041bb-797e-44e8-a0a2-5b9a78dd227e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/d13703f6-eaa8-4cbc-84c1-ac03d1c8b603>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/e3422d26-2da4-4b4d-9d2f-463573cc231c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/79ca2d62-79d4-44f0-8831-1b4bc1c84d2f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/ce8581a9-830a-4501-b2a2-04287de1c3bf>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/2284b495-4433-4682-9251-1737d910722a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/a9d01b5f-795f-4ec7-9eb8-63fe915adf0f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/52a0977a-367b-4132-9e2f-cb8e70964639>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/916610a3-ebdf-492f-98e9-058bcaa01bc9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/b9485f55-d117-428a-b37f-157f839ed63a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/704f95e8-d7e6-4172-b962-4db9f500b0f7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/87497bcf-5b9d-43c9-b9f2-eb7534016455>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/52267166-5c1e-4f36-ab02-9790166073a2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e496ca90-2eb1-4fd8-8d8c-afcb8a46676b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/969a36d7-b393-4618-b68b-27cfe21aa47b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/6a7f9cbf-0484-4935-91fa-48a69399f30e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/36e77edd-108e-4ae2-83d1-75aeaf55c323>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/1be6d8d3-1d0a-4a40-8352-899cbb03c344>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/2d03b282-feab-4993-8580-73c9e7620f2d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/5ec1dcd5-3288-460e-ad33-9f47c53c658e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/238c15ec-88be-4c2b-8032-c480551e18e7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/b83fa22f-67d0-4ac5-b60a-395a5bffba69>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/4ff8f246-1a32-4011-a4f1-bcf9bd0b507a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/fb5c541c-83e3-4066-b82a-afdf83ff35b3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'ILVO Flanders Research Institute for Agriculture, Fisheries and Food'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5442> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1d783ecf-7f2c-4ef0-8811-3bb079a20a8d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/7a23bae2-9232-4d1d-8326-e8b7ab79b20f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'University of Murcia'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=6630> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:ES'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/c1b73383-ae68-45c8-aa89-8f7d8376125c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/e9664366-74c3-4eac-b05b-b966f5d0a244>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/50451ac1-8efd-4ad2-a7a3-b390fe35b168>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/5804a650-2e81-40ce-ab0e-bb7b03a057d2>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'DHI Group'^^xsd:string ;
+        
+    ] ; 
+.
+
+</user/9802ca5e-37d8-43e8-80a0-b5c2525abf58>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/38370955-7ab9-414a-bb9c-fac1c3c3c44c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/d156d1a7-917b-4845-af44-4817c6bff47d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/30405d39-b727-42fd-9c45-dc40784d1b88>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/108aa29d-9b55-4e96-a25f-bcecba3bbcb5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/4bdce954-538b-4efe-8999-218903af6733>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/e0c9bd0c-a1eb-4fac-aa31-97d21f79d170>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a5c49f8d-261f-4688-a7a3-c3ab8742c0d3>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/3316c5d6-ecce-4870-be84-1476344a9560>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d91cad33-e9e4-4788-9108-ff067a08d08e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/505d8d01-9c08-47b1-8332-460e081992ce>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/108afc87-7834-4dc7-b3c2-9f7d27bb128a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/5f80815f-6507-43bd-a907-17662a2638e8>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/a8d2543a-c51b-4c25-b121-a4abf58f8478>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Royal Belgian Institute of Natural Sciences (RBINS)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=1883> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a875797c-6fab-41b2-90a2-17c0a12791d7>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Polytechnic University of Catalonia '^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=12842> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:ES'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/974bf7de-a4df-4274-a4c8-300ef0258389>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Polytechnic University of Catalonia '^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=12842> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:ES'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/4d11dd66-214c-4fce-b398-158cf4ecf558>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Wageningen University & Research (WUR)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=5450> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:NL'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/d7e4a3bc-06ec-4b09-b888-1c3ca4384cfc>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6be26cc9-be85-4fc3-bc5e-00cc21fd55db>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Alfred Wegener Institute for Polar and Marine Research (AWI)'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=950> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:DE'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ae9cbe13-3b8f-4a89-bf8f-8e253bb18342>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/103e68ac-c3bd-4f9f-a7fb-f214ebc1605e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/37a8bb66-7d0e-4153-88db-2b9fbe827282>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/518816d9-c7f2-426d-a997-4c33c66d28de>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Antea Group'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=11438> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Consultancy ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/d46a1773-7f8f-4f8b-abd9-27bf2f3e0848>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/b077bba1-60d7-4a5f-9a48-4144fd7b80ab>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/4f0d6e1a-9ae8-4d38-a751-1c1d583ecf69>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/23a089c0-fcf2-4ce3-bc4a-548dbaa84759>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6684361e-689c-4449-803d-aafce5e713fe>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/8944baab-9c0f-443a-a28a-bb262adf3216>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/dfbc9a82-5bca-4e18-9292-d267ec75b8c6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/c8f3ef6f-bb55-4078-b988-fee753567c1e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/382decbc-f7a2-4c04-9086-d9ecebfe035f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/7245c492-8bde-4b26-a34e-c263883bbe34>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/97528aa7-e1cd-41f9-9007-8da40431e1e9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/15431b87-be8d-4889-9499-68cc409ba277>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Smithsonian Institution'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=1933> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:US'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/1bbe5621-9771-4607-984c-8d076d9f8bc6>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/dd00bde0-613f-4c05-945b-ce2f2a2b52ad>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Antea Group'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=11438> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Consultancy ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/3cd373ad-1165-4281-841b-4b278a77b991>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/34620138-d58c-400d-b551-6ab558324c0d>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/bf352af2-19b6-4e25-b620-13e6a67e26e5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/d07ebe5b-44f4-47c6-b6fa-0ba0747c82b5>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/a495f30a-073c-4a27-83b1-80231d088712>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/85d3aa66-0f72-448d-9214-281ff475d01e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/bb45f4f3-d8f5-4370-9076-6df3a97d87d9>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/014c7f20-d6b8-4ed3-ba54-17c9d13e70ce>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/28c68a04-4cd0-4ae8-8858-a6b88feb984f>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/b4856500-a518-420b-a59c-687aa8e22025>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/b64ac8f8-2efc-4bf0-8067-152dcee2e380>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/d731b932-9961-4c13-832d-869cd87a35f1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/8b5252ff-db9b-4452-932f-a212cb8ffbfc>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/a1a44b4d-e1ff-49b1-8fab-3108fa54ec87>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/0b1e52e7-4cc0-45c4-a7f2-4a23502a228c>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/395b9efb-3e24-44b8-87ce-d0e5f543bd87>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/6a7475f6-f285-43ee-9fe4-7fe8dc496528>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Tractebel ENGIE'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Company ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/a8f39412-5236-4477-bb14-f7e8e7d1e48a>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Antea Group'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=11438> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:Consultancy ;
+        lw:qh lw:Industry ;
+    ] ; 
+.
+
+</user/6291c3c3-12df-4d5f-a462-a7f0f1f014e1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/7e8c911c-f19d-4d74-b211-324156170918>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/ad1e9f57-c209-43bd-b749-121be3833d76>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'VLIZ Flanders Marine Institute'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=36> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:Research_institute ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/76b0fb23-4b5e-488a-a351-0139e749bd3b>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/ed29af75-a2f5-4291-b1c5-3c682112628e>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/1b45634c-68cf-4b19-9fa0-5d5cad995873>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        
+    ] ; 
+.
+
+</user/b8eec851-344b-4923-92d1-5b5daa31d8c1>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'Ghent University'^^xsd:string ;
+        
+        schema:identifier <https://marineinfo.org/imis?module=institute&amp;insid=471> ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:BE'^^xsd:anyURI ; 
+        ] ;
+        lw:isFlemish "true"^^xsd:boolean ;
+        lw:group lw:University ;
+        lw:qh lw:Science ;
+    ] ; 
+.
+
+</user/79e8bc53-b0e3-43ed-85bc-d987f6b976dc>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
+
+</user/21d52bef-9245-4e1e-8eb2-7a872c799e61>
+    a schema:Person ; 
+
+    schema:affiliation [
+        a schema:Organization ;
+        schema:name 'personal'^^xsd:string ;
+        
+        schema:address [
+            a schema:Postaladdress ; 
+            schema:addressCountry 'https://www.iso.org/obp/ui/#iso:code:3166:XAA'^^xsd:anyURI ; 
+        ] ;
+        lw:group lw:personal_interest ;
+        lw:qh lw:Civil_society ;
+    ] ; 
+.
