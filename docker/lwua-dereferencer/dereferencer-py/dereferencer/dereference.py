@@ -124,5 +124,5 @@ class DerefTask:
             # this is better for having intermediate results in dev testing but significantly slower
             # derefEntity.write_store(self.file_name)
             self.store = derefEntity.store
-        # write store
-        self.write_store(self.file_name)
+            # write store
+            self.write_store(self.file_name)
