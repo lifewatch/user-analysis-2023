@@ -29,7 +29,8 @@ services:
     env_file:
       - ./.env
     environment:
-      - GDB_BASE=http://graphdb:7200/
+      - GDB_BASE="http://graphdb:7200/"
+      - NOTEBOOK_ARGS="--NotebookApp.token=''"
     labels:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"
