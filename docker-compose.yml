@@ -21,7 +21,7 @@ services:
     image: lwua/lwua_jupyter
     container_name: lwua_jupyter
     ports:
-      - "8888:8888"
+      - "8889:8888"
     links:
       - graphdb
     volumes:
