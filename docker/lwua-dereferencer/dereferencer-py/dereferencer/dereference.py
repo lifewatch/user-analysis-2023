@@ -7,8 +7,12 @@ from pathlib import Path
 from .helpers import resolve_path
 from .graphdb import uri_list, get_registry_of_lastmod, writeStoreToGraphDB
 from .derefEntity import DerefUriEntity
+from pytravharv import TargetStore, TravHarvConfigBuilder, TravHarvExecuter
+import time
 
 log = logging.getLogger(__name__)
+
+GDB_URL = "https://localhost:7200/repositories/lwua23"
 
 
 def config_path_from_config():
@@ -36,11 +40,40 @@ class Dereference:
     def __init__(self):
         pass
 
+    def init_targetstore(self, url):
+        try:
+            return TargetStore.TargetStore(url)
+        except Exception as e:
+            log.error("init targetstore failed, trying again in 1s")
+            time.sleep(1)
+            self.init_targetstore(url)
+
     def run_dereference(self):
         log.info("running dereference")
 
         config_folder_path = config_path_from_config()
         log.info(f"run_dereference on config files in {config_folder_path}")
+
+        TARGETSTORE = self.init_targetstore(GDB_URL)
+        CONFIGBUILDER = TravHarvConfigBuilder.TravHarvConfigBuilder(
+            TARGETSTORE, str(config_folder_path)
+        )
+
+        CONFIGLIST = CONFIGBUILDER.build_from_folder()
+
+        for travHarvConfig in CONFIGLIST:
+            log.info("Config object: {}".format(travHarvConfig()))
+            prefix_set = travHarvConfig.PrefixSet
+            config_name = self.travHarvConfig.ConfigName
+            tasks = self.travHarvConfig.tasks
+
+            travharvexecutor = TravHarvExecutor(
+                config_name, prefix_set, tasks, TARGETSTORE
+            )
+
+            travharvexecutor.assert_all_paths()
+
+        """
         # get all the config files in the config folder
         # the files should be in yml or yaml format and should start with
         # dereference
@@ -71,6 +104,7 @@ class Dereference:
             log.info(
                 f"task {derefTask.file_name} was present in GraphDB and is not expired"
             )
+        """
 
 
 class DerefTask:
