@@ -50,6 +50,7 @@ class MyHTMLParser(HTMLParser):
 def download_uri_to_store(uri, store, format="json-ld"):
     # sleep for 1 second to avoid overloading any servers => TODO make this
     # configurable and add a warning + smart retry
+    log.info(f"downloading {uri} to the store")
     time.sleep(1)
     headers = {"Accept": "application/ld+json, text/turtle"}
     r = requests.get(uri, headers=headers)
@@ -66,10 +67,13 @@ def download_uri_to_store(uri, store, format="json-ld"):
             or "application/json" in r.headers["Content-Type"]
         ):
             format = "json-ld"
-        elif "text/turtle" in r.headers["Content-Type"]:
+        if "text/turtle" in r.headers["Content-Type"]:
             format = "turtle"
-        store.parse(data=r.text, format=format, publicID=uri)
-        log.info(f"content of {uri} added to the store")
+        try:
+            store.parse(data=r.text, format=format, publicID=uri)
+            log.info(f"content of {uri} added to the store")
+        except Exception as e:
+            log.error(f"failed to parse content of {uri} to the store: {e}")
     else:
         # perform a check in the html to see if there is any link to fair signposting
         # perform request to uri with accept header text/html
@@ -110,9 +114,8 @@ def download_uri_to_store(uri, store, format="json-ld"):
                 elif "text/turtle" in script:
                     log.info(f"found script with type text/turtle")
                     store.parse(
-                        data=script["text/turtle"],
-                        format="turtle",
-                        publicID=uri)
+                        data=script["text/turtle"], format="turtle", publicID=uri
+                    )
             parser.close()
             return
         log.warning(
@@ -233,12 +236,7 @@ class SubTasks:
 
 
 class DerefUriEntity:
-    def __init__(
-            self,
-            uri: str,
-            propertypaths: dict,
-            store: Graph,
-            prefixes: dict):
+    def __init__(self, uri: str, propertypaths: dict, store: Graph, prefixes: dict):
         self.uri = uri
         self.store = store
         self.prefixes = prefixes

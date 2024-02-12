@@ -12,9 +12,10 @@ log = logging.getLogger(__name__)
 
 
 def config_path_from_config():
-    local_default = str(resolve_path("../configs", versus="dotenv"))
+    local_default = str(resolve_path("./configs", versus="dotenv"))
     folder_name = os.getenv("CONFIG_FILES_FOLDER", local_default)
-    return Path(folder_name).absolute()
+    test = "/config"
+    return Path(test).absolute()
 
 
 def isExpired(lastmod: datetime, cache_lifetime: int):
@@ -63,8 +64,7 @@ class Dereference:
                 continue
 
             # check if the task is expired
-            if isExpired(tasks_run[derefTask.file_name],
-                         derefTask.cache_lifetime):
+            if isExpired(tasks_run[derefTask.file_name], derefTask.cache_lifetime):
                 derefTask.run_deref_task()
                 continue
 
@@ -91,10 +91,8 @@ class DerefTask:
                 elif "literal" in self.subjects:
                     self.uris = self.subjects["literal"]
                 else:
-                    log.error(
-                        "subjects should contain either SPARQL or literal")
-                    raise Exception(
-                        "subjects should contain either SPARQL or literal")
+                    log.error("subjects should contain either SPARQL or literal")
+                    raise Exception("subjects should contain either SPARQL or literal")
                 self.prefixes = {}
                 if "prefixes" in config:
                     self.prefixes = config["prefixes"]
@@ -102,7 +100,8 @@ class DerefTask:
                 self.deref_paths = config["assert-paths"]
                 log.info(f"deref_paths: {self.deref_paths}")
                 self.cache_lifetime = (
-                    config["cache_lifetime"] if "cache_lifetime" in config else 0)
+                    config["cache_lifetime"] if "cache_lifetime" in config else 0
+                )
                 self.file_name = config_file.name
             except yaml.YAMLError as exc:
                 log.error(exc)
@@ -125,5 +124,5 @@ class DerefTask:
             # this is better for having intermediate results in dev testing but significantly slower
             # derefEntity.write_store(self.file_name)
             self.store = derefEntity.store
-        # write store
-        self.write_store(self.file_name)
+            # write store
+            self.write_store(self.file_name)

@@ -21,7 +21,7 @@ services:
     image: lwua/lwua_jupyter
     container_name: lwua_jupyter
     ports:
-      - "8888:8888"
+      - "8889:8888"
     links:
       - graphdb
     volumes:
@@ -30,6 +30,7 @@ services:
       - ./.env
     environment:
       - GDB_BASE=http://graphdb:7200/
+      - NOTEBOOK_ARGS="--NotebookApp.token=''"
     labels:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"

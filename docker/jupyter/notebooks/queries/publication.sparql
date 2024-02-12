@@ -1,0 +1,33 @@
+{#- Jinja Template for Sparql Query
+ | Lists schema:Project instances with their (optional) schema:name
+ | variables in template:
+ |    - (optional) N: number of results you want (defaults to no limits --> full listing)
+ |    - (optional) O: offset to apply when paging
+ -#}
+PREFIX schema: <http://schema.org/>
+PREFIX lw: <http://lifewatch.org/ns/>
+PREFIX dct: <http://purl.org/dc/terms/#>
+
+SELECT 
+  (?s as ?publication) 
+  ?publ_type
+  ?bib_type
+  ?biblvl_code
+  ?publish_date
+  ?author_identifier
+  ?author_affil
+WHERE { 
+	?s a dct:BibliographicResource .
+    OPTIONAL {
+        ?s dct:type ?publ_type .
+        ?s mi:hasBibType ?bib_type .
+        ?s mi:hasBibLvlCode ?biblvl_code .
+
+        ?s schema:datePublished ?publish_date .
+    }
+    OPTIONAL {
+        ?s schema:author ?author .
+        ?author schema:identifier ?author_identifier .
+        ?author schema:affiliation ?author_affil .
+    }
+}
