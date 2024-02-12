@@ -439,23 +439,6 @@ dev = ["pre-commit", "tox"]
 testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
-name = "pyaml"
-version = "23.12.0"
-description = "PyYAML-based module to produce a bit more pretty and readable YAML-serialized data"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "pyaml-23.12.0-py3-none-any.whl", hash = "sha256:90407d74c95a55d9b41d3860fcc1759640444d2795df748a328d077bc4f58393"},
-    {file = "pyaml-23.12.0.tar.gz", hash = "sha256:ce6f648efdfb1b3a5579f8cedb04facf0fa1e8f64846b639309b585bb322b4e5"},
-]
-
-[package.dependencies]
-PyYAML = "*"
-
-[package.extras]
-anchors = ["unidecode"]
-
-[[package]]
 name = "pygments"
 version = "2.17.2"
 description = "Pygments is a syntax highlighting package written in Python."
@@ -593,7 +576,7 @@ validators = "^0.22.0"
 type = "git"
 url = "https://github.com/vliz-be-opsci/pyTravHarv.git"
 reference = "HEAD"
-resolved_reference = "ebc5285916611cd3c848769686a3e2fe998711f9"
+resolved_reference = "fde43ad35a7775dc66cfb4a5d3578241c885f2f6"
 
 [[package]]
 name = "pytz"
@@ -1047,4 +1030,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "d4fef9a0962eb2b2bc12d86fb75dc3876c2952656dcb4d99b1eee52caada6c2b"
+content-hash = "b48e2db717e34a3832847b1a62f68c5b7770d0de0bb25577a4f79f24bd10ef8b"

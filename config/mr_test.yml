@@ -1,0 +1,35 @@
+snooze-till-graph-age-minutes: 120 # why-what-concequence-unit # configs is subfolder named travharv
+prefix:
+  ex: <https://example.org/whatever/>
+  mr: <http://marineregions.org/ns/ontology#>
+assert:
+  - subjects:
+      literal:
+        - http://marineregions.org/mrgid/63523
+        - http://marineregions.org/mrgid/2540
+        - http://marineregions.org/mrgid/12548
+    paths:
+      - "mr:hasGeometry"
+      - "mr:isPartOf"
+      - "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>"
+  - subjects:
+      SPARQL: >
+        PREFIX mr: <http://marineregions.org/ns/ontology#>
+        SELECT ?s
+        WHERE {
+          [] mr:isPartOf ?s .
+          ?s a mr:GeoObject .
+        }
+    paths:
+      - "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>"
+      - "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>"
+  - subjects:
+      SPARQL: >
+        PREFIX mr: <http://marineregions.org/ns/ontology#>
+        SELECT ?s
+        WHERE {
+            ?s a mr:MRGeoObject .
+        }
+    paths:
+      - "mr:isPartOf / <https://schema.org/geo> / <https://schema.org/latitude>"
+      - "mr:isPartOf/ <https://schema.org/geo>/<https://schema.org/longitude>"
