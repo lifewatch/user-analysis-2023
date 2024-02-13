@@ -34,7 +34,8 @@ class Dereference:
         log.info("running dereference")
 
         config_folder_path = config_path_from_config()
-        log.info(f"run_dereference on config files in {str(config_folder_path)}")
+        log.info(
+            f"run_dereference on config files in {str(config_folder_path)}")
 
         config_files = [f for f in config_folder_path.glob("*.yml")]
         log.info(f"config files found: {config_files}")

@@ -2,6 +2,7 @@
 --> https://stackoverflow.com/questions/1603109/how-to-make-a-python-script-run-like-a-service-or-daemon-in-linux
 --> https://web.archive.org/web/20160320091458/http://www.jejik.com/files/examples/daemon3x.py
 """
+
 import sys
 import os
 import time

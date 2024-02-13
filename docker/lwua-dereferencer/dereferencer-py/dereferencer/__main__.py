@@ -2,6 +2,7 @@
 -- support service-like commands start/stop/status/reload
 -- will start the cron-service-dispatch and the web UI endpoint
 """
+
 from .daemon import Daemon
 from .helpers import enable_logging, resolve_path
 from dotenv import load_dotenv
