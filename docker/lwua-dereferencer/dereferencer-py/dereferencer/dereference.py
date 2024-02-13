@@ -58,6 +58,9 @@ class Dereference:
         CONFIGLIST = CONFIGBUILDER.build_from_folder()
 
         for travHarvConfig in CONFIGLIST:
+            if travHarvConfig is None:
+                log.info("Snooze is active for this config, skipping...")
+                continue
             log.info("Config object: {}".format(travHarvConfig()))
             prefix_set = travHarvConfig.PrefixSet
             config_name = travHarvConfig.ConfigName
