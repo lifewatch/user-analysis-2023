@@ -576,7 +576,7 @@ validators = "^0.22.0"
 type = "git"
 url = "https://github.com/vliz-be-opsci/pyTravHarv.git"
 reference = "HEAD"
-resolved_reference = "c83999b898bc76d03f11d4d2e8e023ad56f01418"
+resolved_reference = "9226859e4d5f9d773c1e531ddf5997d90843e5aa"
 
 [[package]]
 name = "pytz"
