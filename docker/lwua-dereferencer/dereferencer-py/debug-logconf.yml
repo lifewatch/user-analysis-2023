@@ -3,20 +3,25 @@
 version: 1
 formatters:
   base:
-    format: '%(asctime)-18s @%(name)-23s [%(levelname)-8s] %(message)s'
-    datefmt: '%Y-%m-%d %H:%M:%S'
+    format: "%(asctime)-18s @%(name)-23s [%(levelname)-8s] %(message)s"
+    datefmt: "%Y-%m-%d %H:%M:%S"
 handlers:
   stderr:
     class: logging.StreamHandler
     level: DEBUG
     formatter: base
     stream: ext://sys.stderr
+  stdout:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: base
+    stream: ext://sys.stdout
   file:
     class: logging.FileHandler
     level: DEBUG
     formatter: base
     filename: logging/dereferencer-debug.log
-    mode: 'a'  # in stead of 'w'
+    mode: "a" # in stead of 'w'
 loggers:
   __main__:
     level: DEBUG
@@ -27,9 +32,9 @@ loggers:
   dereferencer:
     level: DEBUG
     propagate: yes
-  apscheduler: 
+  apscheduler:
     level: WARN
     propagate: yes
 root:
   level: DEBUG
-  handlers: [stderr, file]
+  handlers: [stdout, file]
