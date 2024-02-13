@@ -1,6 +1,6 @@
 import logging
 import os
-from pytravharv import TargetStore, TravHarvConfigBuilder, TravHarvExecuter
+from pytravharv import TargetStore, TravHarvConfigBuilder, TravHarvExecutor
 from .helpers import resolve_path
 from pathlib import Path
 import time
@@ -23,7 +23,7 @@ class Dereference:
 
     def init_targetstore(self, url):
         try:
-            return TargetStore.TargetStore(url)
+            return TargetStore(url)
         except Exception as e:
             log.error("init targetstore failed, trying again in 1s")
             log.error("error: {e}")
@@ -34,8 +34,7 @@ class Dereference:
         log.info("running dereference")
 
         config_folder_path = config_path_from_config()
-        log.info(
-            f"run_dereference on config files in {str(config_folder_path)}")
+        log.info(f"run_dereference on config files in {str(config_folder_path)}")
 
         config_files = [f for f in config_folder_path.glob("*.yml")]
         log.info(f"config files found: {config_files}")
@@ -47,11 +46,11 @@ class Dereference:
             # Log the content of the file
             logging.info(content)
 
-        TARGETSTORE = TargetStore.TargetStore(GDB_URL)
+        TARGETSTORE = TargetStore(GDB_URL)
 
         log.info(TARGETSTORE)
 
-        CONFIGBUILDER = TravHarvConfigBuilder.TravHarvConfigBuilder(
+        CONFIGBUILDER = TravHarvConfigBuilder(
             TARGETSTORE,
             str(config_folder_path),
         )
@@ -64,7 +63,7 @@ class Dereference:
             config_name = travHarvConfig.ConfigName
             tasks = travHarvConfig.tasks
 
-            travharvexecutor = TravHarvExecuter.TravHarvExecutor(
+            travharvexecutor = TravHarvExecutor(
                 config_name, prefix_set, tasks, TARGETSTORE
             )
 
