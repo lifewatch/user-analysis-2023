@@ -1,6 +1,6 @@
 import logging
 import os
-from pytravharv import TargetStore, TravHarvConfigBuilder, TravHarvExecutor
+from pytravharv import TravHarv
 from .helpers import resolve_path
 from pathlib import Path
 import time
@@ -21,15 +21,6 @@ class Dereference:
     def __init__(self):
         pass
 
-    def init_targetstore(self, url):
-        try:
-            return TargetStore(url)
-        except Exception as e:
-            log.error("init targetstore failed, trying again in 1s")
-            log.error("error: {e}")
-            time.sleep(1)
-            self.init_targetstore(url)
-
     def run_dereference(self):
         log.info("running dereference")
 
@@ -46,28 +37,4 @@ class Dereference:
             # Log the content of the file
             logging.info(content)
 
-        TARGETSTORE = TargetStore(GDB_URL)
-
-        log.info(TARGETSTORE)
-
-        CONFIGBUILDER = TravHarvConfigBuilder(
-            TARGETSTORE,
-            str(config_folder_path),
-        )
-
-        CONFIGLIST = CONFIGBUILDER.build_from_folder()
-
-        for travHarvConfig in CONFIGLIST:
-            if travHarvConfig is None:
-                log.info("Snooze is active for this config, skipping...")
-                continue
-            log.info("Config object: {}".format(travHarvConfig()))
-            prefix_set = travHarvConfig.PrefixSet
-            config_name = travHarvConfig.ConfigName
-            tasks = travHarvConfig.tasks
-
-            travharvexecutor = TravHarvExecutor(
-                config_name, prefix_set, tasks, TARGETSTORE
-            )
-
-            travharvexecutor.assert_all_paths()
+        TravHarv(config_folder=config_folder_path, target_store=GDB_URL).run()
