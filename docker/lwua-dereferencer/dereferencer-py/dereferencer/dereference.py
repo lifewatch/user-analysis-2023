@@ -27,14 +27,8 @@ class Dereference:
         config_folder_path = config_path_from_config()
         log.info(f"run_dereference on config files in {str(config_folder_path)}")
 
-        config_files = [f for f in config_folder_path.glob("*.yml")]
-        log.info(f"config files found: {config_files}")
+        target_store = [GDB_URL, GDB_URL + "/statements"]
 
-        for f in config_files:
-            with open(f, "r") as file:
-                content = file.read()
-
-            # Log the content of the file
-            logging.info(content)
-
-        TravHarv(config_folder=config_folder_path, target_store=GDB_URL).run()
+        TravHarv(
+            config_folder_path, "uristore", None, None, None, target_store, True
+        ).run_dereference_tasks()

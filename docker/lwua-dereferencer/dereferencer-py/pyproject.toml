@@ -10,7 +10,7 @@ readme = "README.md"
 python = "^3.11"
 apscheduler = "^3.10.4"
 python-dotenv = "^1.0.0"
-pytravharv = {git = "https://github.com/vliz-be-opsci/pyTravHarv.git"}
+pytravharv = {git = "https://github.com/vliz-be-opsci/py-trav-harv.git", rev = "dev"}
 
 
 [tool.poetry.group.dev.dependencies]

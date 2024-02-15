@@ -574,9 +574,9 @@ validators = "^0.22.0"
 
 [package.source]
 type = "git"
-url = "https://github.com/vliz-be-opsci/pyTravHarv.git"
-reference = "HEAD"
-resolved_reference = "70bc3adb59c2fa2f4ca89afedce97f877646573a"
+url = "https://github.com/vliz-be-opsci/py-trav-harv.git"
+reference = "dev"
+resolved_reference = "5210113d52335de2b29e50d3d76d65e99005c9d0"
 
 [[package]]
 name = "pytz"
@@ -1030,4 +1030,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "b48e2db717e34a3832847b1a62f68c5b7770d0de0bb25577a4f79f24bd10ef8b"
+content-hash = "4db701abc54104e3cd88416405a5fce7f63d8f1eebb046daf4f56c3553f90125"
