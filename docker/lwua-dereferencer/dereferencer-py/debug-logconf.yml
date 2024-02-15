@@ -35,6 +35,9 @@ loggers:
   apscheduler:
     level: WARN
     propagate: yes
+  pytravharv:
+    level: DEBUG
+    propagate: yes
 root:
   level: DEBUG
   handlers: [stdout, file]

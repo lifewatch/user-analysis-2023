@@ -1,0 +1,26 @@
+snooze-till-graph-age-minutes: 120
+prefix:
+  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  dcat: <http://www.w3.org/ns/dcat#>
+  schema: <https://schema.org/>
+  org: <http://www.w3.org/ns/org#>
+  dct: <http://purl.org/dc/terms/>
+  mi: <http://www.marineinfo.org/ns/ontology#>
+assert:
+  - subjects:
+      literal:
+        - http://dev.marineinfo.org/id/collection/910 # small special collection
+    paths:
+      - "dcat:resource"
+  - subjects: # the source/subject here is the same as the subject in the first assert
+      SPARQL: >
+        PREFIX dcat: <http://www.w3.org/ns/dcat#>
+        SELECT ?s
+        WHERE {
+          [] dcat:resource ?s . 
+        }
+    paths:
+      - "dcat:resource / dct:title"
+      - "dcat:resource / mi:hasBibType"
+      - "dcat:resource / mi:hasBiblvlCode"
+      - "dcat:resource / schema:datePublished"
