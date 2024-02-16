@@ -10,16 +10,26 @@ input: data/reference_data/AffiliationInfo.csv
 @base <http://lifewatch-user-analysis-2023> . #to decide baseref for this use-case project
 {%- endif %}
 
-{% set stand_institute_identifier = _.stand_institute.split(' ') | join('_') %}
-
-</affiliation/{{ _.stand_institute.split(' ') | join('_') | safe }}>
+{%- if _.MarineInfo_ID != '-' %}
+<{{ _.MarineInfo_ID}}>
+{%- elif _.ROR_ID != '-' %}
+<{{_.ROR_ID}}>
+{%- else %}
+</affiliation/{{ _.local_ID | safe }}>
+{%- endif %}
         a schema:Organization ;
 
         schema:name {{_.stand_institute | ttl("xsd:string") | safe }} ; 
         
         schema:address [
             a schema:Postaladdress ; 
-            schema:addressCountry {{ _.country | ttl("xsd:string") | safe }} ; 
+            schema:addressCountry [
+                a schema:Country ; 
+                schema:name {{ _.country_official_name | ttl("xsd:string") | safe }} ; 
+                schema:identifier <{{_.country_url}}> ; 
+                wikidata_prop:P297 {{ _.country_alpha2 | ttl("xsd:string") | safe }} ; 
+                wikidata_prop:P298 {{ _.country_alpha3 | ttl("xsd:string") | safe }} ;
+            ] ; 
         ] ; 
 
         {%- if _.flemish %}
