@@ -1,0 +1,43 @@
+snooze-till-graph-age-minutes: 120
+prefix:
+  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  dcat: <http://www.w3.org/ns/dcat#>
+  schema: <https://schema.org/>
+  org: <http://www.w3.org/ns/org#>
+  dct: <http://purl.org/dc/terms/#> 
+  mi: <http://www.marineinfo.org/ns/ontology#>
+assert:
+  - subjects:
+      literal:
+        - http://dev.marineinfo.org/id/collection/919  # EurOBIS ackn
+        - http://dev.marineinfo.org/id/collection/944  # EUROBIS ackn – direct,
+        - http://dev.marineinfo.org/id/collection/945  # EUROBIS ackn – indirect
+        - http://dev.marineinfo.org/id/collection/942  # IRMNG ackn
+        - http://dev.marineinfo.org/id/collection/923  # Lifewatch ackn
+        - http://dev.marineinfo.org/id/collection/986  # LifeWatch BopCo
+        - http://dev.marineinfo.org/id/collection/897  # LifeWatch Marine Data Archeology
+        - http://dev.marineinfo.org/id/collection/896  # LifeWatch Observatory
+        - http://dev.marineinfo.org/id/collection/941  # LifeWatch Species Information Backbone
+        - http://dev.marineinfo.org/id/collection/987  # LifeWatch Thematic Remote Sensing
+        - http://dev.marineinfo.org/id/collection/793  # Marine Regions ackn
+        - http://dev.marineinfo.org/id/collection/915  # WoRMS ackn
+        - http://dev.marineinfo.org/id/collection/947  # WoRMS ackn - direct
+    paths:
+      # identifiers van alle resources (personen, instituten, projecten, events, publicaties en datasets) gelinkt aan een LW spcol 
+      # (identifiers van personen moeten ervantussen wegens GDPR)
+      # bij publicaties zijn dit: DOI, WoS code en VABB code
+      - "dcat:resource"
+  - subjects:
+      SPARQL: >
+        PREFIX dcat: <http://www.w3.org/ns/dcat#>
+        PREFIX dct: <http://purl.org/dc/terms/#>
+        SELECT ?s
+        WHERE {
+          [] dcat:resource ?s .
+          ?s a dct:BibliographicResource .
+        }
+    paths:
+      - "dct:title"
+      - "mi:hasBibType"
+      - "mi:hasBiblvlCode"
+      - "schema:datePublished"

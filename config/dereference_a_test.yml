@@ -1,0 +1,17 @@
+snooze-till-graph-age-minutes: 120
+prefix:
+  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  dcat: <http://www.w3.org/ns/dcat#>
+  schema: <https://schema.org/>
+  org: <http://www.w3.org/ns/org#>
+  dct: <http://purl.org/dc/terms/> 
+  mi: <http://www.marineinfo.org/ns/ontology#>
+assert:
+  - subjects:
+      literal:
+        - http://dev.marineinfo.org/id/publication/351092  # random publication
+    paths:
+      - "dct:title"
+      - "mi:hasBibType"
+      - "mi:hasBiblvlCode"
+      - "schema:datePublished"      
