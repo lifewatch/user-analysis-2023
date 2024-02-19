@@ -15,7 +15,7 @@ input: data/reference_data/AffiliationInfo.csv
 {%- elif _.ROR_ID != '-' %}
 <{{_.ROR_ID}}>
 {%- else %}
-</affiliation/{{ _.local_ID | safe }}>
+</affiliation/{{ _.local_ID }}>
 {%- endif %}
         a schema:Organization ;
 
