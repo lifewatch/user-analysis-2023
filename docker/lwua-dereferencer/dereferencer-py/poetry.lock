@@ -484,6 +484,30 @@ python-dateutil = "*"
 uritemplate = "*"
 
 [[package]]
+name = "pyrdfstore"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = ">=3.9,<4.0.0"
+files = []
+develop = false
+
+[package.dependencies]
+myst-parser = "^2.0.0"
+pyrdfj2 = "^0.0.5"
+rdflib = "*"
+recommonmark = "^0.7.1"
+sparqlwrapper = "^2.0.0"
+sphinx-rtd-theme = "^2.0.0"
+validators = "^0.22.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/vliz-be-opsci/py-RDF-store.git"
+reference = "dev"
+resolved_reference = "70134c28dd3a98717c647f17bc0d0a76f50169ba"
+
+[[package]]
 name = "pysubyt"
 version = "0.0.2"
 description = "Python implementation of LinkedData Templates to produce triples out of various datasources"
@@ -564,6 +588,7 @@ develop = false
 [package.dependencies]
 myst-parser = "^2.0.0"
 pyrdfj2 = "^0.0.5"
+pyrdfstore = {git = "https://github.com/vliz-be-opsci/py-RDF-store.git", rev = "dev"}
 pysubyt = "^0.0.2"
 pyyaml = "^6.0.1"
 rdflib = "*"
@@ -576,7 +601,7 @@ validators = "^0.22.0"
 type = "git"
 url = "https://github.com/vliz-be-opsci/py-trav-harv.git"
 reference = "dev"
-resolved_reference = "5210113d52335de2b29e50d3d76d65e99005c9d0"
+resolved_reference = "be6438141191051f2506682f3604e2b58ff0be88"
 
 [[package]]
 name = "pytz"
@@ -979,13 +1004,13 @@ files = [
 
 [[package]]
 name = "urllib3"
-version = "2.2.0"
+version = "2.2.1"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "urllib3-2.2.0-py3-none-any.whl", hash = "sha256:ce3711610ddce217e6d113a2732fafad960a03fd0318c91faa79481e35c11224"},
-    {file = "urllib3-2.2.0.tar.gz", hash = "sha256:051d961ad0c62a94e50ecf1af379c3aba230c66c710493493560c0c223c49f20"},
+    {file = "urllib3-2.2.1-py3-none-any.whl", hash = "sha256:450b20ec296a467077128bff42b73080516e71b56ff59a60a02bef2232c4fa9d"},
+    {file = "urllib3-2.2.1.tar.gz", hash = "sha256:d0570876c61ab9e520d776c38acbbb5b05a776d3f9ff98a5c8fd5162a444cf19"},
 ]
 
 [package.extras]

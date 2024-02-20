@@ -28,7 +28,11 @@ class Dereference:
         log.info(f"run_dereference on config files in {str(config_folder_path)}")
 
         target_store = [GDB_URL, GDB_URL + "/statements"]
-
-        TravHarv(
-            config_folder_path, "uristore", None, None, None, target_store, True
-        ).run_dereference_tasks()
+        try:
+            TravHarv(
+                config_folder_path,
+                target_store_info=target_store,
+            ).run_dereference_tasks()
+        except Exception as e:
+            log.error(f"Error running dereference: {e}")
+            raise e
