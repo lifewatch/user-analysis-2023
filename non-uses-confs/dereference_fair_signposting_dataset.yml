@@ -1,0 +1,10 @@
+snooze-till-graph-age-minutes: 120
+prefixes:
+  schema: <https://schema.org/>
+assert:
+  - subjects: 
+    SPARQL: >
+      SELECT ?s ?p ?o
+      WHERE {
+        ?s ?p schema:Dataset .
+      }

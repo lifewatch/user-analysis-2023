@@ -21,7 +21,7 @@ URN_BASE = os.getenv("URN_BASE", "urn:lwua:INGEST")
 
 def gdb_from_config():
     base = os.getenv("GDB_BASE", "http://localhost:7200")
-    repoid = os.getenv("GDB_REPO", "lwua23")
+    repoid = os.getenv("GDB_REPO", "kgap")
 
     endpoint = f"{ base }/repositories/{ repoid }"
     # update statements are handled at other endpoint

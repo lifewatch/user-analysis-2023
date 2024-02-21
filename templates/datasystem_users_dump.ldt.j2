@@ -12,33 +12,11 @@ input: data/*_info_added.csv
 </user/{{_.user_identifier}}>
     a schema:Person ; 
 
-    schema:affiliation [
-        a schema:Organization ; 
-        {%- if _.stand_institute %}
-        schema:name {{_.stand_institute | ttl("xsd:string") | safe }} ; 
-        {%- endif %}
-        {% if _.MarineInfo_ID %}
-        schema:identifier <{{_.MarineInfo_ID}}> ;
-        {#{% else if _.MarineInfo_ID  %}
-        {% else%}#}
-        {%- endif %}
-        {%- if _.country_url %}
-        schema:address [
-            a schema:Postaladdress ; 
-            schema:addressCountry {{ _.country_url | ttl("xsd:anyURI") | safe }} ; 
-        ] ; 
-        {%- endif %}
-
-        {%- if _.flemish %}
-        lw:isFlemish "true"^^xsd:boolean ; 
-        {%- endif %}
-
-        {%- if _.group %}
-        lw:group lw:{{ _.group.split(' ') | join('_') | safe }} ; 
-        {%- endif %}
-
-        {%- if _.qh %}
-        lw:qh lw:{{ _.qh.split(' ') | join('_') | safe }} ; 
-        {%- endif %}
-    ] ; 
+    {%- if _.MarineInfo_ID != '-' %}
+    schema:affiliation <{{ _.MarineInfo_ID | safe }}> ;
+    {%- elif _.ROR_ID != '-' %}
+    schema:affiliation <{{_.ROR_ID | safe }}> ;
+    {%- else %}
+    schema:affiliation </affiliation/{{ _.local_ID | safe }}> ;
+    {%- endif %} 
 .

@@ -2,9 +2,7 @@ version: "3.7"
 # -----------------------------------------------------------------------
 services: 
   graphdb:
-    build:
-      context: ./docker/graphdb
-    image: lwua/lwua_graphdb
+    image: ghcr.io/vliz-be-opsci/kgap/kgap_graphdb:latest
     container_name: lwua_graphdb
     ports:
       - 7200:7200     # HTTP
@@ -16,16 +14,14 @@ services:
       be.vliz.container.group: "services"
 
   jupyter:
-    build:
-      context: ./docker/jupyter
-    image: lwua/lwua_jupyter
+    image: ghcr.io/vliz-be-opsci/kgap/kgap_jupyter:latest
     container_name: lwua_jupyter
     ports:
       - "8889:8888"
     links:
       - graphdb
     volumes:
-      - "./docker/jupyter/notebooks:/notebooks"
+      - "./jupyter/notebooks:/notebooks"
     env_file:
       - ./.env
     environment:
@@ -34,6 +30,7 @@ services:
     labels:
       be.vliz.container.project: "LWUA"
       be.vliz.container.group: "services"
+      
   dereferencer:
     build: 
       context: ./docker/lwua-dereferencer/ 

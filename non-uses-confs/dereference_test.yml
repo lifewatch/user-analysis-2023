@@ -1,0 +1,11 @@
+snooze-till-graph-age-minutes: 120
+prefixes:
+  rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+  schema: <https://schema.org/>
+assert:
+  - subjects: 
+    SPARQL: >
+      SELECT ?s
+      WHERE {
+        ?s rdf:type schema:Person .
+      }

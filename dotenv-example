@@ -2,7 +2,9 @@
 LOGCONF=debug-logconf.yml
 
 # general repo setting
-GDB_REPO="lwua23"
+GDB_REPO="kgap"
+GDB_URL_READ  = "http://graphdb:7200/repositories/kgap"
+GDB_URL_WRITE = "http://graphdb:7200/repositories/kgap/statements"
 
 # scheduler settings
 SCHEDULER_PERIOD=5 # seconds | time bewteen scheduler runs

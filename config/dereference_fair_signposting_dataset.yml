@@ -1,9 +1,0 @@
-subjects: 
-  SPARQL: >
-    PREFIX schema: <https://schema.org/>
-    SELECT ?s ?p ?o
-    WHERE {
-      ?s ?p schema:Dataset .
-    }
-assert-paths:
-cache_lifetime: 1
