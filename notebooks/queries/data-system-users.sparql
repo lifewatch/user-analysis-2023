@@ -1,0 +1,24 @@
+PREFIX schema: <http://schema.org/>
+PREFIX lw: <http://lifewatch.org/ns/>
+PREFIX wikidata_prop: <https://www.wikidata.org/wiki/Property>
+SELECT 
+  (?graphName as ?source_graph)
+  (?s as ?datasystem_user) 
+  ?affiliation_id 
+  (COALESCE(?predicate, "NA") AS ?predicate_name)
+  (COALESCE(?property, "NA") AS ?value)
+FROM NAMED <urn:lwua:INGEST:/data/3-users_lifewatch_by_group_kpi_2023-11-07.ttl>
+FROM NAMED <urn:lwua:INGEST:/data/2-mailinglist_lifewatch.be_users_2023-11-07.ttl>
+FROM NAMED <urn:lwua:INGEST:/data/1-marinespecies.org_users_2023-11-07.ttl>
+WHERE { 
+    GRAPH ?graphName {
+	?s a schema:Person .
+    OPTIONAL {
+        ?s schema:affiliation ?affiliation_id .
+    }
+    OPTIONAL {
+        ?s schema:affiliation ?affiliation_id .
+        ?affiliation_id ?predicate ?property .
+    }
+  }
+}

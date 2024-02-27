@@ -1,0 +1,29 @@
+{#- Jinja Template for Sparql Query
+ | Lists schema:Project instances with their (optional) schema:name
+ | variables in template:
+ |    - (optional) N: number of results you want (defaults to no limits --> full listing)
+ |    - (optional) O: offset to apply when paging
+ -#}
+PREFIX schema: <https://schema.org/>
+PREFIX dct: <http://purl.org/dc/terms/#>
+PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
+         
+SELECT 
+  (?s as ?identifier) 
+  ?author
+  ?auth_id
+  ?auth_firstname
+  ?auth_lastname
+  ?auth_affil        
+WHERE { 
+	?s a dct:BibliographicResource .
+    OPTIONAL {
+        ?s schema:author ?author .
+        OPTIONAL {
+            ?author schema:identifier ?auth_id . 
+            ?author schema:affiliation ?auth_affil .
+            ?author schema:givenName ?auth_firstname .
+            ?author schema:familyName ?auth_lastname .
+            }
+        }
+}
