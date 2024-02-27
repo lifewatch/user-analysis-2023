@@ -21,7 +21,9 @@ services:
     links:
       - graphdb
     volumes:
-      - "./jupyter/notebooks:/notebooks"
+      - "./notebooks:/notebooks"
+      - "./data:/data"
+      - "./config:/config"
     env_file:
       - ./.env
     environment:
