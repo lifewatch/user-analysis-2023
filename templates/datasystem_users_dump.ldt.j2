@@ -12,6 +12,7 @@ input: data/*_info_added.csv
 </user/{{_.user_identifier}}>
     a schema:Person ; 
 
+    {%- if _.MarineInfo_ID or _.ROR_ID or _.local_ID %}
     {%- if _.MarineInfo_ID != '-' %}
     schema:affiliation <{{ _.MarineInfo_ID | safe }}> ;
     {%- elif _.ROR_ID != '-' %}
@@ -19,4 +20,5 @@ input: data/*_info_added.csv
     {%- else %}
     schema:affiliation </affiliation/{{ _.local_ID | safe }}> ;
     {%- endif %} 
+    {%- endif %}
 .

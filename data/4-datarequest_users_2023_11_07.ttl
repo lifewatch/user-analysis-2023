@@ -1,0 +1,1043 @@
+@prefix schema: <http://schema.org/>.
+@prefix lw: <http://lifewatch.org/ns/>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix wikidata_prop: <https://www.wikidata.org/wiki/Property>.
+
+@base <http://lifewatch-user-analysis-2023> . #to decide baseref for this use-case project
+
+</user/6b2c327b-8b26-4777-b4a6-9e235d7e8db4>
+    a schema:Person ;
+.
+
+</user/4398f91a-e29f-4199-8eaf-1cf06b1727e5>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5442> ;
+.
+
+</user/0b6b77bc-7a15-4345-8566-cf4daa331e75>
+    a schema:Person ;
+.
+
+</user/647d81e5-5dd0-42dc-b6f3-96daa082fcd6>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/2956> ;
+.
+
+</user/e8072257-89c0-4b35-b8e8-e024c45ef88f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/4538> ;
+.
+
+</user/21906f91-8a0f-476f-8da3-d27497e2fdeb>
+    a schema:Person ;
+.
+
+</user/9ebe2e3b-ec4b-4e99-b1b6-23dece4e9ab0>
+    a schema:Person ;
+.
+
+</user/fc0ed2d4-7be8-4ce0-b666-3a4d2258aff2>
+    a schema:Person ;
+.
+
+</user/9b921edf-800c-4229-8724-6e10e5f79afd>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/b3dca2b3-ab33-44e6-8ab0-d51a8dbf5041>
+    a schema:Person ;
+.
+
+</user/32a34636-7e6a-43cc-83fd-0ce7400d0981>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/138> ;
+.
+
+</user/ab1ba220-a235-403c-b2d8-a5b6a1663c3e>
+    a schema:Person ;
+.
+
+</user/5f960f54-3218-40ee-b6b6-aae8c8300550>
+    a schema:Person ;
+.
+
+</user/d6721b9b-7a11-48f6-9665-9b02e9a61a16>
+    a schema:Person ;
+.
+
+</user/c2aae348-a40a-419a-a2d0-45b72d1531e6>
+    a schema:Person ;
+.
+
+</user/53897c51-cbfc-447a-a6db-88325e55fd7f>
+    a schema:Person ;
+.
+
+</user/5a9fb920-2ee0-4d7f-99c7-201800bd839e>
+    a schema:Person ;
+.
+
+</user/593ba869-bbff-441c-a4c1-ec6ca7753d47>
+    a schema:Person ;
+.
+
+</user/861f8247-c696-4024-9006-b41402df5e4c>
+    a schema:Person ;
+.
+
+</user/f12d94d0-8ddb-42eb-88b1-140461ea3c7c>
+    a schema:Person ;
+.
+
+</user/43cfcdee-d780-420c-bd98-c0f512975160>
+    a schema:Person ;
+.
+
+</user/586d4176-9c56-43ac-a865-0aa0ed57b1d7>
+    a schema:Person ;
+.
+
+</user/39bf1629-354e-43dc-96d7-4b4ca6cfb4c7>
+    a schema:Person ;
+.
+
+</user/4ad027af-8aee-4fd7-87c6-0970aa53e4f6>
+    a schema:Person ;
+.
+
+</user/0097f16e-db7c-4163-b707-3c09223c3645>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/138> ;
+.
+
+</user/0e246388-d467-414f-b786-8689df95dd61>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/da6f8007-a581-442e-a4b7-05ee09de409b>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/4538> ;
+.
+
+</user/65c83011-09b6-4cb4-a82c-a358299b362c>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/1748b8b6-0ad6-4ae1-bc8e-cb831cb81814>
+    a schema:Person ;
+.
+
+</user/65f05db4-665e-4c8e-8ee2-1d12cc6750de>
+    a schema:Person ;
+.
+
+</user/4d9edcad-89e0-4093-ac59-5161d26701d9>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/bcefbd2e-4065-433f-a88c-466d5b7af3fc>
+    a schema:Person ;
+.
+
+</user/10acc280-3903-4ebc-a0d0-698a0514d3b8>
+    a schema:Person ;
+.
+
+</user/f8c95bd7-d9fb-4b83-8854-46c72950db87>
+    a schema:Person ;
+.
+
+</user/4e38d949-dae3-443b-b1c5-a2a4fdb66832>
+    a schema:Person ;
+.
+
+</user/d637f630-4104-4125-aedc-1f37bfc1e2a9>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/d00cd5f1-5b36-4614-9e7a-05c9c9c4bd7e>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/14103> ;
+.
+
+</user/7d5419d6-db6d-4b01-9cb7-05ce67d9085a>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/12102> ;
+.
+
+</user/f1ea75d6-1261-419d-954d-ffd9bda64a5d>
+    a schema:Person ;
+.
+
+</user/ca247201-d837-4273-b27b-c58dd4c8015a>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/e25c9d70-0100-45f5-b0af-8616945ec550>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/79a1182c-f643-45e0-800f-6acc2f1c98d3>
+    a schema:Person ;
+.
+
+</user/f5d088e6-84b8-4e75-9d49-3efc30e9fef5>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/8811> ;
+.
+
+</user/c404ed18-eae2-4859-a850-7a68828320b8>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/4ff90cc2-8b5e-4ae4-8099-dfd96d5549bf>
+    a schema:Person ;
+.
+
+</user/8534b3fb-081d-4498-85bd-4c8739fe1afb>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/2956> ;
+.
+
+</user/5adc7b37-a141-42f4-9ec7-350ac98d9396>
+    a schema:Person ;
+.
+
+</user/0c2e6967-9050-45b8-a778-43bacc3df6e3>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/64d4d0da-e441-416b-bc19-05a91d26fa97>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/1883> ;
+.
+
+</user/4435c04b-0b26-4c89-997e-7ce1ea69d772>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/849fa6c8-d117-4042-b0df-baa62f53cc63>
+    a schema:Person ;
+.
+
+</user/2d5d9fbf-17f8-45d3-b79a-5cbeceeba59b>
+    a schema:Person ;
+.
+
+</user/13a0cdb3-5c4a-4cc8-8052-824b2af46087>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/240> ;
+.
+
+</user/cdb8b387-810f-44da-89d0-3d0ed4e44715>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/777> ;
+.
+
+</user/1840c0c4-111d-4403-b149-433a2da17d00>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/138> ;
+.
+
+</user/5dd9f1f7-7a23-4a41-8da4-5ca86d78aacc>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5421> ;
+.
+
+</user/7f99ef19-7179-43bb-97ff-8e9bc325b462>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/8395> ;
+.
+
+</user/f67c9b78-28a6-4be1-8de3-b94dbd54461c>
+    a schema:Person ;
+.
+
+</user/0d7c9e3e-08f9-4abb-9478-6663e767f51f>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/65440867-a95f-4f03-8d3c-1281cff84adf>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5442> ;
+.
+
+</user/9cb54eb8-fc61-4f32-86c8-1408d753b143>
+    a schema:Person ;
+.
+
+</user/1bd4816a-fceb-4283-bee4-1d999a296648>
+    a schema:Person ;
+.
+
+</user/c5fd2bd0-8806-40ce-a4ae-ee9b28622973>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/65c708de-dbad-4733-ab0d-62a37c4cba53>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/009e5336-5feb-47b9-9200-5b42c2a81271>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/9076> ;
+.
+
+</user/44cace26-1344-4793-8581-a480a8379e9a>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/8595> ;
+.
+
+</user/d24ecdd7-95fe-47cc-b582-de9c723bea79>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/12195> ;
+.
+
+</user/c9b4ec0b-dde8-4ea2-bec7-d7bcbc509d7d>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/3260> ;
+.
+
+</user/bf2f274e-019b-44c6-a4e1-161d09fbc6f1>
+    a schema:Person ;
+.
+
+</user/ee9000bb-251b-4654-9a88-dcec2c7fa2d1>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/91b0d484-7ca4-4a5a-880e-7ff4397a46c2>
+    a schema:Person ;
+.
+
+</user/b986ad92-49a1-46cd-9d46-119730a5363f>
+    a schema:Person ;
+    schema:affiliation </affiliation/7bcdcebb-6cf9-4977-a2cc-d6d25a734fe4> ;
+.
+
+</user/529558cb-70e4-4cdd-9c3f-29ed575e437f>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/2d7f1dcf-00b1-4da0-9232-215be2ba1452>
+    a schema:Person ;
+.
+
+</user/cf56ad28-ee5c-4840-8e1c-db9499479ff4>
+    a schema:Person ;
+.
+
+</user/ac242018-14f3-47ad-925f-0262646363ed>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/12102> ;
+.
+
+</user/f35091c4-3242-481f-8d30-dd72a0c23971>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/2956> ;
+.
+
+</user/bac26c44-5166-4266-9fd6-0d62ce3a692f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/3260> ;
+.
+
+</user/73085258-4bbd-4a1f-a58e-e577fb249496>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/8503> ;
+.
+
+</user/5ed72bed-74b7-4f99-a6dc-20922ac7dc23>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/a51fdc38-fa89-4155-ab84-3de9ffbae66a>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/5dcbad4f-e52f-498f-9b5c-3c0aa4b6b005>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/d3ffcf3b-8e89-4248-b6be-03949f7d0ee1>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/2637ed84-850f-44eb-b676-9400bbf23152>
+    a schema:Person ;
+.
+
+</user/f7310040-c94f-4353-a722-113113c29b7e>
+    a schema:Person ;
+.
+
+</user/3213738a-7f00-4c0c-92ca-a809a317225f>
+    a schema:Person ;
+.
+
+</user/daec02b7-8dd0-4407-ad32-0f8e37ce672a>
+    a schema:Person ;
+.
+
+</user/35f20298-228a-4b2c-9a82-082443a5bab1>
+    a schema:Person ;
+.
+
+</user/b4cc43d9-8148-40cd-83dd-88ff05976d9e>
+    a schema:Person ;
+.
+
+</user/15e86ffb-44b9-46c2-993d-be4ed3dcc8e2>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/14103> ;
+.
+
+</user/c59bbf92-aae5-4152-bcf1-50da9f330bec>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/8503> ;
+.
+
+</user/7ff56558-e36f-4855-9662-7bc294634039>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5442> ;
+.
+
+</user/b3f05173-c726-46db-8ef9-f14d96cf7ee5>
+    a schema:Person ;
+.
+
+</user/d6e43f55-a8ad-4cb0-b643-4ef8a1862c13>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5442> ;
+.
+
+</user/5d3c2758-97ea-4f6d-80ae-74f20407da89>
+    a schema:Person ;
+.
+
+</user/11e17a67-e875-457c-b941-8348a48445b3>
+    a schema:Person ;
+.
+
+</user/afde8eb9-938a-41b4-9e9b-ab220aa0b1fc>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/fbc8bfcc-90a1-4ad7-be45-d2aba8959594>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/790d8e01-03e7-44ba-aee8-5a3504a3faa1>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/392297d8-8463-43e0-8049-fb943978ee9d>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/191d2ffd-1e77-4952-9ab5-9c89cf862af1>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/49323d43-9123-44a5-a691-9ff10397af6d>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5442> ;
+.
+
+</user/ca19879d-11dd-4c8d-9db5-9c5d3f2fd03d>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5901> ;
+.
+
+</user/7f4c7cbd-a92a-489e-b4cf-fee9c1ef47dd>
+    a schema:Person ;
+.
+
+</user/c8650e0f-3c92-460b-9b0d-c8db8291842c>
+    a schema:Person ;
+.
+
+</user/408ecc16-44a9-42bd-af3b-f985f011d3b4>
+    a schema:Person ;
+.
+
+</user/3029b697-48f8-4e47-9454-b5dd2b61531e>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/afcd2500-6b0f-4cbc-b548-a61139c2ee37>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/3d66fb08-f7d6-45ae-a57e-a07fc618aaed>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/9f015257-8af9-4ade-8e10-785f1e9550e8>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/4931d649-4f4c-409f-9857-b5980949354b>
+    a schema:Person ;
+.
+
+</user/9ff5a772-16bf-4c65-8347-a83695e320dc>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/2632f8e2-a5c9-41a4-9579-ee17533e31dd>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/4397> ;
+.
+
+</user/09c54f91-cbf1-4ab2-8645-66a384dd7c8f>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/c39ab2b2-ecdd-479e-8fe2-232e587bcb6e>
+    a schema:Person ;
+.
+
+</user/d8128412-d16c-43fe-9cc7-0357865c847f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/516c1db2-38d0-43eb-97a0-49e0f6b0f87f>
+    a schema:Person ;
+    schema:affiliation <https://ror.org/04wcaa208> ;
+.
+
+</user/1f8dc279-9ca4-4f7a-ad38-7f72043cde07>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/3b4cc677-84ad-431e-a64a-789e61fb7e34>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/d84c5b94-6cfc-4698-b1ac-caafd79f3f4d>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/163043d9-2543-456d-afc8-675b1e9a4e9a>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/d9bbc7b9-5741-4e05-9597-d86ff4f02463>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/653539dc-2cbf-4558-9b39-67f3a571e6ab>
+    a schema:Person ;
+.
+
+</user/fcaac607-0532-48a0-ae98-044782e85260>
+    a schema:Person ;
+.
+
+</user/233e924f-cdbb-401e-b65f-a959cd58f8e1>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/9a3c3cfe-6a5d-45fc-b008-afe6957234ba>
+    a schema:Person ;
+.
+
+</user/e6f484bb-ec06-47ed-a679-5ffc7b5fb216>
+    a schema:Person ;
+.
+
+</user/f8488694-6595-4e1a-8f10-29e1c21c2d94>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/320b81a5-4ee8-4768-8926-9c5b5f45e1e9>
+    a schema:Person ;
+.
+
+</user/622c7d69-3daa-4ba0-80c8-ae35010cf809>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/6b2ecea8-9b1a-402f-a0fe-93f4c24efbd0>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/1410> ;
+.
+
+</user/6998abc2-3890-4388-bec9-a1add8e6ab1c>
+    a schema:Person ;
+.
+
+</user/39b94bd3-1ad2-4169-8d89-d5b0e1dcb3d7>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/af8d5adf-b454-4e42-b56c-8443fbd1c13a>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/dd5278a3-7d55-4736-a052-1ee391581768>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/de86698b-5428-44fd-982e-62845cbf472a>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/101c1fd3-4cf4-482d-a727-752474d5962e>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/79f6162a-5467-4b3d-bc3f-e083a93dfa1b>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/15fb9387-00cc-46d2-8948-301c86ef5797>
+    a schema:Person ;
+.
+
+</user/c70c9a2a-baff-48a9-8a48-3602c012d945>
+    a schema:Person ;
+.
+
+</user/ca4f9169-d6ea-4479-9d4f-18dfb9e34cd3>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/1365e806-c3d2-4a0d-94bf-6bac1aecc6d5>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/ab8967e3-3428-463d-9891-a2afc835bd2a>
+    a schema:Person ;
+.
+
+</user/159fc491-d3b4-4aea-9b2d-ddff9e41b3c8>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/ed6f3156-7d15-4e5e-b0b7-a1fa294676a3>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/f854f53f-4f3f-434f-b632-6076133aaf4a>
+    a schema:Person ;
+.
+
+</user/e2167456-8b05-4269-a770-66ab0b4701f5>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/49a9ad0c-dfef-4283-b6ca-de583d9c51a8>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/39f114fd-eed3-48d8-98bb-bab6662f5fed>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/6834974a-5769-4fb5-b296-b4d84265252e>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/f75937b5-2600-42e2-93f2-77b39bae72bb>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/4af074ee-be76-44ea-ac1e-68cdc8d8d595>
+    a schema:Person ;
+.
+
+</user/f10172b7-c71b-471b-9c94-9e4c3fc72da5>
+    a schema:Person ;
+.
+
+</user/c477f71c-84bb-474b-9f88-337707c1c5a2>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/e3490f1d-31a5-4fe2-8f55-be8504159f78>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5442> ;
+.
+
+</user/271b8109-fa41-41df-834c-e9ca2a1557ae>
+    a schema:Person ;
+.
+
+</user/d8fd744f-0286-4f65-956e-fa788f2a9460>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/6630> ;
+.
+
+</user/e2500b6c-07b6-44a6-af17-e0f9881d597f>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/ecbd7cce-4f5b-4049-ac9e-c4d07b1caede>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/083ad7cd-6954-4eba-84ec-ecf19840e8a1>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/d19df4d0-3874-4ca7-97e0-8c9b6bf1adb6>
+    a schema:Person ;
+.
+
+</user/b8c77973-5a88-495b-b5ae-a28ba2cc7d33>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/4b9e4bdf-74f2-4dec-841a-df0c6f4f51db>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/56d6bd88-4696-4e83-9a60-e85bb134ad76>
+    a schema:Person ;
+.
+
+</user/965ed76e-602b-4944-b41c-9dc2c835bfbb>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/dad37886-a5c6-4835-8fc5-f5a8f84480d9>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/0a62a275-a56f-4fff-9f7d-9e68fe4ec5cf>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/69f2bd71-cb6a-4dd6-9ef5-776a663bb92f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/ca9904d6-ca9b-4b7a-a7fc-56b43cfa2261>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/dfd6e930-904c-434d-8181-1bc41b6e54eb>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/241c5f98-541e-47c1-9a2d-8cd012dd1e39>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/e4a9495a-cfe3-4274-98d1-46331f1ac17f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/6d5e4fa4-5833-4f09-8b6d-91bb30195f8a>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/24f7c6a9-553c-45bc-959d-d6255276d4d3>
+    a schema:Person ;
+.
+
+</user/722d8d35-d5b3-4c44-b1b9-b0f905bf6f4f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/1883> ;
+.
+
+</user/1aee89e3-e2f4-40ee-9d88-653bc7a57a7a>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/12842> ;
+.
+
+</user/cadf53dd-1a2d-4b13-859e-36e47feede08>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/12842> ;
+.
+
+</user/600df915-5734-4a07-bbd0-d24639be81bc>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/5450> ;
+.
+
+</user/fa643d3b-f1c6-416a-aa68-4264daa10121>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/0c4e27ab-d00f-498d-9839-be8e7034a831>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/950> ;
+.
+
+</user/6b526317-130e-42bd-a345-bea59e56dadf>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/764746d7-bb26-42c0-bbda-f2b8afe452bc>
+    a schema:Person ;
+.
+
+</user/b8b96711-83c8-4bac-934e-91bafb5ba30d>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/bd5acbe8-e53e-46b2-9a98-c72035a8417f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/11438> ;
+.
+
+</user/8041b9c4-e5cc-4c41-97c4-87662315d137>
+    a schema:Person ;
+.
+
+</user/70b38e90-dc93-43d8-8131-ba299fb3094a>
+    a schema:Person ;
+.
+
+</user/421b4943-9348-46cf-9946-809af78b4075>
+    a schema:Person ;
+.
+
+</user/04c39baa-96c1-4a78-b8db-037b7046ba9f>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/7c8bfee8-5813-4d68-9db9-e1153819bd30>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/b1001ff3-8ea7-44ec-a65e-e2492302cd3a>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/0543ed68-d1de-4498-8672-6943da5e271d>
+    a schema:Person ;
+.
+
+</user/97fd8fcd-c250-4772-8373-65d335ad5559>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/782ad438-a771-4c2a-ac7b-c19a04d7f652>
+    a schema:Person ;
+.
+
+</user/2cd5125e-6056-4649-837e-3ec54ca1326f>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/5e5867af-c53e-44ef-b52b-58e95ce47788>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/0856bf1a-bb48-4a12-a037-a7dbe5a8df24>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/1933> ;
+.
+
+</user/8c337438-a605-475a-8f42-f187dd2da608>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/db62c491-8d97-443e-88aa-b83facb58ac4>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/11438> ;
+.
+
+</user/2f018c8b-b18a-4f2b-a5ba-740794cb88be>
+    a schema:Person ;
+.
+
+</user/3ac7e493-72a0-4f86-a2e4-56735bbe5d08>
+    a schema:Person ;
+.
+
+</user/43a42aa1-90d6-4bd6-819f-2fb8ad8d7505>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/fa71e650-e595-43f8-9e4d-fb5d6126841d>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/6c2ddae5-a955-45c7-81a8-723a327f6520>
+    a schema:Person ;
+.
+
+</user/e27faf94-42f5-4a67-a201-8b07c17dd849>
+    a schema:Person ;
+.
+
+</user/2d595024-2a69-4256-920f-7f62ea506a6b>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/dcd1be17-c8ee-4308-b48e-b540efb4bc04>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/42e185c2-5893-443c-b8d1-58bffdad7fc1>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/b4a97662-fb16-44d8-877b-2cb8655cad0d>
+    a schema:Person ;
+.
+
+</user/8ef30d23-1c24-4137-81c7-5b7b35d8df68>
+    a schema:Person ;
+.
+
+</user/f341076d-80c2-45c6-a064-422c533c24df>
+    a schema:Person ;
+.
+
+</user/d032786b-2854-4389-b229-f99a17d64f41>
+    a schema:Person ;
+.
+
+</user/63d57a20-3acb-4f61-93e4-76c1c2a82acc>
+    a schema:Person ;
+.
+
+</user/c5e9d7e0-16d6-4d2c-9a53-c5cbb7d7e6f0>
+    a schema:Person ;
+.
+
+</user/cbdf2c89-a8a9-41f9-b0b8-0d85a4367cc9>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/ec0ee82f-1f25-477b-98fe-31d92bedaba7>
+    a schema:Person ;
+    schema:affiliation </affiliation/09cf2300-37eb-47b4-8791-81f4a9fee3a9> ;
+.
+
+</user/6148f64e-09da-4118-bb1b-2fec3104784e>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/11438> ;
+.
+
+</user/4be8c284-ac42-461f-a8e7-fedf5c6dbf46>
+    a schema:Person ;
+.
+
+</user/e19cc3a8-e894-4947-b98c-4669175862a0>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/c3307657-c6df-4ef5-8e89-65d72b9ce7e9>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/36> ;
+.
+
+</user/bd4f892c-cf11-4032-940d-7aa8c4982c4c>
+    a schema:Person ;
+.
+
+</user/036f7d77-c1ce-44b1-934a-a1c5794f3df9>
+    a schema:Person ;
+.
+
+</user/d708ebe8-f693-4eff-896f-78cc0dbf5308>
+    a schema:Person ;
+.
+
+</user/1d9c9c7e-3288-4a78-b8b6-a4f5cfa132cd>
+    a schema:Person ;
+    schema:affiliation <https://marineinfo.org/id/institute/471> ;
+.
+
+</user/1514ab68-e12f-4e34-af18-ba900f9cb5eb>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
+
+</user/0f79facb-391b-484f-9839-1408e0a8e18a>
+    a schema:Person ;
+    schema:affiliation </affiliation/eedc2aab-2f2d-497f-ae0c-45205cbd7c40> ;
+.
