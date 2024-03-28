@@ -1,6 +1,15 @@
 version: "3.7"
 # -----------------------------------------------------------------------
 services: 
+  osdg-tool:
+    image: osdg/osdg-tool:latest
+    container_name: lwua_osdg_tool
+    ports:
+      - 5001:5000
+    labels:
+      be.vliz.container.project: "LWUA"
+      be.vliz.container.group: "services"
+
   graphdb:
     image: ghcr.io/vliz-be-opsci/kgap/kgap_graphdb:latest
     container_name: lwua_graphdb
@@ -20,6 +29,7 @@ services:
       - "8889:8888"
     links:
       - graphdb
+      - osdg-tool
     volumes:
       - "./notebooks:/notebooks"
       - "./data:/data"

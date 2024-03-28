@@ -4,7 +4,7 @@ from pandas import DataFrame
 import os
 
 # SPARQL EndPoint to use - wrapped as Knowledge-Graph 'source'
-GDB_BASE: str = os.getenv("GDB_BASE", "http://localhost:7200/")
+GDB_BASE: str = os.getenv("GDB_BASE", "http://graphdb:7200/")
 #print(f"{os.getenv('GDB_BASE')=}")
 #print(f"{GDB_BASE=}")
 GDB_REPO: str = os.getenv("GDB_REPO", "lwua23")
