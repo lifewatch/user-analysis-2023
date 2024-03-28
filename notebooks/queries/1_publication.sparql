@@ -1,0 +1,21 @@
+PREFIX schema: <https://schema.org/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
+         
+SELECT 
+  ?publication 
+  ?type
+  ?publish_date     
+  ?special_collection
+WHERE { 
+	?publication a dct:BibliographicResource .
+    OPTIONAL {
+        ?publication dct:type ?type .
+        }
+    OPTIONAL {
+        ?publication schema:datePublished ?publish_date .
+        }
+    OPTIONAL {
+        ?publication dct:isPartOf ?special_collection .
+    }
+}

@@ -5,15 +5,15 @@
  |    - (optional) O: offset to apply when paging
  -#}
 PREFIX schema: <https://schema.org/>
-
-SELECT 
-  (?s as ?project) 
-  ?name 
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
+         
+SELECT DISTINCT
+  (?publication_url as ?pub_id) 
+  ?location_created
 WHERE { 
-	?s a schema:Project .
+	?publication_url a dct:BibliographicResource .
     OPTIONAL {
-        ?s schema:name ?name .
+        ?publication_url schema:locationCreated ?location_created .
     }
 }
-{{ "OFFSET " ~ O  if O else "" }} {#- add offset statement if provided #}
-{{ "LIMIT " ~ N   if N else "" }} {#- add limit  statement if provided #}

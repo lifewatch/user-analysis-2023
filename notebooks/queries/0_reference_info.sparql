@@ -1,0 +1,35 @@
+PREFIX schema: <https://schema.org/>
+PREFIX lw: <http://lifewatch.org/ns/>
+PREFIX wikidata_prop: <https://www.wikidata.org/wiki/Property>
+SELECT  
+  (?s as ?standard_affiliation)
+  ?name
+  ?qh
+  ?group
+  ?flemish
+  ?country_name
+  ?country_identifier
+  ?country_code2
+  ?country_code3
+  ?country_id
+
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_one.ttl>
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_two.ttl>
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_three.ttl>
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_four.ttl>
+
+WHERE { 
+    ?s a schema:Organization .   
+    ?s schema:name ?name .
+    ?s lw:qh ?qh .
+    ?s lw:group ?group .
+    ?s lw:isFlemish ?flemish . 
+
+    ?s schema:address ?address.
+    ?address schema:addressCountry ?country .
+    ?country schema:name ?country_name .  
+    ?country schema:identifier ?country_identifier .
+    ?country schema:identifier ?country_id .
+    ?country wikidata_prop:P297 ?country_code2 .
+    ?country wikidata_prop:P298 ?country_code3 .
+}

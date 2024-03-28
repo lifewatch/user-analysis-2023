@@ -116,7 +116,11 @@ def insert_graph(graph: Graph, context: str = None):
 
     # Execute the query
     GDB.setQuery(query)
-    GDB.query()
+    try:
+        GDB.query()
+    except Exception as e:
+        log.debug(e)
+        log.exception(e)
 
 
 def assert_context_exists(context: str):

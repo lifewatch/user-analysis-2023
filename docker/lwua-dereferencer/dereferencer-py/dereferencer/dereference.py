@@ -37,7 +37,7 @@ class Dereference:
             TravHarv(
                 config_folder_path,
                 target_store_info=GDB_URLS,
-            ).run_dereference_tasks()
+            ).process()
         except Exception as e:
             log.error(f"Error running dereference: {e}")
             raise e

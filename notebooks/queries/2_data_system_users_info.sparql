@@ -1,0 +1,41 @@
+PREFIX schema: <https://schema.org/>
+PREFIX lw: <http://lifewatch.org/ns/>
+PREFIX wikidata_prop: <https://www.wikidata.org/wiki/Property>
+
+SELECT DISTINCT
+    (?s as ?datasyst_user)
+    ?affiliation_id
+    ?name
+    ?group
+    ?qh
+    ?country
+    ?code_2
+    ?code_3
+
+FROM <urn:lwua:INGEST:/data/1-marinespecies.org_users_2023-11-07.ttl>
+FROM <urn:lwua:INGEST:/data/2-mailinglist_lifewatch.be_users_2023-11-07.ttl>
+FROM <urn:lwua:INGEST:/data/3-users_lifewatch_by_group_kpi_2023-11-07.ttl>
+FROM <urn:lwua:INGEST:/data/4-datarequest_users_2023_11_07.ttl>
+
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_one.ttl>
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_two.ttl>
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_three.ttl>
+FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_four.ttl>
+
+
+WHERE { 
+	?s a schema:Person .
+    OPTIONAL {
+        ?s schema:affiliation ?affiliation_id .
+    }
+    OPTIONAL {
+        ?s schema:affiliation ?affiliation_id .
+        ?affiliation_id schema:name ?name .
+        ?affiliation_id lw:group ?group .
+        ?affiliation_id lw:qh ?qh .
+
+        ?affiliation_id schema:address / schema:addressCountry / schema:name ?country .
+        ?affiliation_id schema:address / schema:addressCountry / wikidata_prop:P297 ?code_2 .
+        ?affiliation_id schema:address / schema:addressCountry / wikidata_prop:P298 ?code_3 .
+    }
+}

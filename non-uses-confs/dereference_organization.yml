@@ -7,11 +7,12 @@ prefix:
   dct: <http://purl.org/dc/terms/> 
   mi: <http://www.marineinfo.org/ns/ontology#>
 assert:
-  - subjects:
-      literal:
-        - http://dev.marineinfo.org/id/publication/351092  # random publication
+  -  subjects:
+      SPARQL: >
+        PREFIX dcat: <http://www.w3.org/ns/dcat#>
+        SELECT ?s
+        WHERE {
+              [] a schema:Organization .
+              }
     paths:
-      - "dct:title"
-      - "mi:hasBibType"
-      - "mi:hasBiblvlCode"
-      - "schema:datePublished"      
+      - schema:name
