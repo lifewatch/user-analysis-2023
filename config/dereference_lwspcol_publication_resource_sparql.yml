@@ -32,6 +32,7 @@ assert:
               }
     paths:
       - "<https://schema.org/author>"
+      - "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>"
   - subjects:
       SPARQL: >
         PREFIX schema: <https://schema.org/>

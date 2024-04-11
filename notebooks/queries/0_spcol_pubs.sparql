@@ -6,5 +6,7 @@ where {
 	?collection a <https://schema.org/Collection> .
     ?collection <http://purl.org/dc/terms/title> ?title .
     ?collection <http://www.w3.org/ns/dcat#resource> ?publication .
-	?publication a <http://purl.org/dc/terms/BibliographicResource> .
+	?publication 
+    FILTER(REGEX(STR(?publication), "/publication/\\d+"))
+    
 }
