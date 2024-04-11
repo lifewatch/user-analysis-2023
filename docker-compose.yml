@@ -10,8 +10,6 @@ services:
     ports:
       - "8080:80"
   graphdb:
-    build:
-      context: ./graphdb
     image: ${REG_NS:-kgap}/kgap_graphdb:${BUILD_TAG:-latest}
     container_name: test_kgap_graphdb
     env_file:
@@ -26,8 +24,6 @@ services:
       # todo later - consider mounted volumes for persistence of data ?
 
   jupyter:
-    build:
-      context: ./jupyter
     image: ${REG_NS:-kgap}/kgap_jupyter:${BUILD_TAG:-latest}
     container_name: test_kgap_jupyter
     ports:
@@ -47,8 +43,6 @@ services:
         condition: service_healthy
 
   sembench:
-    build:
-      context: ./sembench
     image: ${REG_NS:-kgap}/kgap_sembench:${BUILD_TAG:-latest}
     container_name: test_kgap_sembench
     volumes:
