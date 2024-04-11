@@ -1,11 +1,21 @@
 # general logconf setting
 LOGCONF=debug-logconf.yml
 
-# general repo setting
+#graphdb env variables
 GDB_REPO="kgap"
-GDB_URL_READ  = "http://graphdb:7200/repositories/kgap"
-GDB_URL_WRITE = "http://graphdb:7200/repositories/kgap/statements"
+REPOLABEL="label_repo_here"
+GDB_HOME_FOLDER="/opt/graphdb/home"
+GDB_MAX_HEADER=65536
 
-# scheduler settings
-SCHEDULER_PERIOD=5 # seconds | time bewteen scheduler runs
-SCHEDULER_WAIT=5 # seconds | this is needed because the graphdb container takes some time to start, else the first run will be an error
+#jupyter env variables
+SRC_FOLDER="/notebooks"
+
+
+# sembench env variables
+INPUT_DATA_LOCATION="/data/"
+OUTPUT_DATA_LOCATION="/data/"
+SEMBENCH_DATA_LOCATION="/data/"
+SEMBENCH_CONFIG_PATH="/config/sembench.yaml"
+#SCHEDULER_INTERVAL_SECONDS=86400
+
+REG_NS="ghcr.io/vliz-be-opsci/kgap"

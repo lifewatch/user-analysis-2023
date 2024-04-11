@@ -11,7 +11,7 @@ services:
       - "8080:80"
   graphdb:
     image: ${REG_NS:-kgap}/kgap_graphdb:${BUILD_TAG:-latest}
-    container_name: test_kgap_graphdb
+    container_name: lwua_kgap_graphdb
     env_file:
       - ./.env
     #environment: 
@@ -25,7 +25,7 @@ services:
 
   jupyter:
     image: ${REG_NS:-kgap}/kgap_jupyter:${BUILD_TAG:-latest}
-    container_name: test_kgap_jupyter
+    container_name: lwua_kgap_jupyter
     ports:
       - "8889:8888"
     links:
@@ -44,9 +44,10 @@ services:
 
   sembench:
     image: ${REG_NS:-kgap}/kgap_sembench:${BUILD_TAG:-latest}
-    container_name: test_kgap_sembench
+    container_name: lwua_kgap_sembench
     volumes:
       - "./data:/data"
+      - "./config:/config"
     env_file:
       - ./.env
     # environment:
