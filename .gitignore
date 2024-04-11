@@ -3,3 +3,8 @@
 __pycache__
 .ipynb_checkpoints/
 _LWUA_DataSystems_RawInput
+
+# default files introduced by k-gap docker modules
+# by not adding them to the git-repo 
+notebooks/kgap_template.ipynb
+notebooks/kgap_tools.py
