@@ -31,7 +31,7 @@ assert:
               [] <http://www.w3.org/ns/dcat#resource> ?s .
               }
     paths:
-      - "<https://schema.org/author>"
+      - "<https://schema.org/author>/<https://schema.org/identifier>"
       - "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>"
   - subjects:
       SPARQL: >
@@ -42,7 +42,7 @@ assert:
           ?authorid <https://schema.org/identifier> ?s .
         }
     paths:
-      - "<https://schema.org/affiliation>"
+      - "<https://schema.org/affiliation>/<https://schema.org/identifier>"
       - "<https://schema.org/givenName>"
       - "<https://schema.org/familyName>"
   - subjects:
