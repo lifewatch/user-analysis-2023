@@ -24,12 +24,23 @@ assert:
         - http://dev.marineinfo.org/id/collection/947  # WoRMS ackn - direct
     paths:
       - "<http://www.w3.org/ns/dcat#resource> "
-  - subjects:
+  - subjects:                                       # same result as following subject, but not dereferencing atm
       SPARQL: >
         SELECT DISTINCT ?s
         WHERE {
               [] <http://www.w3.org/ns/dcat#resource> ?s .
               }
+    paths:
+      - "<https://schema.org/author>/<https://schema.org/givenName>"
+      - "<https://schema.org/author>/<https://schema.org/identifier>"
+      - "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>"
+  - subjects: 
+      SPARQL: > 
+        SELECT DISTINCT ?pub
+        WHERE {
+            ?s ?p ?pub .
+            FILTER(REGEX(STR(?pub), "dev.marineinfo.org/id/publication"))
+        }
     paths:
       - "<https://schema.org/author>/<https://schema.org/givenName>"
       - "<https://schema.org/author>/<https://schema.org/identifier>"
