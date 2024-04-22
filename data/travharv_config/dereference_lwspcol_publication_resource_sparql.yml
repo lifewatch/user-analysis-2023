@@ -9,19 +9,19 @@ prefix:
 assert:
   - subjects:
       literal:
-        - http://dev.marineinfo.org/id/collection/919  # EurOBIS ackn
-        - http://dev.marineinfo.org/id/collection/944  # EUROBIS ackn – direct,
-        - http://dev.marineinfo.org/id/collection/945  # EUROBIS ackn – indirect
-        - http://dev.marineinfo.org/id/collection/942  # IRMNG ackn
-        - http://dev.marineinfo.org/id/collection/923  # Lifewatch ackn
-        - http://dev.marineinfo.org/id/collection/986  # LifeWatch BopCo
-        - http://dev.marineinfo.org/id/collection/897  # LifeWatch Marine Data Archeology
-        - http://dev.marineinfo.org/id/collection/896  # LifeWatch Observatory
-        - http://dev.marineinfo.org/id/collection/941  # LifeWatch Species Information Backbone
-        - http://dev.marineinfo.org/id/collection/987  # LifeWatch Thematic Remote Sensing
-        - http://dev.marineinfo.org/id/collection/793  # Marine Regions ackn
-        - http://dev.marineinfo.org/id/collection/915  # WoRMS ackn
-        - http://dev.marineinfo.org/id/collection/947  # WoRMS ackn - direct
+        - http://marineinfo.org/id/collection/919  # EurOBIS ackn
+        - http://marineinfo.org/id/collection/944  # EUROBIS ackn – direct,
+        - http://marineinfo.org/id/collection/945  # EUROBIS ackn – indirect
+        - http://marineinfo.org/id/collection/942  # IRMNG ackn
+        - http://marineinfo.org/id/collection/923  # Lifewatch ackn
+        - http://marineinfo.org/id/collection/986  # LifeWatch BopCo
+        - http://marineinfo.org/id/collection/897  # LifeWatch Marine Data Archeology
+        - http://marineinfo.org/id/collection/896  # LifeWatch Observatory
+        - http://marineinfo.org/id/collection/941  # LifeWatch Species Information Backbone
+        - http://marineinfo.org/id/collection/987  # LifeWatch Thematic Remote Sensing
+        - http://marineinfo.org/id/collection/793  # Marine Regions ackn
+        - http://marineinfo.org/id/collection/915  # WoRMS ackn
+        - http://marineinfo.org/id/collection/947  # WoRMS ackn - direct
     paths:
       - "<http://www.w3.org/ns/dcat#resource> "
   - subjects:                                       # same result as following subject, but not dereferencing atm
@@ -39,7 +39,7 @@ assert:
         SELECT DISTINCT ?pub
         WHERE {
             ?s ?p ?pub .
-            FILTER(REGEX(STR(?pub), "dev.marineinfo.org/id/publication"))
+            FILTER(REGEX(STR(?pub), "marineinfo.org/id/publication"))
         }
     paths:
       - "<https://schema.org/author>/<https://schema.org/givenName>"
