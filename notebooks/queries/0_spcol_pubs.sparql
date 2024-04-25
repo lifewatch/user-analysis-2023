@@ -1,12 +1,15 @@
 PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX dct: <http://purl.org/dc/terms/#>
 PREFIX schema: <https://schema.org/>
-select distinct ?collection ?title ?publication
-where { 
+PREFIX dct: <http://purl.org/dc/terms/#>
+
+SELECT DISTINCT 
+    ?collection 
+    ?title 
+    ?publication
+
+WHERE { 
 	?collection a <https://schema.org/Collection> .
-    ?collection <http://purl.org/dc/terms/title> ?title .
+    ?collection <http://purl.org/dc/terms/#title> ?title .
     ?collection <http://www.w3.org/ns/dcat#resource> ?publication .
-	?publication 
-    FILTER(REGEX(STR(?publication), "/publication/\\d+"))
-    
+	?publication a dct:BibliographicResource .     
 }
