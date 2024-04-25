@@ -3,11 +3,11 @@
 # Link to the standardized affiliations list
  -#}
 PREFIX schema: <https://schema.org/>
-PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dct: <http://purl.org/dc/terms/#>
 PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
          
 SELECT DISTINCT
-  (?publication_url as ?identifier)
+  (?publication_url as ?publication)
   ?firstname
   ?lastname
 WHERE { 
@@ -15,12 +15,14 @@ WHERE {
     ?publication_url schema:author ?Author .
     OPTIONAL {
         ?Author schema:givenName ?firstname .
-        ?Author schema:surName ?lastname .
+        ?Author schema:familyName ?lastname .
     }
     OPTIONAL {
         ?Author schema:givenName ?firstname .
     } 
     OPTIONAL {
-        ?Author schema:surName ?lastname .
+        ?Author schema:familyName ?lastname .
     } 
 }
+
+    {# authors can occur with both first & lastname, only lastname and only firstname --> hence use op 3optional statements #}

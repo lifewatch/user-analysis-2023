@@ -1,19 +1,17 @@
-{#- Jinja Template for Sparql Query
-# List affiliations of author(s) from all publications in LW spcol (LWspcol -> publications -> authors -> affiliation)
-# Link to the standardized affiliations list
- -#}
 PREFIX schema: <https://schema.org/>
-PREFIX dct: <http://purl.org/dc/terms/>
-PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
-PREFIX lw: <http://lifewatch.org/ns/>
+PREFIX dct: <http://purl.org/dc/terms/#>
                
 SELECT DISTINCT
-  (?publication_url as ?pub_id) 
+  ?publication 
+  ?publish_date
   ?auth_affil_id
 WHERE { 
-	?publication_url a dct:BibliographicResource .
-    ?publication_url schema:author ?Author .
+	?publication a dct:BibliographicResource .
     OPTIONAL {
-        ?Author schema:affiliation ?auth_affil_id .
+        ?publication schema:datePublished ?publish_date .
+    }
+    OPTIONAL {
+        ?publication schema:author ?author .
+        ?author schema:affiliation ?auth_affil_id .
     }
 }

@@ -1,0 +1,34 @@
+PREFIX schema: <https://schema.org/>
+PREFIX dct: <http://purl.org/dc/terms/#>
+PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
+PREFIX lw: <http://lifewatch.org/ns/>
+PREFIX wikidata_prop: <https://www.wikidata.org/wiki/Property> #sidenote: not the actual wikidata property url - though predicates in graph currently defined with this one
+               
+SELECT DISTINCT
+  ?publication
+  ?publish_date
+  ?affiliation_id
+  ?country_name
+  ?code_2
+  ?code_3
+  ?country_url
+  ?flemish
+WHERE { 
+	?publication a dct:BibliographicResource .
+    OPTIONAL {
+        ?publication schema:datePublished ?publish_date .
+    }
+    OPTIONAL {
+        ?publication schema:author ?author .
+        ?author schema:affiliation ?affiliation_id .
+    
+        ?affiliation_id lw:isFlemish ?flemish .
+        
+        ?affiliation_id schema:address ?auth_affil_address .
+        ?auth_affil_address schema:addressCountry ?auth_affil_address_cntry .
+        ?auth_affil_address_cntry schema:name ?country_name .
+        ?auth_affil_address_cntry wikidata_prop:P297 ?code_2 .
+        ?auth_affil_address_cntry wikidata_prop:P298 ?code_3 .
+        ?auth_affil_address_cntry schema:identifier ?country_url .
+    }
+}

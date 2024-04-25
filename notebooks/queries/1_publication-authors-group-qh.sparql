@@ -4,19 +4,20 @@
 # 2.Add country name & QH category info from the affiliation of (first) author(s) of a publication
  -#}
 PREFIX schema: <https://schema.org/>
-PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX dct: <http://purl.org/dc/terms/#>
 PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
 PREFIX lw: <http://lifewatch.org/ns/>
 
 SELECT DISTINCT
-  (?publication_url as ?pub_id) 
-  (?author_affiliation as ?affil_id)
+  ?publication
+  ?affiliation_id
   ?group
-  ?qh
+  ?quadruple_helix
+               
 WHERE { 
-	?publication_url a dct:BibliographicResource .
-    ?publication_url schema:author ?Author .
-    ?Author schema:affiliation ?author_affiliation .
-    ?author_affiliation lw:group ?group .
-    ?author_affiliation lw:qh ?qh .
+	?publication a dct:BibliographicResource .
+    ?publication schema:author ?author .
+    ?author schema:affiliation ?affiliation_id .
+    ?affiliation_id lw:group ?group .
+    ?affiliation_id lw:qh ?quadruple_helix.
 }
