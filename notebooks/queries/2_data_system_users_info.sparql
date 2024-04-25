@@ -8,20 +8,18 @@ SELECT DISTINCT
     ?name
     ?group
     ?qh
+    ?flemish
+    ?country_id
     ?country
     ?code_2
     ?code_3
 
-FROM <urn:lwua:INGEST:/data/1-marinespecies.org_users_2023-11-07.ttl>
-FROM <urn:lwua:INGEST:/data/2-mailinglist_lifewatch.be_users_2023-11-07.ttl>
-FROM <urn:lwua:INGEST:/data/3-users_lifewatch_by_group_kpi_2023-11-07.ttl>
-FROM <urn:lwua:INGEST:/data/4-datarequest_users_2023_11_07.ttl>
+FROM <urn:sync:1-marinespecies.org_users_2023-11-07.ttl>
+FROM <urn:sync:2-mailinglist_lifewatch.be_users_2023-11-07.ttl>
+FROM <urn:sync:3-users_lifewatch_by_group_kpi_2023-11-07.ttl>
+FROM <urn:sync:4-datarequest_users_2023_11_07.ttl>
 
-FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_one.ttl>
-FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_two.ttl>
-FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_three.ttl>
-FROM <urn:lwua:INGEST:/data/reference_data/AffiliationInfo_four.ttl>
-
+FROM <urn:sync:reference_data/AffiliationInfo.ttl>
 
 WHERE { 
 	?s a schema:Person .
@@ -33,7 +31,9 @@ WHERE {
         ?affiliation_id schema:name ?name .
         ?affiliation_id lw:group ?group .
         ?affiliation_id lw:qh ?qh .
+        ?affiliation_id lw:isFlemish ?flemish .
 
+        ?affiliation_id schema:address / schema:addressCountry / schema:identifier ?country_id .
         ?affiliation_id schema:address / schema:addressCountry / schema:name ?country .
         ?affiliation_id schema:address / schema:addressCountry / wikidata_prop:P297 ?code_2 .
         ?affiliation_id schema:address / schema:addressCountry / wikidata_prop:P298 ?code_3 .
