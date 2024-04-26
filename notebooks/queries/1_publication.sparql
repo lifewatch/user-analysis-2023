@@ -4,17 +4,21 @@ PREFIX mi: <http://www.marineinfo.org/ns/ontology#>
          
 SELECT DISTINCT
   ?publication 
-  ?type
+  ?doctype
+  ?litstyle
   ?publish_date     
   ?special_collection
 WHERE { 
 	?publication a dct:BibliographicResource .
     OPTIONAL {
-        ?publication dct:type ?type .
-        }
+        ?publication dct:type ?doctype .
+    }
+    OPTIONAL {
+        ?publication mi:hasBibType ?litstyle .
+    }
     OPTIONAL {
         ?publication schema:datePublished ?publish_date .
-        }
+    }
     OPTIONAL {
         ?publication dct:isPartOf ?special_collection .
     }
