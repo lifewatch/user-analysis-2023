@@ -3,34 +3,41 @@ PREFIX lw: <http://lifewatch.org/ns/>
 PREFIX wikidata_prop: <https://www.wikidata.org/wiki/Property>
 
 SELECT DISTINCT 
-  (?s as ?standard_affiliation)
-  ?name
-  ?qh
-  ?group
-  ?flemish
-  ?country_name
-  ?country_identifier
-  ?country_code2
-  ?country_code3
-  ?country_id
+	(?s as ?standard_affiliation)
+	?name 
+	?qh 
+	?group 
+	?flemish
+    ?country_name
+    ?country_identifier
+    ?country_code2
+    ?country_code3
+    ?country_id
 
-FROM <urn:sync:reference_data/AffiliationInfo.ttl>
+#FROM <urn:sync:reference_data/AffiliationInfo.ttl>
 
 WHERE { 
-    ?s a schema:Organization . 
+	?s a schema:Organization .
+    
     OPTIONAL {
-    ?s schema:name ?name .
-    ?s lw:qh ?qh .
-    ?s lw:group ?group .
-    ?s lw:isFlemish ?flemish . 
+    	?s schema:name ?name .
     }
     OPTIONAL {
-    ?s schema:address ?address.
-    ?address schema:addressCountry ?country .
-    ?country schema:name ?country_name .  
-    ?country schema:identifier ?country_identifier .
-    ?country schema:identifier ?country_id .
-    ?country wikidata_prop:P297 ?country_code2 .
-    ?country wikidata_prop:P298 ?country_code3 .
+      	?s lw:qh ?qh .  
+    }
+    OPTIONAL {
+    	?s lw:group ?group .
+    }
+    OPTIONAL {
+    	?s lw:isFlemish ?flemish . 
+    }
+    OPTIONAL {
+    	?s schema:address ?address.
+        ?address schema:addressCountry ?country .
+        ?country schema:name ?country_name .  
+        ?country schema:identifier ?country_identifier .
+        ?country schema:identifier ?country_id .
+        ?country wikidata_prop:P297 ?country_code2 .
+        ?country wikidata_prop:P298 ?country_code3 . 
     }
 }

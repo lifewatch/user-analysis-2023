@@ -91,7 +91,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/9277>
@@ -127,7 +127,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 </affiliation/f09ff336-f575-4121-9c5c-a6143bb74c26>
@@ -145,7 +145,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/049xnr573>
@@ -163,7 +163,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/9134>
@@ -181,7 +181,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/036rry744>
@@ -217,7 +217,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/01tkmq646>
@@ -253,7 +253,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/9930>
@@ -397,7 +397,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/11964>
@@ -451,7 +451,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/12672>
@@ -487,7 +487,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 </affiliation/f0ce7197-a00b-4d6d-9aeb-0a7bdb5606b4>
@@ -505,7 +505,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/0594de127>
@@ -523,7 +523,7 @@
                 wikidata_prop:P298 'ARG'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/00289aa83>
@@ -541,7 +541,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/03x57gn41>
@@ -577,7 +577,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/03mxhzf09>
@@ -667,7 +667,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/04abk6t05>
@@ -847,7 +847,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/026nh4520>
@@ -865,7 +865,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/15203>
@@ -883,7 +883,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/3980>
@@ -937,7 +937,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/9219>
@@ -1783,7 +1783,7 @@
                 wikidata_prop:P298 'AUS'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/14939>
@@ -3977,7 +3977,7 @@
             ] ; 
         ] ;
         lw:isFlemish "true"^^xsd:boolean ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/5443>
@@ -12077,7 +12077,7 @@
                 wikidata_prop:P298 'BEL'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_ ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 </affiliation/469c0b07-0bad-48cb-95c3-3e1e23da432c>
@@ -12095,7 +12095,7 @@
                 wikidata_prop:P298 'ITA'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_ ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://ror.org/008stv805>
@@ -25597,7 +25597,7 @@
             ] ; 
         ] ;
         lw:group lw:Non-profit_organization ;
-        lw:qh lw:Civil_Society ;
+        lw:qh lw:Civil_society ;
 .
 <https://ror.org/01bdv4312>
         a schema:Organization ;
@@ -42299,7 +42299,7 @@
                 wikidata_prop:P298 'USA'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_Institute ;
+        lw:group lw:Research_institute ;
         lw:qh lw:Science ;
 .
 <https://marineinfo.org/id/institute/1933>
@@ -45812,7 +45812,7 @@
                 wikidata_prop:P298 'DEU'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:research_network ;
+        lw:group lw:Research_network ;
         lw:qh lw:Science ;
 .
 </affiliation/90f2dee6-d558-4124-b122-a82c6982c9ba>
@@ -46532,7 +46532,7 @@
                 wikidata_prop:P298 ''^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:research_network ;
+        lw:group lw:Research_network ;
         lw:qh lw:Science ;
 .
 <https://ror.org/05td9wm36>
