@@ -1,0 +1,46 @@
+PREFIX schema: <https://schema.org/>
+PREFIX lw: <http://lifewatch.org/ns/>
+PREFIX wikidata_prop: <https://www.wikidata.org/wiki/Property>
+
+SELECT DISTINCT
+    (?person as ?datasyst_user)
+    (?s as ?affiliation_id)
+    ?name
+    ?qh
+    ?group
+    ?flemish
+    ?country
+    ?country_id
+    ?country_code2
+    ?country_code3
+
+FROM <urn:sync:1-marinespecies.org_users_2023-11-07.ttl>
+FROM <urn:sync:2-mailinglist_lifewatch.be_users_2023-11-07.ttl>
+FROM <urn:sync:3-users_lifewatch_by_group_kpi_2023-11-07.ttl>
+FROM <urn:sync:4-datarequest_users_2023_11_07.ttl>
+FROM <urn:sync:download_marbound_outputLS.ttl>
+FROM <urn:sync:reference_data/AffiliationInfo.ttl>
+
+WHERE { 
+	?person a schema:Person .
+    ?person schema:affiliation ?s .
+    
+    OPTIONAL {
+    	?s schema:name ?name .
+    }
+    OPTIONAL {
+      	?s lw:qh ?qh .  
+    }
+    OPTIONAL {
+    	?s lw:group ?group .
+    }
+    OPTIONAL {
+    	?s lw:isFlemish ?flemish . 
+    }
+    OPTIONAL {
+    	?s schema:address / schema:addressCountry / schema:name ?country_name .  
+        ?s schema:address / schema:addressCountry / schema:identifier ?country_id .
+        ?s schema:address / schema:addressCountry / wikidata_prop:P297 ?country_code2 .
+        ?s schema:address / schema:addressCountry / wikidata_prop:P298 ?country_code3 . 
+    }
+}

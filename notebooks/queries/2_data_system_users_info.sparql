@@ -3,16 +3,16 @@ PREFIX lw: <http://lifewatch.org/ns/>
 PREFIX wikidata_prop: <https://www.wikidata.org/wiki/Property>
 
 SELECT DISTINCT
-    (?s as ?datasyst_user)
-    ?affiliation_id
+    (?person as ?datasyst_user)
+    (?s as ?affiliation_id)
     ?name
-    ?group
     ?qh
+    ?group
     ?flemish
-    ?country_id
     ?country
-    ?code_2
-    ?code_3
+    ?country_id
+    ?country_code2
+    ?country_code3
 
 FROM <urn:sync:1-marinespecies.org_users_2023-11-07.ttl>
 FROM <urn:sync:2-mailinglist_lifewatch.be_users_2023-11-07.ttl>
@@ -22,20 +22,25 @@ FROM <urn:sync:4-datarequest_users_2023_11_07.ttl>
 FROM <urn:sync:reference_data/AffiliationInfo.ttl>
 
 WHERE { 
-	?s a schema:Person .
+	?person a schema:Person .
+    ?person schema:affiliation ?s .
+    
     OPTIONAL {
-        ?s schema:affiliation ?affiliation_id .
+    	?s schema:name ?name .
     }
     OPTIONAL {
-        ?s schema:affiliation ?affiliation_id .
-        ?affiliation_id schema:name ?name .
-        ?affiliation_id lw:group ?group .
-        ?affiliation_id lw:qh ?qh .
-        ?affiliation_id lw:isFlemish ?flemish .
-
-        ?affiliation_id schema:address / schema:addressCountry / schema:identifier ?country_id .
-        ?affiliation_id schema:address / schema:addressCountry / schema:name ?country .
-        ?affiliation_id schema:address / schema:addressCountry / wikidata_prop:P297 ?code_2 .
-        ?affiliation_id schema:address / schema:addressCountry / wikidata_prop:P298 ?code_3 .
+      	?s lw:qh ?qh .  
+    }
+    OPTIONAL {
+    	?s lw:group ?group .
+    }
+    OPTIONAL {
+    	?s lw:isFlemish ?flemish . 
+    }
+    OPTIONAL {
+    	?s schema:address / schema:addressCountry / schema:name ?country_name .  
+        ?s schema:address / schema:addressCountry / schema:identifier ?country_id .
+        ?s schema:address / schema:addressCountry / wikidata_prop:P297 ?country_code2 .
+        ?s schema:address / schema:addressCountry / wikidata_prop:P298 ?country_code3 . 
     }
 }
