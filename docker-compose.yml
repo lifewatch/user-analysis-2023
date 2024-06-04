@@ -27,7 +27,7 @@ services:
       #GDB_REPO: kgap                       # default should be changed to reflect the name of your particular case
       #GDB_HOME_FOLDER: /opt/graphdb/home/  # default might be changed to externalise/persist the storage 
     ports:
-      - 7200:7200     # HTTP
+      - 7201:7200     # HTTP
     volumes:
       - ./data:/root/graphdb-import/data
       # todo later - consider mounted volumes for persistence of data ?
@@ -52,9 +52,9 @@ services:
         condition: service_healthy
 
   sembench:
-    build:
-        context: ./sembench
-    #image: ${REG_NS:-kgap}/kgap_sembench:${BUILD_TAG:-latest}
+    #build:
+    #    context: ./sembench
+    image: ${REG_NS:-kgap}/kgap_sembench:${BUILD_TAG:-latest}
     container_name: lwua_kgap_sembench
     volumes:
       - "./data:/data"

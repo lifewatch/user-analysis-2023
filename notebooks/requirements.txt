@@ -5,7 +5,7 @@ numpy
 pandas 
 matplotlib 
 seaborn 
-scikit-learn 
-scipy 
-tensorflow 
-torch
+#scikit-learn 
+#scipy 
+#tensorflow 
+#torch
