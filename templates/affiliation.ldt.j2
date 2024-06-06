@@ -4,12 +4,11 @@ description: template to turn information on standardized affiliations into trip
 input: data/reference_data/AffiliationInfo.csv
 #}
 
-{%- if ctrl.isFirst %}
 {%- include 'includes/prefixes.ttl' %}
 
 @base <http://lifewatch-user-analysis-2023> . #to decide baseref for this use-case project
-{%- endif %}
 
+{%- for _ in sets['_']%}
 {%- if _.MarineInfo_ID != '-' %}
 <{{ _.MarineInfo_ID}}>
 {%- elif _.ROR_ID != '-' %}
@@ -44,3 +43,4 @@ input: data/reference_data/AffiliationInfo.csv
         lw:qh lw:{{ _.qh.split(' ') | join('_') | safe }} ; 
         {%- endif %}
 .
+{%- endfor %}

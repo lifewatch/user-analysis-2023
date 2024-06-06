@@ -3,12 +3,11 @@ name: datasystem_users_dump.ldt.j2
 description: template to turn data on users of the LifeWatch datasystem into triples 
 input: data/*_info_added.csv
 #}
-{%- if ctrl.isFirst %}
 {%- include 'includes/prefixes.ttl' %}
 
 @base <http://lifewatch-user-analysis-2023> . #to decide baseref for this use-case project
-{%- endif %}
 
+{%- for _ in sets['_']%}
 </user/{{_.user_identifier}}>
     a schema:Person ; 
 
@@ -22,3 +21,4 @@ input: data/*_info_added.csv
     {%- endif %} 
     {%- endif %}
 .
+{%- endfor %}

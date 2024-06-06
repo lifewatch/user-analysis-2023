@@ -1,3 +1,59 @@
+#RDF production tasks:
+rdf_production_task_affiliation_info:
+  func: pysubyt
+  args:
+    template_folder: "/templates/"
+    template_name: affiliation.ldt.j2
+    source: !resolve "{input}/reference_data/AffiliationInfo.csv"
+    sink: !resolve "{output}/reference_data/AffiliationInfo.ttl"
+    mode: iteration
+
+rdf_production_task_marinespecies_users:
+  func: pysubyt
+  args:
+    template_folder: "/templates/"
+    template_name: datasystem_users_dump.ldt.j2
+    source: !resolve "{input}/1-marinespecies.org_users_2023-11-07_info_added.csv"
+    sink: !resolve "{output}/1-marinespecies.org_users_2023-11-07.ttl"
+    mode: iteration
+
+rdf_production_task_lifewatch_mailinglist:
+  func: pysubyt
+  args:
+    template_folder: "/templates/"
+    template_name: datasystem_users_dump.ldt.j2
+    source: !resolve "{input}/2-mailinglist_lifewatch.be_users_2023-11-07_info_added.csv"
+    sink: !resolve "{output}/2-mailinglist_lifewatch.be_users_2023-11-07.ttl"
+    mode: iteration
+
+rdf_production_task_lifewatch_kpi:
+  func: pysubyt
+  args:
+    template_folder: "/templates/"
+    template_name: datasystem_users_dump.ldt.j2
+    source: !resolve "{input}/3-users_lifewatch_by_group_kpi_2023-11-07_info_added.csv"
+    sink: !resolve "{output}/3-users_lifewatch_by_group_kpi_2023-11-07.ttl"
+    mode: iteration
+
+rdf_production_task_lifewatch_datarequests:
+  func: pysubyt
+  args:
+    template_folder: "/templates/"
+    template_name: datasystem_users_dump.ldt.j2
+    source: !resolve "{input}/4-datarequest_users_2023_11_07_info_added.csv"
+    sink: !resolve "{output}/4-datarequest_users_2023_11_07.ttl"
+    mode: iteration
+
+rdf_production_task_marineregions_users:
+  func: pysubyt
+  args:
+    template_folder: "/templates/"
+    template_name: datasystem_users_dump.ldt.j2
+    source: !resolve "{input}/download_marbound_outputLS_info_added.csv"
+    sink: !resolve "{output}/download_marbound_outputLS.ttl"
+    mode: iteration
+
+# task to ingest rdf files in /data
 ingest_data_task:
   func: py-sync-fs-triples
   args:
@@ -5,6 +61,7 @@ ingest_data_task:
     read_uri: http://graphdb:7200/repositories/kgap
     write_uri: http://graphdb:7200/repositories/kgap/statements
 
+# task to dereference resources from lifewatch special collections specified in 'dereference_lwspcol_publication_resource_sparql.yml'
 travharv_task:
   func: py-trav-harv
   args:
