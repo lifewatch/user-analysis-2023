@@ -59,6 +59,7 @@ services:
     volumes:
       - "./data:/data"
       - "./config:/config"
+      - "./templates:/templates"
     env_file:
       - ./.env
     # environment:

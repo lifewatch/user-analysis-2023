@@ -12,10 +12,10 @@ SRC_FOLDER="/notebooks"
 
 
 # sembench env variables
-INPUT_DATA_LOCATION="/data/"
-OUTPUT_DATA_LOCATION="/data/"
-SEMBENCH_DATA_LOCATION="/data/"
-SEMBENCH_CONFIG_PATH="/config/sembench.yaml"
+INPUT_DATA_LOCATION=/data
+OUTPUT_DATA_LOCATION=/data
+SEMBENCH_DATA_LOCATION=/data
+SEMBENCH_CONFIG_PATH=/config/sembench.yaml
 #SCHEDULER_INTERVAL_SECONDS=86400
 
 REG_NS="ghcr.io/vliz-be-opsci/kgap"
