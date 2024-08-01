@@ -1,4 +1,4 @@
-@prefix schema: <http://schema.org/>.
+@prefix schema: <https://schema.org/>.
 @prefix lw: <http://lifewatch.org/ns/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 @prefix wikidata_prop: <https://www.wikidata.org/wiki/Property>.
@@ -12077,7 +12077,7 @@
                 wikidata_prop:P298 'BEL'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_institute ;
+        lw:group lw:Research_ ;
         lw:qh lw:Science ;
 .
 </affiliation/469c0b07-0bad-48cb-95c3-3e1e23da432c>
@@ -12095,7 +12095,7 @@
                 wikidata_prop:P298 'ITA'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_institute ;
+        lw:group lw:Research_ ;
         lw:qh lw:Science ;
 .
 <https://ror.org/008stv805>
@@ -14024,7 +14024,6 @@
         lw:group lw:University ;
         lw:qh lw:Science ;
 .
-
 <https://ror.org/005ypkf75>
         a schema:Organization ;
 
@@ -25597,7 +25596,7 @@
             ] ; 
         ] ;
         lw:group lw:Non-profit_organization ;
-        lw:qh lw:Civil_society ;
+        lw:qh lw:Civil_Society ;
 .
 <https://ror.org/01bdv4312>
         a schema:Organization ;
@@ -28317,7 +28316,6 @@
         lw:group lw:University ;
         lw:qh lw:Science ;
 .
-
 </affiliation/98655883-2ef9-480e-b882-124b18a111b8>
         a schema:Organization ;
 
@@ -45812,7 +45810,7 @@
                 wikidata_prop:P298 'DEU'^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_network ;
+        lw:group lw:research_network ;
         lw:qh lw:Science ;
 .
 </affiliation/90f2dee6-d558-4124-b122-a82c6982c9ba>
@@ -46532,7 +46530,7 @@
                 wikidata_prop:P298 ''^^xsd:string ;
             ] ; 
         ] ;
-        lw:group lw:Research_network ;
+        lw:group lw:research_network ;
         lw:qh lw:Science ;
 .
 <https://ror.org/05td9wm36>
